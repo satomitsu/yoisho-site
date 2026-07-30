@@ -461,6 +461,19 @@ footer.site a { color: var(--text2); }
   .fcard img { height: 120px; }
 }
 
+/* ---------- よくある質問 ---------- */
+
+.faq { display: grid; grid-template-columns: 1fr; gap: 28px; }
+@media (min-width: 900px) { .faq { grid-template-columns: 1fr 1fr; gap: 56px; } }
+.faq-fig { height: 240px; width: auto; margin-top: 14px; display: block; }
+@media (min-width: 900px) { .faq-fig { height: 280px; } }
+/* 質問は上下の罫だけで区切る（箱にしない） */
+.qa { display: flex; flex-direction: column;
+      border-top: var(--stroke) solid var(--ink); }
+.qa .q { padding: 20px 0; border-bottom: var(--stroke) solid var(--ink); }
+.qa .q h3 { margin: 0 0 8px; font-size: 16px; }
+.qa .q p { margin: 0; font-size: 14px; line-height: 1.85; color: var(--text2); }
+
 /* ---------- 2分割 ---------- */
 
 .split { display: grid; grid-template-columns: 1fr; }
