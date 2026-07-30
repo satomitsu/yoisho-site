@@ -324,3 +324,218 @@ footer.site a { color: var(--text2); }
   .card, .tile { padding: 18px; box-shadow: 4px 4px 0 var(--ink); }
   .chapter > .head .n { font-size: 21px; }
 }
+
+/* ================================================================
+   LP（トップページ）専用
+   Claude Design のLPから、構成と演出を取り入れた部分。
+   色・書体・角丸・影の規則は DESIGN.md のまま（2色目のアクセントは足さない）。
+   ================================================================ */
+
+/* 画面幅いっぱいのセクションをインクの罫で積む。
+   .wrap の内側ではなく body 直下に置く */
+.lp { margin: 0; }
+.band-sec { border-bottom: var(--stroke) solid var(--ink); }
+.inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+/* ---------- ヘッダー ---------- */
+
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; padding: 14px 0;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px;
+            text-decoration: none; color: var(--ink); }
+.nav-logo img { width: 38px; height: 38px; display: block;
+                border: var(--stroke) solid var(--ink); }
+.nav-logo .word { font-family: var(--font-en); font-weight: 700;
+                  font-size: 23px; letter-spacing: -.5px; line-height: 1; }
+.nav-logo .band { background: var(--accent); border: 1.5px solid var(--ink);
+                  font-size: 8px; font-weight: 700; letter-spacing: .35em;
+                  padding: 1px 1px 1px 5px; line-height: 1.5; margin-top: 3px; }
+.nav-links { display: flex; align-items: center; gap: 22px; }
+.nav-links a { font-size: 14px; font-weight: 700; text-decoration: none;
+               color: var(--ink); }
+.nav-links a:hover { background: var(--accent); }
+@media (max-width: 800px) { .nav-links .hide-sp { display: none; } }
+
+/* ---------- ヒーロー ---------- */
+
+.hero-lp { display: grid; grid-template-columns: 1fr; gap: 24px;
+           align-items: center; padding: 48px 0 0; }
+@media (min-width: 900px) {
+  .hero-lp { grid-template-columns: 1fr 420px; gap: 40px; padding: 60px 0 0; }
+}
+
+.pill {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--card); border: var(--stroke) solid var(--ink);
+  padding: 6px 13px; font-size: 12px; font-weight: 700; margin-bottom: 22px;
+}
+.pill .dot { width: 8px; height: 8px; background: var(--accent-text); }
+
+.display {
+  margin: 0; font-weight: 700; letter-spacing: -.02em; line-height: 1.12;
+  font-size: clamp(38px, 7.2vw, 64px);
+}
+/* 見出しの中でライムのベタ塗りブロックにする語 */
+.display .mark {
+  display: inline-block; background: var(--accent);
+  border: var(--stroke) solid var(--ink); box-shadow: 5px 5px 0 var(--ink);
+  padding: 0 12px 4px; margin: 6px 4px 8px 0;
+}
+.hero-lp .sub { margin: 22px 0 0; font-size: 17px; line-height: 1.85;
+                color: var(--text2); max-width: 30em; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center;
+                gap: 14px; margin-top: 30px; }
+
+/* 事実だけを並べる数値。計測していない指標は載せない */
+.facts { display: flex; gap: 26px; margin-top: 36px; align-items: stretch; }
+.facts .rule { width: 2px; background: var(--ink); }
+.facts .v { font-family: var(--font-en); font-size: 30px; font-weight: 600;
+            line-height: 1.1; }
+.facts .v small { font-size: 15px; font-weight: 600; }
+.facts .k { font-size: 12px; color: var(--text2); font-weight: 700; margin-top: 2px; }
+
+/* キャラクターはライムのベタ面に立たせる（下端を基準線に揃える） */
+.figure { position: relative; display: flex; align-items: flex-end;
+          justify-content: center; height: 380px; }
+.figure .plate { position: absolute; bottom: 0; width: 100%; max-width: 360px;
+                 height: 150px; background: var(--accent);
+                 border: var(--stroke) solid var(--ink); }
+.figure img { position: relative; height: 360px; width: auto; }
+@media (min-width: 900px) { .figure { height: 480px; } .figure img { height: 460px; } }
+
+/* ---------- 黒帯 ---------- */
+
+.marquee {
+  background: var(--ink); color: var(--paper);
+  display: flex; align-items: center; gap: 26px;
+  padding: 14px 24px; overflow-x: auto; white-space: nowrap;
+  scrollbar-width: none;
+}
+.marquee::-webkit-scrollbar { display: none; }
+.marquee span { font-family: var(--font-en); font-size: 13px; font-weight: 600;
+                letter-spacing: .2em; }
+.marquee i { color: var(--accent); font-style: normal; }
+
+/* ---------- セクション見出し ---------- */
+
+/* 縦だけ指定する。ショートハンドにすると .inner の左右パディングを
+   打ち消してしまい、狭い画面で文字が画面端に貼り付く */
+.sec { padding-top: 64px; padding-bottom: 64px; }
+.sec-eyebrow {
+  font-family: var(--font-en); font-size: 12px; font-weight: 600;
+  letter-spacing: .18em; color: var(--accent-text); margin: 0 0 12px;
+}
+.sec h2 { font-size: clamp(26px, 4.4vw, 40px); letter-spacing: -.01em;
+          line-height: 1.25; margin: 0 0 12px; }
+.sec .sec-note { color: var(--text2); font-size: 15px; max-width: 34em; margin: 0; }
+
+/* ---------- 番号つきカード ---------- */
+
+.cards { display: grid; gap: 18px; margin-top: 36px; }
+@media (min-width: 760px) { .cards.two { grid-template-columns: 1fr 1fr; } }
+
+.fcard {
+  background: var(--card); border: var(--stroke) solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink); padding: 20px;
+  display: flex; gap: 18px; align-items: flex-start;
+}
+.fcard img { height: 130px; width: auto; flex-shrink: 0; }
+.fcard .no {
+  display: inline-block; background: var(--accent);
+  border: var(--stroke) solid var(--ink);
+  font-family: var(--font-en); font-size: 12px; font-weight: 700;
+  padding: 0 7px; margin-bottom: 8px;
+}
+.fcard h3 { margin: 0 0 8px; font-size: 19px; }
+.fcard p { margin: 0; font-size: 14px; line-height: 1.8; color: var(--text2); }
+@media (max-width: 480px) {
+  .fcard { flex-direction: column; align-items: center; text-align: left; }
+  .fcard img { height: 120px; }
+}
+
+/* ---------- 2分割 ---------- */
+
+.split { display: grid; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .split { grid-template-columns: 1fr 1fr; } }
+.split > div { padding: 56px 24px; }
+@media (min-width: 900px) {
+  .split > div + div { border-left: var(--stroke) solid var(--ink); }
+  .split > div { padding: 60px 40px; }
+}
+@media (max-width: 899px) {
+  .split > div + div { border-top: var(--stroke) solid var(--ink); }
+}
+.split > div + div { background: var(--surface2); }
+
+/* 経路を示す行 */
+.route { display: flex; gap: 14px; align-items: center;
+         background: var(--card); border: var(--stroke) solid var(--ink);
+         padding: 13px 15px; margin-bottom: 12px; }
+.route .mark { width: 34px; height: 34px; flex-shrink: 0;
+               background: var(--ink); display: grid; place-items: center; }
+.route .mark svg { width: 18px; height: 18px; }
+.route .mark svg * { stroke: var(--accent); stroke-width: 2.2; fill: none;
+                     stroke-linecap: round; stroke-linejoin: round; }
+.route b { display: block; font-size: 15px; }
+.route span { font-size: 13px; color: var(--text2); }
+
+/* インクのベタ面で言い切る箱 */
+.callout { background: var(--ink); color: var(--paper);
+           padding: 18px 20px; font-size: 14px; line-height: 1.85; }
+
+/* ---------- アプリ画面の再現 ---------- */
+
+.mock { background: var(--card); border: var(--stroke) solid var(--ink);
+        box-shadow: 6px 6px 0 var(--ink); padding: 18px; }
+.mock-head { display: flex; align-items: center; gap: 11px;
+             border-bottom: var(--stroke) solid var(--ink);
+             padding-bottom: 13px; margin-bottom: 13px; }
+.mock-head .av { width: 38px; height: 38px; border-radius: 50%;
+                 background: var(--accent); border: var(--stroke) solid var(--ink);
+                 display: grid; place-items: center;
+                 font-weight: 700; font-size: 15px; color: var(--accent-text); }
+.mock-head b { display: block; font-size: 15px; }
+.mock-head span { font-size: 12px; color: var(--text2); }
+/* サボり検知は「腕」の色（DESIGN.md 2章）。赤は破壊的操作専用なので使わない */
+.mock-head .flag { margin-left: auto; background: rgba(255, 211, 78, .45);
+                   border: var(--stroke) solid var(--ink); color: #8A6A00;
+                   font-size: 11px; font-weight: 700; padding: 2px 7px; }
+.mock-opt { border: var(--stroke) solid var(--ink); padding: 9px 12px;
+            font-size: 14px; margin-bottom: 7px; background: var(--card); }
+.mock-opt.on { background: var(--accent); }
+.mock-send { background: var(--accent); border: var(--stroke) solid var(--ink);
+             box-shadow: 4px 4px 0 var(--ink); text-align: center;
+             font-weight: 700; padding: 11px; margin-top: 12px; font-size: 15px; }
+
+/* ---------- 3つの記録 ---------- */
+
+.models { display: grid; gap: 18px; margin-top: 32px; }
+@media (min-width: 760px) { .models { grid-template-columns: repeat(3, 1fr); } }
+.model { border: var(--stroke) solid var(--ink); box-shadow: 5px 5px 0 var(--ink);
+         background: var(--card); }
+.model .pic { height: 190px; display: grid; place-items: end center;
+              border-bottom: var(--stroke) solid var(--ink); overflow: hidden; }
+.model .pic img { height: 180px; width: auto; }
+.model .pic.strength { background: var(--accent); }
+.model .pic.run      { background: rgba(124, 212, 255, .30); }
+.model .pic.body     { background: rgba(200, 155, 255, .30); }
+.model .body-txt { padding: 18px; }
+.model h3 { margin: 0 0 8px; font-size: 18px; }
+.model p { margin: 0; font-size: 14px; color: var(--text2); line-height: 1.8; }
+
+/* ---------- 締め ---------- */
+
+.closing { display: grid; grid-template-columns: 1fr; gap: 20px;
+           align-items: center; padding: 60px 0; }
+@media (min-width: 900px) { .closing { grid-template-columns: 1fr 340px; } }
+.closing h2 { font-size: clamp(28px, 5vw, 46px); letter-spacing: -.02em;
+              line-height: 1.18; margin: 0 0 14px; }
+
+footer.lp-footer { background: var(--ink); color: var(--paper); padding: 32px 0; }
+footer.lp-footer .inner { display: flex; flex-wrap: wrap; gap: 14px 26px;
+                          align-items: center; justify-content: space-between; }
+footer.lp-footer a { color: var(--paper); }
+footer.lp-footer a:hover { background: var(--accent); color: var(--ink); }
+footer.lp-footer .en { font-size: 15px; font-weight: 700; }

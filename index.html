@@ -4,136 +4,269 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>yoisho — 仲間とだけ続ける筋トレ記録</title>
-<meta name="description" content="相互フォローの仲間だけに閉じた筋トレ記録アプリ。ランキングも、いいね数も、知らない人もいません。ジムでの入力速度に全振りしています。">
+<meta name="description" content="相互フォローの仲間だけに閉じた筋トレ記録アプリ。ジムでの入力速度を最優先に作りました。ランキングも、おすすめユーザーも、いいね数もありません。">
 <meta name="theme-color" content="#F4F2EC">
 <meta property="og:title" content="yoisho — 仲間とだけ続ける筋トレ記録">
-<meta property="og:description" content="相互フォローの仲間だけに閉じた筋トレ記録アプリ。ランキングも、いいね数も、知らない人もいません。">
+<meta property="og:description" content="相互フォローの仲間だけに閉じた筋トレ記録アプリ。ランキングも、おすすめユーザーも、いいね数もありません。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://yoisho.jp/">
+<link rel="icon" href="img/icon-120.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<div class="wrap">
+<body class="lp">
 
-<header class="site">
-  <a class="logo lg" href="./" aria-label="yoisho">
-    <span class="word">yoisho</span>
-    <span class="band">よいしょ</span>
-  </a>
-</header>
-
-<h1>仲間とだけ、続ける。</h1>
-<p class="lead">相互フォローの仲間だけに閉じた筋トレ記録アプリ（iOS）</p>
-
-<!-- ヒーローはアプリのホーム画面と同じ作り（3px枠＋7pxライムのずらし影）。
-     「総挙上量が主役」という製品の性格をそのまま見せる -->
-<section>
-  <div class="hero">
-    <p class="eyebrow">今月の総挙上量</p>
-    <div class="stat"><span class="num">24,960</span><span class="unit num">kg</span></div>
-    <p class="analogy">持ち上げた重さは <b>路線バス 2.1 台</b>ぶん</p>
+<!-- ヘッダー -->
+<div class="band-sec">
+  <div class="inner">
+    <nav class="nav">
+      <a class="nav-logo" href="./" aria-label="yoisho">
+        <img src="img/icon-120.png" alt="">
+        <span>
+          <span class="word">yoisho</span><br>
+          <span class="band">よいしょ</span>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a class="hide-sp" href="#what">できること</a>
+        <a class="hide-sp" href="#circle">仲間</a>
+        <a class="hide-sp" href="#models">記録する種類</a>
+        <a class="btn" href="mailto:support@yoisho.jp">問い合わせる</a>
+      </div>
+    </nav>
   </div>
-  <p style="margin-top:14px; color:var(--text2); font-size:15px;">
-    積み上げた重さが身近なものに換算されます。数字が伸びること自体が、続ける理由になるように。
-  </p>
-</section>
+</div>
 
-<section>
-  <h2>作らないと決めているもの</h2>
-  <div class="grid cols-3">
-    <div class="tile">
-      <h3 class="struck">ランキング</h3>
-      <p>他人と数値で競う仕組みは置きません。伸びたかどうかは自分の過去とだけ比べます。</p>
-    </div>
-    <div class="tile">
-      <h3 class="struck">ユーザー検索</h3>
-      <p>知らない人とつながる経路がありません。おすすめ表示も公開タイムラインもありません。</p>
-    </div>
-    <div class="tile">
-      <h3 class="struck">いいね数の可視化</h3>
-      <p>数が誰かの目に触れることはありません。何回押されたかを競う画面を作りません。</p>
-    </div>
-  </div>
-  <p style="margin-top:16px; font-size:15px; color:var(--text2);">
-    仲間になるのは<strong style="color:var(--ink)">招待QRか招待コード</strong>から、承認したときだけです。
-  </p>
-</section>
-
-<section>
-  <h2>ジムで止まらない</h2>
-  <div class="card">
-    <p>種目ごとにセットの入力欄が並び、前回の重量と回数がそのまま入っています。<strong>タップして編集モードに入る手順はありません。</strong>数字を直して次のセットへ進むだけです。</p>
-    <p>セットを入れると<strong>レストタイマーが自動で走ります</strong>。長さを変えても経過時間は引き継がれるので、押し直しで秒数が巻き戻ることはありません。</p>
-  </div>
-</section>
-
-<section>
-  <h2>記録は3種類、それぞれに合った形で</h2>
-  <div class="grid cols-3">
-    <div class="tile">
-      <span class="tag strength">筋トレ</span>
-      <h3>重量 × 回数 × セット</h3>
-      <p>推定1RM と自己ベストの更新を追います。ルーティンに保存すれば1タップで呼び出せます。</p>
-    </div>
-    <div class="tile">
-      <span class="tag run">ランニング</span>
-      <h3>距離と時間</h3>
-      <p>ペースは自動で計算します。筋トレと同じ入力欄に押し込みません。</p>
-    </div>
-    <div class="tile">
-      <span class="tag body">ボディワーク</span>
-      <h3>種類と時間</h3>
-      <p>ヨガ・ピラティス・ストレッチ・モビリティ。重さではなく続けた時間で見ます。</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>届くのは2つだけ</h2>
-  <div class="grid">
-    <div class="card">
-      <span class="tag strength">よいしょ</span>
-      <p style="margin:14px 0 0">仲間の記録に送る、ひと言つきの拍手です。送った相手にだけ届きます。何回送られたかが他の人に見えることはありません。</p>
-    </div>
-    <div class="card">
-      <span class="tag body">がんば</span>
-      <p style="margin:14px 0 0">しばらく記録がない仲間に送れます。ひと言は毎日入れ替わる5つから選ぶだけ。</p>
-      <div class="chips">
-        <span class="chip">そろそろ動く？</span>
-        <span class="chip">ベンチ台が泣いてるよ</span>
-        <span class="chip">前回の記録、抜くけど</span>
-        <span class="chip">筋肉が逃げていくぞ</span>
+<!-- ヒーロー -->
+<div class="band-sec">
+  <div class="inner">
+    <div class="hero-lp">
+      <div>
+        <span class="pill"><span class="dot"></span>相互フォローの仲間だけに閉じた筋トレ記録</span>
+        <h1 class="display">
+          ジムでの<br>
+          <span class="mark">1タップ</span>を、<br>
+          いちばん速く。
+        </h1>
+        <p class="sub">重量と回数を打つだけ。セットを足せばレストが走り出す。数字で競う相手はいない。届くのは、仲間からの「よいしょ」だけ。</p>
+        <div class="hero-actions">
+          <a class="cta" href="#what">できることを見る</a>
+          <a class="btn" href="mailto:support@yoisho.jp">問い合わせる</a>
+        </div>
+        <!-- 数値は実装から言い切れるものだけ。計測していない指標は載せない -->
+        <div class="facts">
+          <div>
+            <div class="v">0<small> 件</small></div>
+            <div class="k">ランキング・おすすめユーザー</div>
+          </div>
+          <div class="rule"></div>
+          <div>
+            <div class="v">2<small> つ</small></div>
+            <div class="k">仲間になる経路（QR・招待コード）</div>
+          </div>
+        </div>
+      </div>
+      <div class="figure">
+        <div class="plate"></div>
+        <img src="img/fist.png" alt="腕を上げた yoisho のキャラクター">
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<section>
-  <h2>公開するかどうかは自分で決める</h2>
-  <div class="note">
-    <p>筋トレは、終了サマリーの<strong>「フィードに投稿する」を押したときだけ</strong>公開されます。セットを追加しただけではフィードに出ません。トレーニング中の様子が勝手に共有されることはありません。</p>
+<div class="marquee band-sec">
+  <span>RECORD FAST</span><i>◆</i>
+  <span>NO RANKING</span><i>◆</i>
+  <span>FRIENDS ONLY</span><i>◆</i>
+  <span>YOUR OWN HISTORY</span><i>◆</i>
+  <span>RECORD FAST</span><i>◆</i>
+  <span>NO RANKING</span>
+</div>
+
+<!-- 01 できること -->
+<div class="band-sec" id="what">
+  <div class="inner sec">
+    <p class="sec-eyebrow">01 — WHAT IT DOES</p>
+    <h2>4つだけ、ちゃんとやる</h2>
+    <p class="sec-note">機能を増やすより、ジムで指が止まらないことを選びました。</p>
+
+    <div class="cards two">
+      <div class="fcard">
+        <img src="img/clipboard.png" alt="">
+        <div>
+          <span class="no">01</span>
+          <h3>セットは常に入力欄</h3>
+          <p>タップして編集モードに入る手間はありません。重量と回数は最初から数字フィールドとして並び、触ればすぐ直せます。総挙上量はその場で追従します。</p>
+        </div>
+      </div>
+      <div class="fcard">
+        <img src="img/drink.png" alt="">
+        <div>
+          <span class="no">02</span>
+          <h3>レストは勝手に走る</h3>
+          <p>セットを足した瞬間に 90 秒のレストが開始。45／60／90／120／180 秒に途中で変えても、経過時間はそのまま引き継ぎます。</p>
+        </div>
+      </div>
+      <div class="fcard">
+        <img src="img/squat.png" alt="">
+        <div>
+          <span class="no">03</span>
+          <h3>総挙上量が主指標</h3>
+          <p>今月・今週の積み上げを kg で表示し、路線バスやグランドピアノに換算します。運動時間ではなく、持ち上げた重さで自分を測ります。</p>
+        </div>
+      </div>
+      <div class="fcard">
+        <img src="img/sidestretch.png" alt="">
+        <div>
+          <span class="no">04</span>
+          <h3>履歴はスタンプで残る</h3>
+          <p>やった日はカレンダーにライムのスタンプが押されます。比べる相手は先月の自分だけ。埋まっていく月を眺めるための画面です。</p>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
+</div>
 
-<section>
-  <h2>いまの状況</h2>
-  <p>TestFlight で限定的にテスト中です。公開時期が決まりましたらこのページでお知らせします。</p>
-  <p><a class="cta" href="mailto:support@yoisho.jp">問い合わせる</a></p>
-</section>
+<!-- 02 / 03 -->
+<div class="band-sec split">
+  <div id="circle">
+    <p class="sec-eyebrow">02 — CLOSED CIRCLE</p>
+    <h2>知らない人は、<br>入ってこない</h2>
+    <p class="sec-note" style="margin-bottom:22px">ユーザー検索もおすすめの仲間も作りません。仲間になる方法は2つだけ。</p>
 
-<nav class="pages">
-  <a class="btn" href="privacy.html">プライバシーポリシー</a>
-  <a class="btn" href="support.html">サポート</a>
-</nav>
+    <div class="route">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h2M20 14v2M16 20h4"/></svg>
+      </span>
+      <span>
+        <b>招待QR / 招待コード</b>
+        <span>その場で見せる。<span class="en">KENJI-7F3AQ2</span> を送る。</span>
+      </span>
+    </div>
+    <div class="route">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 12.5l5.5 5.5L20 7"/></svg>
+      </span>
+      <span>
+        <b>承認制のリクエスト</b>
+        <span>承認するまで、記録は誰にも見えない。</span>
+      </span>
+    </div>
 
-<footer class="site">
-  <span class="en">yoisho</span>
-  <span><a href="mailto:support@yoisho.jp">support@yoisho.jp</a></span>
+    <div class="callout" style="margin-top:20px">
+      ランキングもリーダーボードも作りません。よいしょの数は、相手には見えません。
+    </div>
+  </div>
+
+  <div id="cheer">
+    <p class="sec-eyebrow">03 — CHEER</p>
+    <h2>よいしょは届く。<br>がんばも届く。</h2>
+    <p class="sec-note" style="margin-bottom:22px">通知が飛ぶのは「よいしょ」と「がんば」だけ。7日サボっている仲間には、その日の5つのひと言から選んで送れます。</p>
+
+    <div class="mock">
+      <div class="mock-head">
+        <span class="av" aria-hidden="true">S</span>
+        <span>
+          <b>Sho</b>
+          <span>最後の記録から 8 日</span>
+        </span>
+        <span class="flag">サボり中</span>
+      </div>
+      <div class="mock-opt">ベンチ台が泣いてるよ</div>
+      <div class="mock-opt on">プロテインだけ飲んでない？</div>
+      <div class="mock-opt">来週の自分に丸投げか</div>
+      <div class="mock-send">がんばを送る</div>
+    </div>
+  </div>
+</div>
+
+<!-- 04 記録する種類 -->
+<div class="band-sec" id="models">
+  <div class="inner sec">
+    <p class="sec-eyebrow">04 — THREE MODELS</p>
+    <h2>記録するのは、この3つ</h2>
+    <p class="sec-note">データの形が違うので、入力画面も分けています。ひとつのフォームに無理やり詰め込みません。</p>
+
+    <div class="models">
+      <div class="model">
+        <div class="pic strength"><img src="img/plank.png" alt=""></div>
+        <div class="body-txt">
+          <h3>筋トレ</h3>
+          <p>種目・重量・回数・セット。前回の Max を横に置いて、推定1RM と自己ベストの更新を追います。</p>
+        </div>
+      </div>
+      <div class="model">
+        <div class="pic run"><img src="img/run.png" alt=""></div>
+        <div class="body-txt">
+          <h3>ランニング</h3>
+          <p>距離と時間だけ。ペースは自動計算。筋トレと同じ入力欄に押し込みません。</p>
+        </div>
+      </div>
+      <div class="model">
+        <div class="pic body"><img src="img/lunge.png" alt=""></div>
+        <div class="body-txt">
+          <h3>ボディワーク</h3>
+          <p>ヨガ・ピラティス・ストレッチ・モビリティ。重さではなく、続けた時間で見ます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 05 公開の意思 -->
+<div class="band-sec">
+  <div class="inner sec">
+    <p class="sec-eyebrow">05 — YOUR CALL</p>
+    <h2>公開するかどうかは、自分で決める</h2>
+    <div class="cards two" style="margin-top:26px">
+      <div class="fcard" style="align-items:center">
+        <img src="img/point.png" alt="">
+        <div>
+          <h3>筋トレは押したときだけ</h3>
+          <p>終了サマリーの「フィードに投稿する」を押したときだけ公開されます。セットを追加しただけではフィードに出ません。トレーニング中の様子が勝手に共有されることはありません。</p>
+        </div>
+      </div>
+      <div class="fcard" style="align-items:center">
+        <img src="img/press.png" alt="">
+        <div>
+          <h3>あとから仲間になった人には見えない</h3>
+          <p>仲間になる前の投稿は、あとから仲間になった相手には表示されません。承認した瞬間に、過去の履歴すべてがさかのぼって見られることはありません。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 締め -->
+<div class="band-sec">
+  <div class="inner closing">
+    <div>
+      <h2>今日の1セットから、<br>積み上げていく。</h2>
+      <p class="sec-note" style="margin-bottom:24px">いまは TestFlight で限定的にテスト中です。公開時期が決まりましたら、このページでお知らせします。</p>
+      <div class="hero-actions" style="margin-top:0">
+        <a class="cta" href="mailto:support@yoisho.jp">問い合わせる</a>
+        <a class="btn" href="support.html">よくある質問</a>
+      </div>
+    </div>
+    <div class="figure" style="height:320px">
+      <div class="plate" style="max-width:280px;height:120px"></div>
+      <img src="img/press.png" alt="バーベルを頭上に上げた yoisho のキャラクター" style="height:300px">
+    </div>
+  </div>
+</div>
+
+<footer class="lp-footer">
+  <div class="inner">
+    <span class="en">yoisho</span>
+    <span>
+      <a href="privacy.html">プライバシーポリシー</a> ／
+      <a href="support.html">サポート</a> ／
+      <a href="mailto:support@yoisho.jp">support@yoisho.jp</a>
+    </span>
+  </div>
 </footer>
 
-</div>
 </body>
 </html>
