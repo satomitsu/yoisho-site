@@ -366,10 +366,12 @@ footer.site a { color: var(--text2); }
 
 /* ---------- ヒーロー ---------- */
 
+/* 下の余白は必ず持たせる。無いとボタンとキャラクターの台が
+   黒帯に貼り付いて、区切りが読めなくなる */
 .hero-lp { display: grid; grid-template-columns: 1fr; gap: 24px;
-           align-items: center; padding: 48px 0 0; }
+           align-items: center; padding: 48px 0 52px; }
 @media (min-width: 900px) {
-  .hero-lp { grid-template-columns: 1fr 420px; gap: 40px; padding: 60px 0 0; }
+  .hero-lp { grid-template-columns: 1fr 420px; gap: 40px; padding: 60px 0 72px; }
 }
 
 .pill {
