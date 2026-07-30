@@ -4,14 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>yoisho — 仲間とだけ続ける筋トレ記録</title>
-<meta name="description" content="相互フォローの仲間だけに閉じた筋トレ記録アプリ。ランキングも、いいね数も、知らない人もいません。">
+<meta name="description" content="相互フォローの仲間だけに閉じた筋トレ記録アプリ。ランキングも、いいね数も、知らない人もいません。ジムでの入力速度に全振りしています。">
+<meta name="theme-color" content="#F4F2EC">
+<meta property="og:title" content="yoisho — 仲間とだけ続ける筋トレ記録">
+<meta property="og:description" content="相互フォローの仲間だけに閉じた筋トレ記録アプリ。ランキングも、いいね数も、知らない人もいません。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yoisho.jp/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="_style.css">
 </head>
 <body>
 <div class="wrap">
 
-<header>
-  <a class="logo" href="./">
+<header class="site">
+  <a class="logo lg" href="./" aria-label="yoisho">
     <span class="word">yoisho</span>
     <span class="band">よいしょ</span>
   </a>
@@ -20,39 +28,110 @@
 <h1>仲間とだけ、続ける。</h1>
 <p class="lead">相互フォローの仲間だけに閉じた筋トレ記録アプリ（iOS）</p>
 
-<p>ジムでの入力の速さを最優先に作っています。重さと回数を打つだけ。セットを足すとレストのタイマーが動きます。</p>
+<!-- ヒーローはアプリのホーム画面と同じ作り（3px枠＋7pxライムのずらし影）。
+     「総挙上量が主役」という製品の性格をそのまま見せる -->
+<section>
+  <div class="hero">
+    <p class="eyebrow">今月の総挙上量</p>
+    <div class="stat"><span class="num">24,960</span><span class="unit num">kg</span></div>
+    <p class="analogy">持ち上げた重さは <b>路線バス 2.1 台</b>ぶん</p>
+  </div>
+  <p style="margin-top:14px; color:var(--text2); font-size:15px;">
+    積み上げた重さが身近なものに換算されます。数字が伸びること自体が、続ける理由になるように。
+  </p>
+</section>
 
-<div class="card">
+<section>
   <h2>作らないと決めているもの</h2>
-  <ul>
-    <li><strong>ランキングと数値の比較</strong> — 他人と競う仕組みは置きません</li>
-    <li><strong>ユーザー検索とおすすめ</strong> — 知らない人とつながる経路はありません</li>
-    <li><strong>いいね数の可視化</strong> — 数が誰かの目に触れることはありません</li>
-  </ul>
-  <p style="margin-bottom:0;">仲間になるのは招待QRか招待コードから、承認したときだけです。</p>
-</div>
+  <div class="grid cols-3">
+    <div class="tile">
+      <h3 class="struck">ランキング</h3>
+      <p>他人と数値で競う仕組みは置きません。伸びたかどうかは自分の過去とだけ比べます。</p>
+    </div>
+    <div class="tile">
+      <h3 class="struck">ユーザー検索</h3>
+      <p>知らない人とつながる経路がありません。おすすめ表示も公開タイムラインもありません。</p>
+    </div>
+    <div class="tile">
+      <h3 class="struck">いいね数の可視化</h3>
+      <p>数が誰かの目に触れることはありません。何回押されたかを競う画面を作りません。</p>
+    </div>
+  </div>
+  <p style="margin-top:16px; font-size:15px; color:var(--text2);">
+    仲間になるのは<strong style="color:var(--ink)">招待QRか招待コード</strong>から、承認したときだけです。
+  </p>
+</section>
 
-<h2>できること</h2>
-<ul>
-  <li><strong>筋トレ・ランニング・ボディワーク</strong>をそれぞれに合った形で記録できます</li>
-  <li><strong>ルーティン</strong>に種目を保存して、1タップで呼び出せます</li>
-  <li><strong>総挙上量</strong>が身近なものの重さで表示されます</li>
-  <li>仲間に<strong>「よいしょ」</strong>を送れます。しばらく記録がない仲間には<strong>「がんば」</strong>を送れます</li>
-  <li>筋トレは<strong>「フィードに投稿する」を押したときだけ</strong>公開されます</li>
-</ul>
+<section>
+  <h2>ジムで止まらない</h2>
+  <div class="card">
+    <p>種目ごとにセットの入力欄が並び、前回の重量と回数がそのまま入っています。<strong>タップして編集モードに入る手順はありません。</strong>数字を直して次のセットへ進むだけです。</p>
+    <p>セットを入れると<strong>レストタイマーが自動で走ります</strong>。長さを変えても経過時間は引き継がれるので、押し直しで秒数が巻き戻ることはありません。</p>
+  </div>
+</section>
 
-<h2>いまの状況</h2>
-<p>TestFlight で限定的にテスト中です。公開時期が決まりましたらこのページでお知らせします。</p>
+<section>
+  <h2>記録は3種類、それぞれに合った形で</h2>
+  <div class="grid cols-3">
+    <div class="tile">
+      <span class="tag strength">筋トレ</span>
+      <h3>重量 × 回数 × セット</h3>
+      <p>推定1RM と自己ベストの更新を追います。ルーティンに保存すれば1タップで呼び出せます。</p>
+    </div>
+    <div class="tile">
+      <span class="tag run">ランニング</span>
+      <h3>距離と時間</h3>
+      <p>ペースは自動で計算します。筋トレと同じ入力欄に押し込みません。</p>
+    </div>
+    <div class="tile">
+      <span class="tag body">ボディワーク</span>
+      <h3>種類と時間</h3>
+      <p>ヨガ・ピラティス・ストレッチ・モビリティ。重さではなく続けた時間で見ます。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>届くのは2つだけ</h2>
+  <div class="grid">
+    <div class="card">
+      <span class="tag strength">よいしょ</span>
+      <p style="margin:14px 0 0">仲間の記録に送る、ひと言つきの拍手です。送った相手にだけ届きます。何回送られたかが他の人に見えることはありません。</p>
+    </div>
+    <div class="card">
+      <span class="tag body">がんば</span>
+      <p style="margin:14px 0 0">しばらく記録がない仲間に送れます。ひと言は毎日入れ替わる5つから選ぶだけ。</p>
+      <div class="chips">
+        <span class="chip">そろそろ動く？</span>
+        <span class="chip">ベンチ台が泣いてるよ</span>
+        <span class="chip">前回の記録、抜くけど</span>
+        <span class="chip">筋肉が逃げていくぞ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>公開するかどうかは自分で決める</h2>
+  <div class="note">
+    <p>筋トレは、終了サマリーの<strong>「フィードに投稿する」を押したときだけ</strong>公開されます。セットを追加しただけではフィードに出ません。トレーニング中の様子が勝手に共有されることはありません。</p>
+  </div>
+</section>
+
+<section>
+  <h2>いまの状況</h2>
+  <p>TestFlight で限定的にテスト中です。公開時期が決まりましたらこのページでお知らせします。</p>
+  <p><a class="cta" href="mailto:support@yoisho.jp">問い合わせる</a></p>
+</section>
 
 <nav class="pages">
-  <a href="privacy.html">プライバシーポリシー</a>
-  <a href="support.html">サポート</a>
-  <a href="mailto:support@yoisho.jp">お問い合わせ</a>
+  <a class="btn" href="privacy.html">プライバシーポリシー</a>
+  <a class="btn" href="support.html">サポート</a>
 </nav>
 
-<footer>
-  <span>yoisho</span>
-  <span>support@yoisho.jp</span>
+<footer class="site">
+  <span class="en">yoisho</span>
+  <span><a href="mailto:support@yoisho.jp">support@yoisho.jp</a></span>
 </footer>
 
 </div>

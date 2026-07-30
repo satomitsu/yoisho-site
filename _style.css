@@ -1,60 +1,73 @@
-/* yoisho 公開サイト。意匠は DESIGN.md（ネオブルータリズム／ライト）に合わせる。
-   角丸なし・枠は2px・影はぼかしなしのずらし影・アクセントは塗りのみ。 */
+/* yoisho 公開サイト
+   意匠の正は DESIGN.md（ネオブルータリズム／ライト）。
+   守っていること:
+   - 角丸は 0（円はドットのみ）
+   - 枠線・文字・影はすべてインク #12120F。グレーの罫線を作らない
+   - 影はぼかしなしの単色オフセット（ヒーロー 7px ライム / 浮く要素 4px インク）
+   - ライムは面だけ。ライムの上の文字はインク、ライム色の文字は使わない
+   - グラデーション・半透明のガラス・内側の影は使わない
+   - アプリが .preferredColorScheme(.light) 固定なので、サイトもライト1本に絞る
+     （darkに寄せると紙とインクの世界観が崩れるため、意図的な選択）
+*/
 
 :root {
-  --paper: #F4F2EC;
-  --surface: #FFFFFF;
-  --surface2: #EFEBE0;
-  --ink: #12120F;
-  --ink2: #5A5A52;
-  --accent: #C9F65C;
+  --paper:       #F4F2EC;
+  --card:        #FFFFFF;
+  --surface2:    #EFEBE0;
+  --surface3:    #E3DFD3;
+  --ink:         #12120F;
+  --text2:       #6C6A60;
+  --text3:       #96938A;
+  --accent:      #C9F65C;
   --accent-text: #3F5A00;
-  --stroke: 2px;
+
+  /* 種目タイプ（DESIGN.md の部位カラーから。差し色はこの3つだけ） */
+  --run:      #7CD4FF;
+  --run-text: #0E6EA8;
+  --body:     #C89BFF;
+  --body-text:#6B3FBF;
+
+  --stroke:      2px;
+  --stroke-hero: 3px;
+
+  --font-en: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-jp: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN",
+             "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; }
-
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic",
-               system-ui, sans-serif;
-  line-height: 1.85;
+  font-family: var(--font-jp);
   font-size: 16px;
+  line-height: 1.9;
+  font-feature-settings: "palt" 1;   /* 日本語の詰め */
 }
 
-.wrap {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 0 20px 80px;
-}
+/* 数字とラテン文字は必ず Space Grotesk（DESIGN.md 3章） */
+.en, .num { font-family: var(--font-en); font-feature-settings: "tnum" 1; }
 
-/* ヘッダー ---------------------------------------------------------------- */
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px 96px; }
+/* 読み物の測度。日本語は 34em 前後がいちばん追いやすい */
+.prose { max-width: 34em; }
 
-header {
-  padding: 48px 0 32px;
-}
+/* ---------- ロゴ ---------- */
 
-.logo {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  color: var(--ink);
-}
-
+.logo { display: inline-flex; flex-direction: column; align-items: center;
+        gap: 6px; text-decoration: none; color: var(--ink); }
 .logo .word {
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-en);
   font-weight: 700;
   font-size: 40px;
   letter-spacing: -1px;
   line-height: 1;
 }
-
+/* よいしょブロック。字間 .5em が最後の字の後ろにも入るので右を詰める */
 .logo .band {
   background: var(--accent);
   border: var(--stroke) solid var(--ink);
@@ -63,129 +76,251 @@ header {
   font-weight: 700;
   letter-spacing: .5em;
   padding: 3px 6px 3px 11px;
-  line-height: 1.4;
+  line-height: 1.5;
 }
+.logo.lg .word { font-size: 62px; letter-spacing: -1.5px; }
+.logo.lg .band { font-size: 14px; padding: 4px 8px 4px 14px; }
 
-/* 本文 -------------------------------------------------------------------- */
+header.site { padding: 44px 0 8px; }
+
+/* ---------- 見出し ---------- */
 
 h1 {
-  font-size: 26px;
-  line-height: 1.4;
-  margin: 40px 0 8px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.45;
   letter-spacing: .01em;
+  margin: 32px 0 10px;
+  text-wrap: balance;
 }
-
 h2 {
-  font-size: 17px;
-  margin: 40px 0 12px;
-  padding-bottom: 8px;
-  border-bottom: var(--stroke) solid var(--ink);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0 0 14px;
+  text-wrap: balance;
+}
+h3 { font-size: 16px; font-weight: 700; margin: 26px 0 6px; }
+
+/* 極小の大文字ラベル（DESIGN.md 3章） */
+.eyebrow {
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text2);
+  margin: 0 0 8px;
 }
 
-h3 { font-size: 15px; margin: 28px 0 8px; }
-
-p, li { color: var(--ink); }
-
-.lead { color: var(--ink2); margin: 0 0 4px; font-size: 14px; }
-
-a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
-a:hover { background: var(--accent); }
-a:focus-visible { outline: 3px solid var(--accent-text); outline-offset: 2px; }
-
-ul { padding-left: 1.3em; }
-li { margin: 6px 0; }
+.lead { font-size: 17px; color: var(--text2); margin: 0 0 4px; }
+p { margin: 0 0 1.1em; }
+p:last-child { margin-bottom: 0; }
 
 strong { font-weight: 700; }
 
-/* 表 --------------------------------------------------------------------- */
+a { color: var(--accent-text); text-decoration: underline;
+    text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+a:hover { background: var(--accent); color: var(--ink); }
+a:focus-visible { outline: 3px solid var(--accent-text); outline-offset: 2px; }
 
-.table-scroll { overflow-x: auto; margin: 16px 0; }
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  min-width: 480px;
-  background: var(--surface);
-  border: var(--stroke) solid var(--ink);
-  font-size: 14px;
+ul { padding-left: 0; list-style: none; margin: 0 0 1.1em; }
+ul li { position: relative; padding-left: 20px; margin: 8px 0; }
+/* 行頭記号はインクの小さな四角（角丸を使わないため） */
+ul li::before {
+  content: ""; position: absolute; left: 0; top: .72em;
+  width: 7px; height: 7px; background: var(--ink);
 }
 
-th, td {
-  border: 1px solid var(--ink);
-  padding: 10px 12px;
-  text-align: left;
-  vertical-align: top;
-  line-height: 1.7;
-}
+/* ---------- 箱 ---------- */
 
-th { background: var(--surface2); font-weight: 700; }
-
-/* 箱 --------------------------------------------------------------------- */
+section { margin: 40px 0; }
 
 .card {
-  background: var(--surface);
+  background: var(--card);
   border: var(--stroke) solid var(--ink);
-  box-shadow: 6px 6px 0 var(--ink);
-  padding: 22px 24px;
-  margin: 28px 0;
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 24px;
 }
 
-.card h2 { margin-top: 0; }
+/* ヒーローだけ 3px 枠＋7px ライムの影（最上位の1枚） */
+.hero {
+  background: var(--card);
+  border: var(--stroke-hero) solid var(--ink);
+  box-shadow: 7px 7px 0 var(--accent);
+  padding: 26px 24px;
+}
+.hero .stat {
+  font-family: var(--font-en);
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -.01em;
+  display: flex; align-items: baseline; gap: 6px;
+}
+.hero .stat .unit { font-size: 20px; font-weight: 600; }
+.hero .analogy {
+  margin: 12px 0 0; padding-top: 12px;
+  border-top: var(--stroke) solid var(--ink);
+  font-size: 15px; color: var(--text2);
+}
+.hero .analogy b { color: var(--ink); font-weight: 700; }
 
 .note {
   background: var(--surface2);
   border: var(--stroke) solid var(--ink);
-  padding: 16px 18px;
-  margin: 24px 0;
-  font-size: 15px;
+  padding: 18px 20px;
 }
 
-.mail {
-  display: inline-block;
-  background: var(--accent);
+/* インク枠の器に入れ子を置くときは 6px 空ける（DESIGN.md nestedGap） */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.chip {
+  background: var(--surface2);
   border: var(--stroke) solid var(--ink);
+  padding: 5px 10px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ---------- 一覧（作らないもの / 3つの記録） ---------- */
+
+.grid { display: grid; gap: 14px; }
+@media (min-width: 620px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+
+.tile {
+  background: var(--card);
+  border: var(--stroke) solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 18px;
+}
+.tile h3 { margin: 0 0 6px; font-size: 16px; }
+.tile p { font-size: 14px; color: var(--text2); margin: 0; line-height: 1.8; }
+
+/* 種目タイプの色見出し。面は淡色、文字は濃色（DESIGN.md 2章） */
+.tag {
+  display: inline-block;
+  border: var(--stroke) solid var(--ink);
+  padding: 2px 8px;
+  font-size: 12px; font-weight: 700;
+}
+.tag.strength { background: var(--accent);                 color: var(--ink); }
+.tag.run      { background: rgba(124, 212, 255, .30);      color: var(--run-text); }
+.tag.body     { background: rgba(200, 155, 255, .30);      color: var(--body-text); }
+
+/* 「作らないもの」は取り消し線の見出しで示す。
+   線画アイコンに斜線を重ねる案は、この線の太さと表示サイズだと
+   何の絵か読めなくなったので採らない（DESIGN.md 1章:
+   整理は枠・余白・文字サイズで行う）。 */
+.struck {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--ink);
+  text-underline-offset: 0;
+}
+
+/* ---------- ボタン ---------- */
+
+.cta, .btn {
+  display: inline-block;
+  border: var(--stroke) solid var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.cta {
+  background: var(--accent);
+  box-shadow: 6px 6px 0 var(--ink);
+  padding: 14px 22px;
+  font-size: 16px;
+}
+.btn {
+  background: var(--card);
   box-shadow: 4px 4px 0 var(--ink);
   padding: 10px 16px;
-  font-weight: 700;
-  text-decoration: none;
-  margin-top: 4px;
-}
-.mail:hover { background: var(--accent); transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
-
-/* ナビ・フッター ---------------------------------------------------------- */
-
-nav.pages {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 28px 0 0;
-}
-
-nav.pages a {
-  background: var(--surface);
-  border: var(--stroke) solid var(--ink);
-  box-shadow: 4px 4px 0 var(--ink);
-  padding: 9px 14px;
-  text-decoration: none;
-  font-weight: 700;
   font-size: 14px;
 }
-nav.pages a:hover { background: var(--accent); }
-
-footer {
-  margin-top: 64px;
-  padding-top: 20px;
-  border-top: var(--stroke) solid var(--ink);
-  font-size: 13px;
-  color: var(--ink2);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-  justify-content: space-between;
+/* 押している間は影の位置まで沈む（DESIGN.md 6章） */
+.cta:active { transform: translate(6px, 6px); box-shadow: 0 0 0 var(--ink); }
+.btn:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--ink); }
+.cta:hover, .btn:hover { background: var(--accent); }
+@media (prefers-reduced-motion: reduce) {
+  .cta, .btn { transition: none; }
 }
 
+/* ---------- 表 ---------- */
+
+.table-scroll { overflow-x: auto; margin: 0 0 6px;
+                border: var(--stroke) solid var(--ink); }
+/* 表が切れていることを黙って隠さない。狭い画面でだけ出す */
+.table-hint { display: none; font-size: 13px; color: var(--text2); margin: 0 0 1.1em; }
+@media (max-width: 700px) { .table-hint { display: block; } }
+table { border-collapse: collapse; width: 100%; min-width: 460px;
+        background: var(--card); font-size: 14px; }
+th, td { border: 1px solid var(--ink); padding: 11px 13px;
+         text-align: left; vertical-align: top; line-height: 1.75; }
+/* 外周は器の枠に任せる（二重線を出さない） */
+tr:first-child th, tr:first-child td { border-top: 0; }
+tr:last-child th, tr:last-child td { border-bottom: 0; }
+th:first-child, td:first-child { border-left: 0; }
+th:last-child, td:last-child { border-right: 0; }
+th { background: var(--surface2); font-weight: 700; white-space: nowrap; }
+
+/* ---------- 目次（ポリシー） ---------- */
+
+.toc { background: var(--surface2); border: var(--stroke) solid var(--ink);
+       padding: 20px 22px; margin: 20px 0 44px; }
+/* 要点ボックスは目次と同じ幅・別の面にして、2枚が1枚に見えないようにする */
+.summary { background: var(--card); border: var(--stroke) solid var(--ink);
+           box-shadow: 4px 4px 0 var(--ink); padding: 20px 22px; margin: 28px 0 0; }
+.toc ol { margin: 0; padding: 0; list-style: none; counter-reset: toc;
+          display: grid; gap: 2px; }
+@media (min-width: 620px) { .toc ol { grid-template-columns: 1fr 1fr; gap: 2px 24px; } }
+.toc li { counter-increment: toc; }
+.toc a {
+  display: flex; gap: 10px; align-items: baseline;
+  padding: 5px 4px; text-decoration: none; color: var(--ink); font-size: 15px;
+}
+.toc a::before {
+  content: counter(toc);
+  font-family: var(--font-en); font-weight: 600; font-size: 13px;
+  color: var(--text2); min-width: 1.4em;
+}
+.toc a:hover { background: var(--accent); }
+
+/* 章。番号を大きな数字で立てる（数字が主役・DESIGN.md 1章） */
+.chapter { margin: 44px 0 0; scroll-margin-top: 20px; }
+.chapter > .head { display: flex; gap: 14px; align-items: baseline;
+                   border-bottom: var(--stroke) solid var(--ink);
+                   padding-bottom: 10px; margin-bottom: 18px; }
+.chapter > .head .n {
+  font-family: var(--font-en); font-size: 26px; font-weight: 600;
+  line-height: 1; color: var(--ink); min-width: 1.3em;
+}
+.chapter > .head h2 { margin: 0; }
+
+/* ---------- ナビ・フッター ---------- */
+
+nav.pages { display: flex; flex-wrap: wrap; gap: 10px; margin: 40px 0 0; }
+
+footer.site {
+  margin-top: 56px; padding-top: 20px;
+  border-top: var(--stroke) solid var(--ink);
+  display: flex; flex-wrap: wrap; gap: 6px 20px;
+  justify-content: space-between;
+  font-size: 13px; color: var(--text2);
+}
+footer.site a { color: var(--text2); }
+
+/* ---------- 狭い画面 ---------- */
+
 @media (max-width: 560px) {
-  body { font-size: 15px; }
-  h1 { font-size: 22px; }
-  .card { padding: 18px; box-shadow: 4px 4px 0 var(--ink); }
+  body { font-size: 15px; line-height: 1.85; }
+  h1 { font-size: 26px; }
+  h2 { font-size: 18px; }
+  .logo.lg .word { font-size: 46px; }
+  .hero { padding: 20px 18px; box-shadow: 5px 5px 0 var(--accent); }
+  .hero .stat { font-size: 36px; }
+  .card, .tile { padding: 18px; box-shadow: 4px 4px 0 var(--ink); }
+  .chapter > .head .n { font-size: 21px; }
 }

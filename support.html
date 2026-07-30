@@ -5,13 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>サポート | yoisho</title>
 <meta name="description" content="筋トレ記録アプリ yoisho のサポートページ。よくある質問、通報への対応、お問い合わせ先。">
+<meta name="theme-color" content="#F4F2EC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="_style.css">
 </head>
 <body>
 <div class="wrap">
 
-<header>
-  <a class="logo" href="./">
+<header class="site">
+  <a class="logo" href="./" aria-label="yoisho">
     <span class="word">yoisho</span>
     <span class="band">よいしょ</span>
   </a>
@@ -20,51 +24,56 @@
 <h1>サポート</h1>
 <p class="lead">困ったこと、気づいたこと、直してほしいこと</p>
 
-<div class="card">
-  <h2>お問い合わせ</h2>
-  <p>不具合の報告、機能の要望、通報に関するご連絡はこちらへどうぞ。個人で開発・運営しています。</p>
-  <p><a class="mail" href="mailto:support@yoisho.jp">support@yoisho.jp</a></p>
-  <p style="font-size:14px; color:var(--ink2); margin-bottom:0;">
-    不具合のご連絡には、<strong>端末の機種・iOSのバージョン・アプリのバージョン</strong>（プロフィール画面の下部に表示されます）を添えていただけると助かります。
-  </p>
-</div>
+<section>
+  <div class="card prose">
+    <h2>お問い合わせ</h2>
+    <p>不具合の報告、機能の要望、通報に関するご連絡はこちらへどうぞ。個人で開発・運営しています。</p>
+    <p><a class="cta" href="mailto:support@yoisho.jp">support@yoisho.jp</a></p>
+    <p style="font-size:14px; color:var(--text2); margin:16px 0 0">
+      不具合のご連絡には、<strong>端末の機種・iOSのバージョン・アプリのバージョン</strong>（プロフィール画面の下部に表示されます）を添えていただけると助かります。
+    </p>
+  </div>
+</section>
 
-<h2>よくある質問</h2>
+<section class="chapter">
+  <div class="head"><h2>よくある質問</h2></div>
 
-<h3>誰に記録が見られますか</h3>
-<p>相互フォローが成立した仲間だけです。ユーザー検索も、おすすめ表示も、公開タイムラインもありません。仲間になるには招待QRか招待コードが必要で、承認しない限り関係は成立しません。</p>
+  <h3>誰に記録が見られますか</h3>
+  <p class="prose">相互フォローが成立した仲間だけです。ユーザー検索も、おすすめ表示も、公開タイムラインもありません。仲間になるには招待QRか招待コードが必要で、承認しない限り関係は成立しません。</p>
+  <p class="prose">仲間になる前の投稿は、あとから仲間になった相手には表示されません。</p>
 
-<h3>筋トレの記録はいつ公開されますか</h3>
-<p>終了サマリーの「フィードに投稿する」を押したときだけです。セットを追加しただけではフィードに出ません。トレーニング中の様子が勝手に共有されることはありません。</p>
-<p>ランニングとボディワークは、記録した時点で公開されます。</p>
+  <h3>筋トレの記録はいつ公開されますか</h3>
+  <p class="prose">終了サマリーの「フィードに投稿する」を押したときだけです。セットを追加しただけではフィードに出ません。トレーニング中の様子が勝手に共有されることはありません。</p>
+  <p class="prose">ランニングとボディワークは、記録した時点で公開されます。</p>
 
-<h3>通知が届きません</h3>
-<p>次の順に確認してください。</p>
-<ul>
-  <li>端末の<strong>集中モード</strong>（おやすみモードを含む）が入っていないか</li>
-  <li>iOSの設定 → 通知 → yoisho で「通知を許可」がONか、<strong>バナー</strong>にチェックが入っているか</li>
-  <li>同じく「通知の要約」に入っていないか。入っていると決まった時刻にまとめて表示されます</li>
-  <li>アプリのプロフィール画面で、通知が「ON」になっているか</li>
-</ul>
+  <h3>通知が届きません</h3>
+  <p class="prose">次の順に確認してください。</p>
+  <ul class="prose">
+    <li>端末の<strong>集中モード</strong>（おやすみモードを含む）が入っていないか</li>
+    <li>iOSの設定 → 通知 → yoisho で「通知を許可」がONか、<strong>バナー</strong>にチェックが入っているか</li>
+    <li>同じく「通知の要約」に入っていないか。入っていると決まった時刻にまとめて表示されます</li>
+    <li>アプリのプロフィール画面で、通知が「ON」になっているか</li>
+  </ul>
 
-<h3>通報したいときは</h3>
-<p>フィードの投稿またはコメントの「…」メニューから通報できます。<strong>24時間以内に対応</strong>します。規約に反する内容は削除し、悪質な場合はアカウントの利用を停止します。通報した事実が相手に伝わることはありません。</p>
-<p>同じメニューからブロックもできます。ブロックすると相手の投稿は表示されなくなり、自分の投稿も相手に表示されなくなります。</p>
+  <h3>通報したいときは</h3>
+  <p class="prose">フィードの投稿またはコメントの「…」メニューから通報できます。<strong>24時間以内に対応</strong>します。規約に反する内容は削除し、悪質な場合はアカウントの利用を停止します。通報した事実が相手に伝わることはありません。</p>
+  <p class="prose">同じメニューからブロックもできます。ブロックすると相手の投稿は表示されなくなり、自分の投稿も相手に表示されなくなります。</p>
 
-<h3>アカウントを削除したい</h3>
-<p>プロフィール →「アカウントを削除」から、アカウントとすべてのデータを完全に削除できます。記録・投稿・仲間関係がすべて消え、<strong>取り消せません</strong>。</p>
+  <h3>アカウントを削除したい</h3>
+  <p class="prose">プロフィール →「アカウントを削除」から、アカウントとすべてのデータを完全に削除できます。記録・投稿・仲間関係がすべて消え、<strong>取り消せません</strong>。</p>
 
-<h3>ランキングや「いいね」はありますか</h3>
-<p>ありません。他人と数値で競う仕組みは作らない方針です。仲間に届くのは「よいしょ」と「がんば」だけで、数が他人に見えることもありません。</p>
+  <h3>ランキングや「いいね」はありますか</h3>
+  <p class="prose">ありません。他人と数値で競う仕組みは作らない方針です。仲間に届くのは「よいしょ」と「がんば」だけで、数が他人に見えることもありません。</p>
+</section>
 
 <nav class="pages">
-  <a href="./">トップ</a>
-  <a href="privacy.html">プライバシーポリシー</a>
+  <a class="btn" href="./">トップ</a>
+  <a class="btn" href="privacy.html">プライバシーポリシー</a>
 </nav>
 
-<footer>
-  <span>yoisho</span>
-  <span>support@yoisho.jp</span>
+<footer class="site">
+  <span class="en">yoisho</span>
+  <span><a href="mailto:support@yoisho.jp">support@yoisho.jp</a></span>
 </footer>
 
 </div>
