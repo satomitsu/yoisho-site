@@ -1,0 +1,191 @@
+/* yoisho 公開サイト。意匠は DESIGN.md（ネオブルータリズム／ライト）に合わせる。
+   角丸なし・枠は2px・影はぼかしなしのずらし影・アクセントは塗りのみ。 */
+
+:root {
+  --paper: #F4F2EC;
+  --surface: #FFFFFF;
+  --surface2: #EFEBE0;
+  --ink: #12120F;
+  --ink2: #5A5A52;
+  --accent: #C9F65C;
+  --accent-text: #3F5A00;
+  --stroke: 2px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic",
+               system-ui, sans-serif;
+  line-height: 1.85;
+  font-size: 16px;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+/* ヘッダー ---------------------------------------------------------------- */
+
+header {
+  padding: 48px 0 32px;
+}
+
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.logo .word {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.logo .band {
+  background: var(--accent);
+  border: var(--stroke) solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .5em;
+  padding: 3px 6px 3px 11px;
+  line-height: 1.4;
+}
+
+/* 本文 -------------------------------------------------------------------- */
+
+h1 {
+  font-size: 26px;
+  line-height: 1.4;
+  margin: 40px 0 8px;
+  letter-spacing: .01em;
+}
+
+h2 {
+  font-size: 17px;
+  margin: 40px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: var(--stroke) solid var(--ink);
+}
+
+h3 { font-size: 15px; margin: 28px 0 8px; }
+
+p, li { color: var(--ink); }
+
+.lead { color: var(--ink2); margin: 0 0 4px; font-size: 14px; }
+
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+a:hover { background: var(--accent); }
+a:focus-visible { outline: 3px solid var(--accent-text); outline-offset: 2px; }
+
+ul { padding-left: 1.3em; }
+li { margin: 6px 0; }
+
+strong { font-weight: 700; }
+
+/* 表 --------------------------------------------------------------------- */
+
+.table-scroll { overflow-x: auto; margin: 16px 0; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 480px;
+  background: var(--surface);
+  border: var(--stroke) solid var(--ink);
+  font-size: 14px;
+}
+
+th, td {
+  border: 1px solid var(--ink);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.7;
+}
+
+th { background: var(--surface2); font-weight: 700; }
+
+/* 箱 --------------------------------------------------------------------- */
+
+.card {
+  background: var(--surface);
+  border: var(--stroke) solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+  padding: 22px 24px;
+  margin: 28px 0;
+}
+
+.card h2 { margin-top: 0; }
+
+.note {
+  background: var(--surface2);
+  border: var(--stroke) solid var(--ink);
+  padding: 16px 18px;
+  margin: 24px 0;
+  font-size: 15px;
+}
+
+.mail {
+  display: inline-block;
+  background: var(--accent);
+  border: var(--stroke) solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 10px 16px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 4px;
+}
+.mail:hover { background: var(--accent); transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
+
+/* ナビ・フッター ---------------------------------------------------------- */
+
+nav.pages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0 0;
+}
+
+nav.pages a {
+  background: var(--surface);
+  border: var(--stroke) solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 9px 14px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+nav.pages a:hover { background: var(--accent); }
+
+footer {
+  margin-top: 64px;
+  padding-top: 20px;
+  border-top: var(--stroke) solid var(--ink);
+  font-size: 13px;
+  color: var(--ink2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  justify-content: space-between;
+}
+
+@media (max-width: 560px) {
+  body { font-size: 15px; }
+  h1 { font-size: 22px; }
+  .card { padding: 18px; box-shadow: 4px 4px 0 var(--ink); }
+}
