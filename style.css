@@ -211,6 +211,12 @@ section { margin: 40px 0; }
    線画アイコンに斜線を重ねる案は、この線の太さと表示サイズだと
    何の絵か読めなくなったので採らない（DESIGN.md 1章:
    整理は枠・余白・文字サイズで行う）。 */
+/* セクション内の小見出し。h2 とカードの間の段 */
+.subhead {
+  font-size: 20px; font-weight: 700; margin: 44px 0 6px;
+  padding-top: 30px; border-top: var(--stroke) solid var(--ink);
+}
+
 .struck {
   text-decoration: line-through;
   text-decoration-thickness: 2px;
