@@ -611,3 +611,64 @@ footer.lp-footer a:hover { background: var(--accent); color: var(--ink); }
 .foot-cols > div { display: flex; flex-direction: column; gap: 10px; }
 .foot-cols .head { font-size: 12px; font-weight: 700; color: var(--accent);
                    letter-spacing: .1em; }
+
+/* ---------- Pro の帯（通常版LPに1枠だけ置く） ---------- */
+
+.pro-band { background: var(--surface2); }
+.pro-band-in { display: grid; grid-template-columns: 1fr; gap: 20px;
+               padding-top: 56px; padding-bottom: 56px; align-items: center; }
+@media (min-width: 900px) { .pro-band-in { grid-template-columns: 1fr 240px; } }
+.pro-band h2 { font-size: clamp(24px, 4vw, 34px); margin: 0 0 12px; letter-spacing: -.01em; }
+.pro-band .sec-note { max-width: 34em; }
+.pro-fig { display: flex; justify-content: center; }
+.pro-fig img { height: 200px; width: auto; }
+.price-note { font-family: var(--font-en); font-size: 14px; font-weight: 600;
+              color: var(--text2); }
+
+/* ---------- Pro ページ ---------- */
+
+/* 見出しの右上に置く小さな PRO バッジ */
+.pro-tag {
+  display: inline-block; background: var(--ink); color: var(--accent);
+  font-family: var(--font-en); font-size: 11px; font-weight: 700;
+  letter-spacing: .18em; padding: 3px 8px; vertical-align: middle;
+}
+
+/* 無料 / Pro の比較表。狭い画面でも横スクロールさせない */
+.compare { width: 100%; border-collapse: collapse; margin-top: 28px;
+           background: var(--card); border: var(--stroke) solid var(--ink); }
+.compare th, .compare td { border: 1px solid var(--ink); padding: 12px 10px;
+                           font-size: 13px; text-align: center; }
+.compare th:first-child, .compare td:first-child { text-align: left; }
+.compare thead th { background: var(--ink); color: var(--paper);
+                    font-size: 12px; letter-spacing: .06em; }
+.compare thead th.pro-col { background: var(--accent); color: var(--ink); }
+.compare tbody td.pro-col { background: rgba(201, 246, 92, .16); font-weight: 700; }
+.compare td .en { font-family: var(--font-en); font-weight: 600; }
+@media (max-width: 480px) {
+  .compare th, .compare td { padding: 10px 6px; font-size: 12px; }
+}
+
+/* 料金カード */
+.plans { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 32px; }
+@media (min-width: 760px) { .plans { grid-template-columns: 1fr 1fr; } }
+.plan { background: var(--card); border: var(--stroke) solid var(--ink);
+        box-shadow: 5px 5px 0 var(--ink); padding: 24px; }
+.plan.best { box-shadow: 6px 6px 0 var(--accent-text); }
+.plan .badge { display: inline-block; background: var(--accent);
+               border: var(--stroke) solid var(--ink); font-size: 11px;
+               font-weight: 700; padding: 2px 8px; margin-bottom: 12px; }
+.plan h3 { margin: 0 0 6px; font-size: 17px; }
+.plan .amount { font-family: var(--font-en); font-size: 40px; font-weight: 700;
+                letter-spacing: -.02em; line-height: 1.1; }
+.plan .per { font-size: 14px; color: var(--text2); font-weight: 600; }
+.plan p { margin: 10px 0 18px; font-size: 13px; line-height: 1.8; color: var(--text2); }
+
+/* 「やらないこと」を Pro ページでも同じ体裁で使う */
+.never { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 28px; }
+@media (min-width: 760px) { .never { grid-template-columns: 1fr 1fr; } }
+.never > div { border: var(--stroke) solid var(--ink); background: var(--card);
+               padding: 16px 18px; }
+.never h3 { margin: 0 0 6px; font-size: 15px; text-decoration: line-through;
+            text-decoration-thickness: 2px; }
+.never p { margin: 0; font-size: 13px; line-height: 1.8; color: var(--text2); }
