@@ -672,3 +672,61 @@ footer.lp-footer a:hover { background: var(--accent); color: var(--ink); }
 .never h3 { margin: 0 0 6px; font-size: 15px; text-decoration: line-through;
             text-decoration-thickness: 2px; }
 .never p { margin: 0; font-size: 13px; line-height: 1.8; color: var(--text2); }
+
+/* ---------- Pro ページの配色（クール・ダーク） ---------- */
+
+/* 通常版は紙とインクの明るい世界。Pro は「別の部屋」に見せたいので、
+   地をインクに反転させ、差し色をライムから寒色（スカイ）へ移す。
+   スタイルはすべて変数越しに書いてあるので、変数を入れ替えるだけで反転する。
+   反転で文字と面の関係が崩れる箇所（塗り面の上の文字）だけ、下で名指しで直す。 */
+body.pro-page {
+  --paper:       #0E0E0C;   /* 地 */
+  --card:        #171714;   /* カード面 */
+  --surface2:    #131310;   /* 副面 */
+  --surface3:    #1E1E19;
+  --ink:         #EFEDE6;   /* 文字・枠・影（紙色に反転） */
+  --text2:       #A8A69B;
+  --text3:       #7E7C73;
+  --accent:      #7CD4FF;   /* 差し色（スカイ） */
+  --accent-text: #9FE0FF;   /* 暗地の上に載せる差し色の文字 */
+}
+
+/* 塗り面（スカイ）の上の文字は、反転後の --ink（明るい）では読めない。
+   面の上だけ濃い藍を使う */
+body.pro-page .cta,
+body.pro-page .cta:hover,
+body.pro-page .display .mark,
+body.pro-page .fcard .no,
+body.pro-page .plan .badge,
+body.pro-page .nav-logo .band,
+body.pro-page .compare thead th.pro-col { color: #08202C; }
+
+body.pro-page .btn:hover { color: #08202C; }
+body.pro-page .compare tbody td.pro-col { background: rgba(124, 212, 255, .14); }
+body.pro-page .compare thead th { background: #1E1E19; color: var(--ink); }
+
+/* 締めの面は、反転すると差し色のベタ塗りが強すぎる。深い藍にして文字を明るく */
+body.pro-page .closing-sec { background: #0A1A24; }
+body.pro-page .closing .sec-note { color: var(--text2); }
+body.pro-page .cta-invert { background: var(--accent); color: #08202C;
+                            border-color: var(--accent); box-shadow: 6px 6px 0 #1E4A61; }
+body.pro-page .cta-invert:hover { background: #9FE0FF; color: #08202C; }
+
+/* フッターは地より一段暗く。反転で明るくなると、締めの面と喧嘩する */
+body.pro-page footer.lp-footer { background: #080807; color: var(--ink); }
+body.pro-page footer.lp-footer a { color: var(--ink); }
+body.pro-page footer.lp-footer a:hover { background: var(--accent); color: #08202C; }
+body.pro-page .foot-brand .sq { background: var(--ink); border-color: var(--ink); }
+body.pro-page .foot-cols .head { color: var(--accent); }
+
+/* ヒーロー背後のライム台座もスカイへ（変数経由なので自動。ここは影の色だけ） */
+body.pro-page .fcard { box-shadow: 5px 5px 0 #2A2A24; }
+body.pro-page .plan { box-shadow: 5px 5px 0 #2A2A24; }
+body.pro-page .plan.best { box-shadow: 6px 6px 0 var(--accent); }
+body.pro-page .never > div { background: var(--card); }
+
+/* ヒーロー背後の台座は、暗い地の上ではベタのスカイが強すぎる。
+   深い藍に落として、キャラクターと差し色を前に出す */
+body.pro-page .figure .plate { background: #10394F; border-color: var(--accent); }
+/* フッターの PRO バッジは、反転で明るい面に薄い文字になってしまう */
+body.pro-page .pro-tag { background: var(--accent); color: #08202C; }
