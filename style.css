@@ -635,8 +635,14 @@ footer.lp-footer a:hover { background: var(--accent); color: var(--ink); }
 }
 
 /* 無料 / Pro の比較表。狭い画面でも横スクロールさせない */
-.compare { width: 100%; border-collapse: collapse; margin-top: 28px;
-           background: var(--card); border: var(--stroke) solid var(--ink); }
+/* 横スクロールに逃がさず、画面幅に収める。1列目だけ折り返させる。
+   min-width はプライバシーの表のために全体へ掛けてあるので、ここで打ち消す
+   （効いたままだと 460px を下回れず、狭い画面で PRO 列が切れる） */
+.compare { width: 100%; min-width: 0; table-layout: fixed; border-collapse: collapse;
+           margin-top: 28px; background: var(--card);
+           border: var(--stroke) solid var(--ink); }
+.compare th { white-space: normal; }
+.compare th:first-child, .compare td:first-child { width: 44%; word-break: break-word; }
 .compare th, .compare td { border: 1px solid var(--ink); padding: 12px 10px;
                            font-size: 13px; text-align: center; }
 .compare th:first-child, .compare td:first-child { text-align: left; }
@@ -673,62 +679,58 @@ footer.lp-footer a:hover { background: var(--accent); color: var(--ink); }
             text-decoration-thickness: 2px; }
 .never p { margin: 0; font-size: 13px; line-height: 1.8; color: var(--text2); }
 
-/* ---------- Pro ページの配色（クール・ダーク） ---------- */
+/* ---------- Pro ページの配色（黒とライムを入れ替える） ---------- */
 
-/* 通常版は紙とインクの明るい世界。Pro は「別の部屋」に見せたいので、
-   地をインクに反転させる。差し色はライムのまま（ブランドの色を変えない）。
-   スタイルはすべて変数越しに書いてあるので、変数を入れ替えるだけで反転する。
-   反転で文字と面の関係が崩れる箇所（塗り面の上の文字）だけ、下で名指しで直す。 */
+/* 色は通常版と同じ3色（紙・インク・ライム）のまま、**役割だけ入れ替える**。
+   通常版: 地は紙、ライムは小さな塗り面、黒は文字と枠。
+   Pro:    地がライム、黒が塗り面（CTA・締め・台座）、文字と枠は黒のまま。
+   新しい色を持ち込まずに「別の部屋」に見せるための反転。 */
 body.pro-page {
-  --paper:       #0E0E0C;   /* 地 */
-  --card:        #171714;   /* カード面 */
-  --surface2:    #131310;   /* 副面 */
-  --surface3:    #1E1E19;
-  --ink:         #EFEDE6;   /* 文字・枠・影（紙色に反転） */
-  --text2:       #A8A69B;
-  --text3:       #7E7C73;
-  --accent:      #F2452F;   /* 差し色は赤（Pro は別の部屋に見せる） */
-  --accent-text: #FF8A78;   /* 暗地の上に載せる赤の文字。面の赤より明るく取る */
+  --paper:       #C9F65C;   /* 地がライム */
+  --card:        #F4F2EC;   /* カード面は紙。ライム地の上で白は浮きすぎる */
+  --surface2:    #BFEE4E;   /* 副面は一段濃いライム */
+  --surface3:    #B4E63F;
+  --ink:         #12120F;   /* 文字・枠・影は黒のまま */
+  --text2:       #3F5A00;   /* ライム地の上の副文字は濃いオリーブ */
+  --text3:       #55701A;
+  --accent:      #12120F;   /* 差し色が黒 */
+  --accent-text: #12120F;
 }
 
-/* 差し色の面の上の文字は、反転後の --ink（明るい）では読めない。面の上だけインクに戻す。
-   赤地に黒は 5.4:1、白は 3.9:1 で、黒のほうが読める */
+/* 黒い塗り面の上の文字はライムにする（通常版の .cta-invert と同じ考え方） */
 body.pro-page .cta,
 body.pro-page .cta:hover,
 body.pro-page .display .mark,
 body.pro-page .fcard .no,
 body.pro-page .plan .badge,
-body.pro-page .nav-logo .band,
 body.pro-page .pro-tag,
-body.pro-page .compare thead th.pro-col { color: #12120F; }
+body.pro-page .compare thead th,
+body.pro-page .compare thead th.pro-col { color: #C9F65C; }
 
-body.pro-page .btn:hover { color: #12120F; }
-body.pro-page .compare tbody td.pro-col { background: rgba(242, 69, 47, .14); }
-body.pro-page .compare thead th { background: #1E1E19; color: var(--ink); }
-body.pro-page .pro-tag { background: var(--accent); }
+body.pro-page .btn:hover { background: var(--ink); color: #C9F65C; }
+body.pro-page .compare tbody td.pro-col { background: rgba(18, 18, 15, .07); }
+body.pro-page .compare thead th { background: var(--ink); }
 
-/* 締めの面は、暗い地に馴染む深い赤茶。赤の主ボタンを前に出す */
-body.pro-page .closing-sec { background: #1E0F0C; }
-body.pro-page .closing .sec-note { color: var(--text2); }
-body.pro-page .cta-invert { background: var(--accent); color: #12120F;
-                            border-color: var(--accent); box-shadow: 6px 6px 0 #7A1F14; }
-body.pro-page .cta-invert:hover { background: #FF6A56; color: #12120F; }
-
-/* フッターは地より一段暗く。反転で明るくなると、締めの面と喧嘩する */
-body.pro-page footer.lp-footer { background: #080807; color: var(--ink); }
-body.pro-page footer.lp-footer a { color: var(--ink); }
-body.pro-page footer.lp-footer a:hover { background: var(--accent); color: #12120F; }
-body.pro-page .foot-brand .sq { background: var(--ink); border-color: var(--ink); }
-body.pro-page .foot-cols .head { color: var(--accent); }
-
-body.pro-page .fcard { box-shadow: 5px 5px 0 #2A2A24; }
-body.pro-page .plan { box-shadow: 5px 5px 0 #2A2A24; }
-body.pro-page .plan.best { box-shadow: 6px 6px 0 var(--accent); }
-body.pro-page .never > div { background: var(--card); }
-
-/* ヒーロー背後の台座は、暗い地の上でベタの赤が強すぎる。
-   深い赤茶に落として、キャラクターと差し色を前に出す */
-body.pro-page .figure .plate { background: #3A1410; border-color: var(--accent); }
-
-/* ロゴの「よいしょ」帯だけはライムのまま。ブランドの色をページの配色に巻き込まない */
+/* ロゴの「よいしょ」帯はライムのまま。地と同色になるので枠だけで見せる */
 body.pro-page .nav-logo .band { background: #C9F65C; color: #12120F; }
+
+/* 締めの面は黒。ライム地から一度落として、最後の主ボタンを立たせる */
+body.pro-page .closing-sec { background: var(--ink); }
+body.pro-page .closing h2 { color: #F4F2EC; }
+body.pro-page .closing .sec-note { color: #B9B6AB; }
+body.pro-page .cta-invert { background: #C9F65C; color: #12120F;
+                            border-color: #C9F65C; box-shadow: 6px 6px 0 #3F5A00; }
+body.pro-page .cta-invert:hover { background: #D8FF7A; }
+body.pro-page .closing .btn { background: transparent; color: #F4F2EC;
+                              border-color: #F4F2EC; box-shadow: 4px 4px 0 #F4F2EC; }
+body.pro-page .closing .btn:hover { background: #C9F65C; color: #12120F;
+                                    border-color: #C9F65C; }
+
+/* フッターは黒のまま（地のライムから最後にもう一度落ちる） */
+body.pro-page footer.lp-footer { background: var(--ink); color: #F4F2EC; }
+body.pro-page footer.lp-footer a { color: #F4F2EC; }
+body.pro-page footer.lp-footer a:hover { background: #C9F65C; color: #12120F; }
+body.pro-page .foot-cols .head { color: #C9F65C; }
+
+/* ヒーロー背後の台座も黒。ライム地の上ではこれが一番強い */
+body.pro-page .figure .plate { background: var(--ink); border-color: var(--ink); }
