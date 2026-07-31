@@ -704,8 +704,12 @@ body.pro-page .display .mark,
 body.pro-page .fcard .no,
 body.pro-page .plan .badge,
 body.pro-page .pro-tag,
-body.pro-page .compare thead th,
 body.pro-page .compare thead th.pro-col { color: #C9F65C; }
+
+/* --paper は「地の色」として反転させたが、**紙として使っている箇所**は紙のまま。
+   ここを一緒に反転させると、白いはずの面や文字までライムになる */
+body.pro-page .compare thead th { color: #F4F2EC; }
+body.pro-page .foot-brand .sq { background: #F4F2EC; border-color: #F4F2EC; }
 
 body.pro-page .btn:hover { background: var(--ink); color: #C9F65C; }
 body.pro-page .compare tbody td.pro-col { background: rgba(18, 18, 15, .07); }
