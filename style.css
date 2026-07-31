@@ -748,3 +748,6 @@ body.pro-page .closing .btn { background: transparent; color: #F4F2EC;
                               border-color: #F4F2EC; box-shadow: 4px 4px 0 #F4F2EC; }
 body.pro-page .closing .btn:hover { background: var(--accent); color: var(--ink);
                                     border-color: var(--accent); }
+
+/* ヘッダーのロゴの隣に置く PRO。ロゴの高さの中心に合わせる */
+body.pro-page .nav-logo .pro-tag { align-self: center; margin-left: 2px; }
