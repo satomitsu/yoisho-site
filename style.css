@@ -687,11 +687,12 @@ body.pro-page {
   --ink:         #EFEDE6;   /* 文字・枠・影（紙色に反転） */
   --text2:       #A8A69B;
   --text3:       #7E7C73;
-  --accent:      #C9F65C;   /* 差し色はライムのまま */
-  --accent-text: #C9F65C;   /* 暗地の上ではライムがそのまま最も強く読める */
+  --accent:      #F2452F;   /* 差し色は赤（Pro は別の部屋に見せる） */
+  --accent-text: #FF8A78;   /* 暗地の上に載せる赤の文字。面の赤より明るく取る */
 }
 
-/* ライム面の上の文字は、反転後の --ink（明るい）では読めない。面の上だけインクに戻す */
+/* 差し色の面の上の文字は、反転後の --ink（明るい）では読めない。面の上だけインクに戻す。
+   赤地に黒は 5.4:1、白は 3.9:1 で、黒のほうが読める */
 body.pro-page .cta,
 body.pro-page .cta:hover,
 body.pro-page .display .mark,
@@ -702,16 +703,16 @@ body.pro-page .pro-tag,
 body.pro-page .compare thead th.pro-col { color: #12120F; }
 
 body.pro-page .btn:hover { color: #12120F; }
-body.pro-page .compare tbody td.pro-col { background: rgba(201, 246, 92, .13); }
+body.pro-page .compare tbody td.pro-col { background: rgba(242, 69, 47, .14); }
 body.pro-page .compare thead th { background: #1E1E19; color: var(--ink); }
 body.pro-page .pro-tag { background: var(--accent); }
 
-/* 締めの面は、暗い地に馴染む深いオリーブ。ライムの主ボタンを前に出す */
-body.pro-page .closing-sec { background: #171C0C; }
+/* 締めの面は、暗い地に馴染む深い赤茶。赤の主ボタンを前に出す */
+body.pro-page .closing-sec { background: #1E0F0C; }
 body.pro-page .closing .sec-note { color: var(--text2); }
 body.pro-page .cta-invert { background: var(--accent); color: #12120F;
-                            border-color: var(--accent); box-shadow: 6px 6px 0 #3F5A00; }
-body.pro-page .cta-invert:hover { background: #D8FF7A; color: #12120F; }
+                            border-color: var(--accent); box-shadow: 6px 6px 0 #7A1F14; }
+body.pro-page .cta-invert:hover { background: #FF6A56; color: #12120F; }
 
 /* フッターは地より一段暗く。反転で明るくなると、締めの面と喧嘩する */
 body.pro-page footer.lp-footer { background: #080807; color: var(--ink); }
@@ -725,6 +726,9 @@ body.pro-page .plan { box-shadow: 5px 5px 0 #2A2A24; }
 body.pro-page .plan.best { box-shadow: 6px 6px 0 var(--accent); }
 body.pro-page .never > div { background: var(--card); }
 
-/* ヒーロー背後の台座は、暗い地の上でベタのライムが強すぎる。
-   深いオリーブに落として、キャラクターと差し色を前に出す */
-body.pro-page .figure .plate { background: #2C3A10; border-color: var(--accent); }
+/* ヒーロー背後の台座は、暗い地の上でベタの赤が強すぎる。
+   深い赤茶に落として、キャラクターと差し色を前に出す */
+body.pro-page .figure .plate { background: #3A1410; border-color: var(--accent); }
+
+/* ロゴの「よいしょ」帯だけはライムのまま。ブランドの色をページの配色に巻き込まない */
+body.pro-page .nav-logo .band { background: #C9F65C; color: #12120F; }
