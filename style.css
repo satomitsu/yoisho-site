@@ -451,7 +451,9 @@ footer.site a { color: var(--text2); }
   box-shadow: 5px 5px 0 var(--ink); padding: 20px;
   display: flex; gap: 18px; align-items: flex-start;
 }
-.fcard img { height: 130px; width: auto; flex-shrink: 0; }
+/* 画像の枠を固定する。幅を成り行きにすると、細いポーズの行だけ
+   文字の開始位置が左にずれて、カードの縦が揃わない */
+.fcard img { height: 130px; width: 120px; object-fit: contain; flex-shrink: 0; }
 .fcard .no {
   display: inline-block; background: var(--accent);
   border: var(--stroke) solid var(--ink);
@@ -462,7 +464,7 @@ footer.site a { color: var(--text2); }
 .fcard p { margin: 0; font-size: 14px; line-height: 1.8; color: var(--text2); }
 @media (max-width: 480px) {
   .fcard { flex-direction: column; align-items: center; text-align: left; }
-  .fcard img { height: 120px; }
+  .fcard img { height: 120px; width: 120px; }
 }
 
 /* ---------- よくある質問 ---------- */
