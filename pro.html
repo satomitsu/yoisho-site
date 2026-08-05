@@ -76,13 +76,60 @@
       <h2>Pro で増える3つ</h2>
       <p class="sec-note">記録画面には手を入れません。増えるのは履歴・推移・設定の中だけです。</p>
       <div class="cards two">
-        <div class="fcard">
-          <img src="img/pro/bench.png" alt="">
-          <div>
-            <span class="no">01</span>
-            <h3>12週より前の推移</h3>
-            <p>無料は直近12週まで。Pro は6ヶ月と全期間が開き、最初の1セットまで遡って、年をまたいだ積み上げが見えます。種目ごとの推移も、その範囲すべてで追えます。</p>
+        <div class="fcard trend-card">
+          <div class="top">
+            <img src="img/pro/bench.png" alt="">
+            <div>
+              <span class="no">01</span>
+              <h3>12週より前の推移</h3>
+              <p>無料は直近12週まで。Pro は6ヶ月と全期間が開き、最初の1セットまで遡って、年をまたいだ積み上げが見えます。種目ごとの推移も、その範囲すべてで追えます。</p>
+            </div>
           </div>
+        <svg class="trend" viewBox="0 0 838 394" role="img"
+             aria-label="推移のグラフ。直近12週は無料で見え、それより前は Pro で開く">
+          <defs>
+            <linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#C9F65C" stop-opacity=".34"/>
+              <stop offset="1" stop-color="#C9F65C" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+
+          <!-- 目盛り。読ませるものではないので、いちばん弱い線にする -->
+          <g stroke="#3A3A33" stroke-width="1.5">
+            <line x1="0" y1="88" x2="838" y2="88"/>
+            <line x1="0" y1="186" x2="838" y2="186"/>
+            <line x1="0" y1="284" x2="838" y2="284"/>
+          </g>
+
+          <polygon points="58,290 58.0,217.4 80.5,227.8 103.0,211.0 125.5,221.9 148.0,204.1 170.5,215.1 193.0,196.1 215.5,207.1 238.0,186.8 260.5,197.9 283.0,176.3 305.5,187.5 328.0,164.8 350.5,176.5 373.0,153.0 395.5,165.3 418.0,141.3 440.5,154.6 463.0,130.3 485.5,144.9 508.0,120.5 530.5,136.4 553.0,112.0 575.5,129.2 598.0,104.7 620.5,123.0 643.0,98.1 665.5,117.3 688.0,91.8 710.5,111.6 733.0,85.2 755.5,105.2 778.0,77.6 778,290" fill="url(#trendFill)"/>
+          <polyline points="58.0,217.4 80.5,227.8 103.0,211.0 125.5,221.9 148.0,204.1 170.5,215.1 193.0,196.1 215.5,207.1 238.0,186.8 260.5,197.9 283.0,176.3 305.5,187.5 328.0,164.8 350.5,176.5 373.0,153.0 395.5,165.3 418.0,141.3 440.5,154.6 463.0,130.3 485.5,144.9 508.0,120.5 530.5,136.4 553.0,112.0 575.5,129.2 598.0,104.7 620.5,123.0 643.0,98.1 665.5,117.3 688.0,91.8 710.5,111.6 733.0,85.2 755.5,105.2 778.0,77.6" fill="none" stroke="#C9F65C" stroke-width="4"
+                    stroke-linejoin="round" stroke-linecap="round"/>
+
+          <!-- 12週前の境目。無料で見えるのはここから右 -->
+          <line x1="430" y1="44" x2="430" y2="292" stroke="#C9F65C" stroke-width="4"
+                stroke-dasharray="12 10" stroke-linecap="round"/>
+
+          <circle cx="58" cy="217.4" r="8" fill="#C9F65C"/>
+          <circle cx="778" cy="77.6" r="9" fill="#C9F65C"/>
+
+          <!-- Pro で解放。開いた錠前 -->
+          <g transform="translate(108 96)">
+            <rect width="252" height="56" fill="#C9F65C"/>
+            <!-- 開いた錠前。閉じた形だと「まだ開かない」に読める -->
+            <g transform="translate(26 12)" fill="none" stroke="#12120F" stroke-width="3.6">
+              <rect x="0" y="14" width="24" height="18" rx="2.5" fill="#12120F" stroke="none"/>
+              <path d="M11 14V9.5a7.5 7.5 0 0 1 15 0" stroke-linecap="round"/>
+            </g>
+            <text x="86" y="38" class="t-badge">Pro で解放</text>
+          </g>
+
+          <text x="52" y="264" class="t-lock">PRO ONLY</text>
+          <text x="778" y="264" class="t-free" text-anchor="end">FREE・直近12週</text>
+
+          <text x="30" y="354" class="t-ax">6ヶ月前</text>
+          <text x="430" y="354" class="t-ax on" text-anchor="middle">12週前</text>
+          <text x="808" y="354" class="t-ax" text-anchor="end">今週</text>
+        </svg>
         </div>
         <div class="fcard">
           <img src="img/pro/stand.png" alt="">

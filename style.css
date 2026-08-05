@@ -477,7 +477,29 @@ footer.site a { color: var(--text2); }
 #adds .cards.two .fcard p { font-size: 15px; }
 @media (max-width: 480px) {
   #adds .cards.two .fcard img { height: 140px; width: 140px; }
+  /* .fcard の縦積みは .top には効かない（flex の親が入れ替わっている）。
+     ここで畳まないと、絵と文が 170px ずつに割れて読めなくなる */
+  .trend-card .top { flex-direction: column; align-items: center; }
+  /* 図が縮むぶん、中の文字は viewBox の中で大きくする（実寸で7px になる） */
+  .trend .t-ax { font-size: 25px; }
+  .trend .t-lock, .trend .t-free { font-size: 24px; }
 }
+
+/* 01 の図。**線の形は決め打ち**（乱数で作ると、作り直すたびに形が変わる）。
+   絵と文の下に横いっぱいで置く。文の横に置くと 300px 弱しか取れず、
+   軸のラベルが読めない大きさになる */
+.trend-card { display: block; }
+.trend-card .top { display: flex; gap: 24px; align-items: flex-start; }
+.trend { width: 100%; height: auto; display: block; margin-top: 22px; }
+.trend text { font-family: var(--font-jp), sans-serif; }
+.trend .t-badge { font-size: 25px; font-weight: 700; fill: #12120F; }
+.trend .t-lock  { font-family: var(--font-en); font-size: 20px; font-weight: 700;
+                  letter-spacing: .12em; fill: #C9F65C; }
+.trend .t-free  { font-size: 20px; font-weight: 700; fill: #8B8980; }
+.trend .t-ax    { font-size: 18px; font-weight: 700; fill: #6C6A60; }
+.trend .t-ax.on { fill: #C9F65C; }
+/* 図のぶんだけ 01 が高くなる。02 は中身を真ん中に置いて、下に空きを溜めない */
+#adds .cards.two .fcard:not(.trend-card) { align-items: center; }
 
 /* ---------- テーマの見せ方 ---------- */
 
