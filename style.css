@@ -467,6 +467,40 @@ footer.site a { color: var(--text2); }
   .fcard img { height: 120px; width: 120px; }
 }
 
+/* ---------- テーマの見せ方 ---------- */
+
+/* 文字で説明しても伝わらないので、4つ並べて見せる。
+   **アバターの丸は4つとも同じ紙色**にして、違いはスクリーンショットだけで語らせる
+   （丸まで色を変えると、どこを見比べればいいのか分からなくなる） */
+.themes-card { display: block; }
+/* 枠いっぱいに流すと1行が90字を超えて読みにくい */
+.themes-card p { max-width: 46em; }
+.themes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+          margin-top: 22px; clear: both; }
+.themes figure { margin: 0; }
+.themes .face { width: 76px; height: 76px; border-radius: 50%;
+                border: var(--stroke) solid var(--ink); display: block; margin: 0 0 10px; }
+.themes figcaption { font-size: 13px; font-weight: 700; margin-bottom: 12px;
+                     display: flex; align-items: center; gap: 6px; }
+/* 無料 / PRO の別を、名前のとなりに小さく置く */
+.themes figcaption span {
+  font-family: var(--font-en); font-size: 10px; font-weight: 700; letter-spacing: .1em;
+  background: var(--accent); color: var(--ink); padding: 1px 5px;
+  border: 1px solid var(--ink);
+}
+/* **高さと object-fit を戻す。** .fcard img の height:130px / contain が効いたままだと、
+   縦長のスクリーンショットが横長の箱の中で小さく収まる（実際にそうなった） */
+.themes .shot { width: 100%; height: auto; object-fit: fill; display: block;
+                border: var(--stroke) solid var(--ink); }
+@media (max-width: 700px) {
+  .themes { grid-template-columns: 1fr 1fr; gap: 20px; }
+}
+
+/* 黒い箱の中では、インクの枠が見えない */
+body.pro-page .themes figcaption { color: #F4F2EC; }
+body.pro-page .themes .face { border-color: var(--accent); }
+body.pro-page .themes .shot { border-color: #3A3A33; }
+
 /* まだ作っていないもの。**影を落とさず、枠を破線にする。**
    同じ見た目で並べると、使えるものと区別が付かない */
 .fcard.soon { border-style: dashed; box-shadow: none; }
