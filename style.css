@@ -467,6 +467,18 @@ footer.site a { color: var(--text2); }
   .fcard img { height: 120px; width: 120px; }
 }
 
+/* Pro ページの「増える3つ」だけ、枠を一回り大きくする。
+   03 が横幅いっぱいで大きいので、同じ寸法だと 01・02 が添え物に見える。
+   **トップページの .fcard には触らない**（あちらは6枚並ぶので、大きくすると縦に伸びる） */
+#adds .cards.two .fcard { padding: 28px; gap: 24px; }
+#adds .cards.two .fcard img { height: 172px; width: 156px; }
+/* 21px だと「ルーティンと自作種目が無制限」の最後の1字だけが次の行に落ちる */
+#adds .cards.two .fcard h3 { font-size: 20px; margin-bottom: 10px; text-wrap: balance; }
+#adds .cards.two .fcard p { font-size: 15px; }
+@media (max-width: 480px) {
+  #adds .cards.two .fcard img { height: 140px; width: 140px; }
+}
+
 /* ---------- テーマの見せ方 ---------- */
 
 /* 文字で説明しても伝わらないので、4つ並べて見せる。
