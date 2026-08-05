@@ -498,30 +498,19 @@ footer.site a { color: var(--text2); }
 .trend .t-free  { font-size: 20px; font-weight: 700; fill: #8B8980; }
 .trend .t-ax    { font-size: 18px; font-weight: 700; fill: #6C6A60; }
 .trend .t-ax.on { fill: #C9F65C; }
-/* 02 の図。**重ねて置いてあることだけ**伝わればいいので、2枚で足りる。
-   紙の1枚を傾けて後ろに敷き、手前をライムのベタで抜く */
-.routines { position: relative; margin-top: 26px; padding-top: 60px; }
-.rt { border: 3px solid var(--ink); color: var(--ink); }
-/* 後ろの1枚は**手前より広く**取り、右にはみ出させる。
-   同じ幅で重ねると、傾きだけでは2枚あることが分かりにくい */
-.rt.back {
-  position: absolute; top: 0; left: 6%; right: 0;
-  background: #E9E5DA; padding: 14px 20px;
-  font-size: 19px; font-weight: 700;
-  transform: rotate(-4deg);
-}
-/* 手前は少し右に寄せる。後ろの1枚が左からも覗く */
-.rt.front { position: relative; margin: 0 9% 0 4%; background: var(--accent);
-            padding: 22px 24px; box-shadow: 9px 9px 0 #000000; }
-.rt-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.rt-head h4 { margin: 0; font-size: 21px; font-weight: 700; color: var(--ink); }
-/* 種目数は黒で抜く。ライムの面に同じライムの札を置いても読めない */
-.rt-count { background: var(--ink); color: #F4F2EC; font-size: 13px; font-weight: 700;
-            padding: 4px 10px; flex-shrink: 0; }
-/* **body.pro-page .fcard p より強くする。** 同じ強さだと、あとに書かれている
-   向こう（薄い灰色）が勝って、ライムの面で読めなくなる */
-body.pro-page .rt.front p { margin: 12px 0 0; font-size: 15px; line-height: 1.9;
-                            font-weight: 500; color: var(--ink); }
+/* 02 の図。CSS で紙を組むのをやめ、起こした画像を2枚並べる。
+   左＝ルーティンの束、右＝「自作」札つきの種目一覧。
+   **横幅の比は 1.83:1**（666×422 と 701×815 の高さがそろう比）。
+   地の色（#12120F）は画像に焼いてあるので、黒い箱にそのまま溶ける */
+/* **minmax(0, …) にする。** 素の fr だと画像の固有幅（666px）が最小幅になり、
+   狭い画面で箱ごと右へあふれる（実際にそうなった） */
+.rt-shots { display: grid; grid-template-columns: minmax(0, 1.83fr) minmax(0, 1fr);
+            gap: 10px; align-items: end; margin-top: 22px; }
+/* **.fcard img（130px固定）と #adds の 172px 指定に勝たせる。**
+   高さを解かないと、図が箱の中で切手大に縮む */
+#adds .cards.two .fcard .rt-shots img { width: 100%; height: auto; object-fit: contain; }
+/* 狭い画面では縦に積む。2列のままだと種目一覧の文字が読めない大きさになる */
+@media (max-width: 480px) { .rt-shots { grid-template-columns: minmax(0, 1fr); align-items: start; } }
 
 /* ---------- テーマの見せ方 ---------- */
 
