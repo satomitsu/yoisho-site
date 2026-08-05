@@ -467,6 +467,11 @@ footer.site a { color: var(--text2); }
   .fcard img { height: 120px; width: 120px; }
 }
 
+/* まだ作っていないもの。**影を落とさず、枠を破線にする。**
+   同じ見た目で並べると、使えるものと区別が付かない */
+.fcard.soon { border-style: dashed; box-shadow: none; }
+body.pro-page .fcard.soon { box-shadow: none; border-color: var(--accent); }
+
 /* ---------- よくある質問 ---------- */
 
 .faq { display: grid; grid-template-columns: 1fr; gap: 28px; }
