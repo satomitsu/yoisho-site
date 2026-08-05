@@ -536,7 +536,10 @@ body.pro-page .themes-card > .themes-head p { color: var(--text2); }
 .swatches { display: flex; gap: 8px; flex-shrink: 0; }
 .swatches span { width: 34px; height: 34px; border: var(--stroke) solid var(--ink); display: block; }
 
-.themes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+/* **minmax(0, …) にする。** 素の 1fr だと折り返せない英字（CYBER / PRO）の
+   最小幅が列幅になり、狭い画面で4枚の横幅が不揃いになる（実際にそうなった） */
+.themes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 14px; margin-top: 28px; }
 
 .theme {
   background: var(--t-bg);
@@ -580,8 +583,13 @@ body.pro-page .themes-card > .themes-head p { color: var(--text2); }
                  clip-path: polygon(0 0, 100% 0, 100% 78%, 78% 100%, 0 100%); }
 
 @media (max-width: 760px) {
-  .themes { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .themes { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
   .themes-head { flex-direction: column; gap: 16px; }
+  /* 名札を1行で収める。顔を58pxのままにすると札の幅が足りず、
+     「キュート」が縦に折れる。さらに狭い画面では折り返して顔の下に落とす */
+  .theme .head { flex-wrap: wrap; }
+  .theme .face { width: 40px; height: 40px; }
+  .theme .tname { white-space: nowrap; font-size: 11px; padding: 3px 7px; }
 }
 
 /* まだ作っていないもの。**影を落とさず、枠を破線にする。**
