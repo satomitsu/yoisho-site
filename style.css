@@ -470,36 +470,74 @@ footer.site a { color: var(--text2); }
 /* ---------- テーマの見せ方 ---------- */
 
 /* 文字で説明しても伝わらないので、4つ並べて見せる。
-   **アバターの丸は4つとも同じ紙色**にして、違いはスクリーンショットだけで語らせる
-   （丸まで色を変えると、どこを見比べればいいのか分からなくなる） */
+   **枠ごとそのテーマの配色で塗り、角の落とし方まで合わせる。**
+   キュートは丸く、サイバーは角を斬り、ダークは枠を持たない——
+   アプリでの作りをそのまま小さくしたものを置く（見本が実物と食い違わない）。
+   色は AppTheme.swift が正。ここを直すときは向こうと突き合わせる */
+
+/* この1枚だけ地を紙にする。箱まで黒いと、ダークの見本が背景に溶ける */
+/* **クラスを1つ足して勝たせる。** body.pro-page .fcard h3 と同じ強さだと、
+   あとに書かれている向こうが勝って、白い箱に紙色の見出しが乗る（実際にそうなった） */
+body.pro-page .themes-card { background: #FFFFFF; }
+body.pro-page .themes-card > .themes-head h3 { color: var(--ink); }
+body.pro-page .themes-card > .themes-head p { color: var(--text2); }
+
 .themes-card { display: block; }
+.themes-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
 /* 枠いっぱいに流すと1行が90字を超えて読みにくい */
-.themes-card p { max-width: 46em; }
-.themes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
-          margin-top: 22px; clear: both; }
-.themes figure { margin: 0; }
-.themes .face { width: 76px; height: 76px; border-radius: 50%;
-                border: var(--stroke) solid var(--ink); display: block; margin: 0 0 10px; }
-.themes figcaption { font-size: 13px; font-weight: 700; margin-bottom: 12px;
-                     display: flex; align-items: center; gap: 6px; }
-/* 無料 / PRO の別を、名前のとなりに小さく置く */
-.themes figcaption span {
-  font-family: var(--font-en); font-size: 10px; font-weight: 700; letter-spacing: .1em;
-  background: var(--accent); color: var(--ink); padding: 1px 5px;
-  border: 1px solid var(--ink);
+.themes-head p { max-width: 42em; margin: 0; }
+
+/* 4色の見本。並びは下の4枚と同じ順にする */
+.swatches { display: flex; gap: 8px; flex-shrink: 0; }
+.swatches span { width: 34px; height: 34px; border: var(--stroke) solid var(--ink); display: block; }
+
+.themes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+
+.theme {
+  background: var(--t-bg);
+  border: var(--stroke) solid var(--t-edge);
+  padding: 14px 12px 12px;
 }
+.theme .head { display: flex; align-items: center; justify-content: space-between;
+               gap: 8px; margin-bottom: 12px; }
+.theme .tname {
+  font-size: 12px; font-weight: 700; padding: 3px 9px;
+  background: var(--t-acc); color: var(--t-on);
+  border: var(--stroke) solid var(--t-chip-edge);
+}
+.theme .face { width: 58px; height: 58px; border-radius: 50%;
+               border: var(--stroke) solid var(--t-face-edge); display: block; flex-shrink: 0; }
 /* **高さと object-fit を戻す。** .fcard img の height:130px / contain が効いたままだと、
    縦長のスクリーンショットが横長の箱の中で小さく収まる（実際にそうなった） */
-.themes .shot { width: 100%; height: auto; object-fit: fill; display: block;
-                border: var(--stroke) solid var(--ink); }
-@media (max-width: 700px) {
-  .themes { grid-template-columns: 1fr 1fr; gap: 20px; }
-}
+.theme .phone { border: 2px solid var(--t-frame); overflow: hidden; line-height: 0; }
+.theme .phone img { width: 100%; height: auto; object-fit: fill; display: block; }
+/* 無料 / PRO。**そのテーマの文字色**で置く（灰色にすると読み飛ばされる） */
+.theme .tnote { margin: 10px 0 0; font-size: 11px; font-weight: 700;
+                font-family: var(--font-en); letter-spacing: .12em; color: var(--t-note); }
 
-/* 黒い箱の中では、インクの枠が見えない */
-body.pro-page .themes figcaption { color: #F4F2EC; }
-body.pro-page .themes .face { border-color: var(--accent); }
-body.pro-page .themes .shot { border-color: #3A3A33; }
+.t-light { --t-bg:#F4F2EC; --t-edge:#12120F; --t-acc:#C9F65C; --t-on:#12120F;
+           --t-chip-edge:#12120F; --t-face-edge:#12120F; --t-frame:#12120F; --t-note:#3F5A00; }
+/* ダークは枠を持たない。暗い地では白い枠がそのまま光の線になるため（AppTheme） */
+.t-dark  { --t-bg:#15161A; --t-edge:#15161A; --t-acc:#C9F65C; --t-on:#12120F;
+           --t-chip-edge:#12120F; --t-face-edge:#31353D; --t-frame:#31353D; --t-note:#C9F65C; }
+.t-cute  { --t-bg:#FFF7F3; --t-edge:#43302F; --t-acc:#FFB3C7; --t-on:#43302F;
+           --t-chip-edge:#43302F; --t-face-edge:#43302F; --t-frame:#43302F; --t-note:#C4506F; }
+/* サイバーの差し色はシアン。名札だけ第2アクセントのマゼンタで抜く */
+.t-cyber { --t-bg:#07070C; --t-edge:#00F0FF; --t-acc:#FF2D95; --t-on:#FFFFFF;
+           --t-chip-edge:#FF2D95; --t-face-edge:#00F0FF; --t-frame:#00F0FF; --t-note:#00F0FF; }
+
+/* 角の落とし方をテーマに合わせる */
+.t-cute, .t-cute .phone { border-radius: 12px; }
+.t-cute .tname { border-radius: 6px; }
+.t-cyber { clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+           box-shadow: 0 0 16px rgba(0, 240, 255, .30); }
+.t-cyber .face { border-radius: 0;
+                 clip-path: polygon(0 0, 100% 0, 100% 78%, 78% 100%, 0 100%); }
+
+@media (max-width: 760px) {
+  .themes { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .themes-head { flex-direction: column; gap: 16px; }
+}
 
 /* まだ作っていないもの。**影を落とさず、枠を破線にする。**
    同じ見た目で並べると、使えるものと区別が付かない */
