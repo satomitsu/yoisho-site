@@ -504,7 +504,7 @@ footer.site a { color: var(--text2); }
    地の色（#12120F）は画像に焼いてあるので、黒い箱にそのまま溶ける */
 /* **minmax(0, …) にする。** 素の fr だと画像の固有幅（666px）が最小幅になり、
    狭い画面で箱ごと右へあふれる（実際にそうなった） */
-.rt-shots { display: grid; grid-template-columns: minmax(0, 1.83fr) minmax(0, 1fr);
+.rt-shots { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
             gap: 10px; align-items: end; margin-top: 22px; }
 /* **.fcard img（130px固定）と #adds の 172px 指定に勝たせる。**
    高さを解かないと、図が箱の中で切手大に縮む */
