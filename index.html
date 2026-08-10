@@ -22,7 +22,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=21">
+  <link rel="stylesheet" href="style.css?v=22">
 </head>
 
 <body class="lp">
@@ -89,7 +89,7 @@
     <div class="inner sec">
       <p class="sec-eyebrow">01 — WHAT IT DOES</p>
       <h2>4つだけ、ちゃんとやる</h2>
-      <p class="sec-note">機能を増やすより、ジムで指が止まらないことを選びました。</p>
+      <p class="sec-note">面倒な機能を増やさず、ジムで指が止まらないことを選びました。</p>
 
       <div class="cards two">
         <div class="fcard">
@@ -120,8 +120,8 @@
           <img src="img/drink.png" alt="">
           <div>
             <span class="no">04</span>
-            <h3>記録を共有する</h3>
-            <p>終了サマリーの「フィードに投稿する」を押したときだけ、仲間のフィードに出ます。種目ごとの内訳まで一緒に共有されます。</p>
+            <h3>記録を確認する</h3>
+            <p>総負荷量の推移と、種目ごとの最大重量・推定1RM。直近7日にどこを効かせたかは、人体図の濃さで分かります。</p>
           </div>
         </div>
       </div>
@@ -187,20 +187,13 @@
       <h2>よいしょは届く。<br>がんばも届く。</h2>
       <p class="sec-note" style="margin-bottom:22px">通知が飛ぶのは「よいしょ」と「がんば」だけ。7日サボっている仲間には、その日の5つのひと言から選んで送れます。</p>
 
-      <div class="mock">
-        <div class="mock-head">
-          <span class="av" aria-hidden="true">S</span>
-          <span>
-            <b>Sho</b>
-            <span>最後の記録から 8 日</span>
-          </span>
-          <span class="flag">サボり中</span>
-        </div>
-        <div class="mock-opt">ベンチ台が泣いてるよ</div>
-        <div class="mock-opt on">プロテインだけ飲んでない？</div>
-        <div class="mock-opt">来週の自分に丸投げか</div>
-        <div class="mock-send">がんばを送る</div>
-      </div>
+      <!-- 手で組んだ再現ではなく、アプリの実物（sample/iphone/19-cheer.png を
+           シートのところで切ったもの）。作り直すたびに本物とずれるのを避ける -->
+      <figure class="shot">
+        <img src="img/cheer-sheet.png" alt="仲間によいしょを送るシート。今日のひと言が5つ並んでいる"
+             width="900" height="888" loading="lazy">
+        <figcaption>ひと言は毎日入れ替わります。自由記述はありません。</figcaption>
+      </figure>
     </div>
   </div>
 
