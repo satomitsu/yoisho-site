@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>水泳記録 - yoisho — 泳いだぶんが、そのまま残る</title>
+  <meta name="description" content="仲間と続ける水泳記録アプリ。距離を入れるだけで残せて、泳いだぶんは実在の海峡や川の大きさに換算されます。記録が見えるのは承認した相互フォローの仲間だけ。一人でも使えて、仲間はあとから招けます。">
+  <meta name="theme-color" content="#F4F2EC">
+  <meta property="og:title" content="水泳記録 - yoisho — 泳いだぶんが、そのまま残る">
+  <meta property="og:description" content="距離を入れるだけ。泳いだぶんは実在の海峡や川の大きさに換算されます。公開は相互フォローの仲間だけ。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yoisho.jp/swim.html">
+  <meta property="og:image" content="https://yoisho.jp/img/swim/link-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://yoisho.jp/img/swim/link-image.png">
+  <link rel="icon" href="img/swim/icon-120.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=23">
+</head>
+
+<!-- 差し色だけ水色（アプリの Brand と同じ #5CC8F5）。骨格は筋トレの LP と同じ -->
+
+<body class="lp swim">
+
+  <!-- ヘッダー -->
+  <div class="band-sec">
+    <div class="inner">
+      <nav class="nav">
+        <a class="nav-logo" href="swim.html" aria-label="水泳記録 - yoisho">
+          <img src="img/swim/icon-120.png" alt="">
+          <span class="stack">
+            <span class="word">yoisho</span>
+            <span class="band">すいむ</span>
+          </span>
+        </a>
+        <div class="nav-links">
+          <a class="hide-sp" href="#what">できること</a>
+          <a class="hide-sp" href="#landmark">泳いだ距離</a>
+          <a class="hide-sp" href="#cheer">よいしょ</a>
+          <a class="hide-sp" href="#circle">仲間</a>
+          <a class="hide-sp" href="#faq">よくある質問</a>
+          <a class="hide-sp" href="./">筋トレ版</a>
+          <a class="btn" href="mailto:support@yoisho.jp">問い合わせる</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ヒーロー。右はキャラクターではなくアプリの実物（水泳のポーズの絵を持っていない） -->
+  <div class="band-sec">
+    <div class="inner">
+      <div class="hero-lp">
+        <div>
+          <span class="pill"><span class="dot"></span>水泳記録 - yoisho</span>
+          <h1 class="display">
+            泳いだぶんが、<br>
+            <span class="mark">そのまま</span><br>
+            残る。
+          </h1>
+          <p class="sub">距離を入れるだけ。1本ずつ足していって、その日ぶんをまとめて振り返ります。仲間に見せるかどうかは、自分で決められます。一人でも使えて、仲間はあとから招けます。</p>
+          <div class="hero-actions">
+            <!-- 公開されたら戻す: <a class="cta" href="https://apps.apple.com/jp/app/id6801551094">App Store でダウンロード</a> -->
+            <span class="cta" aria-disabled="true">近日公開</span>
+            <a class="btn" href="mailto:support@yoisho.jp">問い合わせる</a>
+          </div>
+        </div>
+        <div class="figure">
+          <div class="plate"></div>
+          <img src="img/swim/swimmer.png" alt="キャップとゴーグルをつけた yoisho のキャラクター">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee band-sec">
+    <span>DISTANCE FIRST</span><i>◆</i>
+    <span>NO RANKING</span><i>◆</i>
+    <span>FRIENDS ONLY</span><i>◆</i>
+    <span>YOUR OWN HISTORY</span><i>◆</i>
+    <span>DISTANCE FIRST</span><i>◆</i>
+    <span>NO RANKING</span>
+  </div>
+
+  <!-- 01 できること -->
+  <div class="band-sec" id="what">
+    <div class="inner sec">
+      <p class="sec-eyebrow">01 — WHAT IT DOES</p>
+      <h2>プールサイドで、<br>止まらない</h2>
+      <p class="sec-note">濡れた手で長く触らずに済むように、入れるものを減らしています。</p>
+
+      <div class="cards two">
+        <div class="fcard">
+          <div>
+            <span class="no">01</span>
+            <h3>距離だけで残せる</h3>
+            <p>要るのは距離だけ。時間は任意です。時計を見ずに泳ぐ日でも、1本も残せないということになりません。泳法はクロール・平泳ぎ・背泳ぎ・バタフライの4つから選びます。</p>
+          </div>
+        </div>
+        <div class="fcard">
+          <div>
+            <span class="no">02</span>
+            <h3>1本ずつ足していく</h3>
+            <p>1日に何本も泳ぐので、「セットを追加」で1本ずつ入れていきます。最後に「今日の記録を終了」を押すと、その日ぶんをまとめて振り返れます。</p>
+          </div>
+        </div>
+        <div class="fcard">
+          <div>
+            <span class="no">03</span>
+            <h3>泳いだ距離が、地図の上に乗る</h3>
+            <p>1.6 km は「鳴門海峡の最狭部を横断」。実在の海峡・川幅・橋の長さに換算して、押したときだけ地図で場所を見られます。</p>
+          </div>
+        </div>
+        <div class="fcard">
+          <div>
+            <span class="no">04</span>
+            <h3>仲間と続ける</h3>
+            <p>仲間の記録には「よいしょ」を送れます。しばらく泳いでいない仲間には「がんば」。届くのはこの2つだけで、数は誰にも見えません。</p>
+          </div>
+        </div>
+      </div>
+
+      <figure class="shot" style="margin:32px auto 0">
+        <img src="img/swim/home.png" alt="yoisho スイムのホーム画面。今月のスイム 16.2 km と、泳いだ距離の換算が出ている"
+             width="620" height="1059" loading="lazy">
+        <figcaption>ホーム。今月の距離と、いま届いている場所。</figcaption>
+      </figure>
+
+      <h3 class="subhead" style="margin-top:56px">やらないこと</h3>
+      <p class="sec-note" style="margin-bottom:20px">増やさないと決めているものも、同じくらい大事にしています。</p>
+      <div class="grid cols-3">
+        <div class="tile">
+          <h3 class="struck">ランキング</h3>
+          <p>他人と距離で競う仕組みは置きません。伸びたかどうかは自分の過去とだけ比べます。</p>
+        </div>
+        <div class="tile">
+          <h3 class="struck">ユーザー検索</h3>
+          <p>知らない人とつながる経路がありません。おすすめ表示も公開タイムラインもありません。</p>
+        </div>
+        <div class="tile">
+          <h3 class="struck">いいね数の可視化</h3>
+          <p>数が誰かの目に触れることはありません。何回押されたかを競う画面を作りません。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 泳いだ距離 -->
+  <div class="band-sec split" id="landmark">
+    <div>
+      <p class="sec-eyebrow">02 — HOW FAR</p>
+      <h2>その距離が、<br>どこまでか分かる</h2>
+      <p class="sec-note" style="margin-bottom:22px">「1,600 m 泳いだ」だけでは、遠いのか近いのか分かりません。実在の場所に置き換えて、届いた1つと次の1つを並べます。</p>
+
+      <div class="route">
+        <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M3 12h18M7 8v8M17 8v8" /></svg>
+        </span>
+        <span>
+          <b>50 m — 公式競泳プール 1本</b>
+          <span>長水路をちょうど1本。</span>
+        </span>
+      </div>
+      <div class="route">
+        <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 16c3-4 5-4 8 0s5 4 8 0M4 9c3-4 5-4 8 0s5 4 8 0" /></svg>
+        </span>
+        <span>
+          <b>200 m — 隅田川を横断</b>
+          <span>下流をひと泳ぎで渡りきる距離。</span>
+        </span>
+      </div>
+      <div class="route">
+        <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 12.5l5.5 5.5L20 7" /></svg>
+        </span>
+        <span>
+          <b>650 m — 関門海峡を横断</b>
+          <span>本州と九州のあいだ、最も狭い場所。</span>
+        </span>
+      </div>
+      <div class="route">
+        <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3v18M5 8l7-5 7 5" /></svg>
+        </span>
+        <span>
+          <b>63.5 km — 琵琶湖を縦断</b>
+          <span>1年ぶんの積み上げが、湖ひとつぶんになる。</span>
+        </span>
+      </div>
+
+      <div class="callout" style="margin-top:20px">
+        地図は押したときだけ開きます。ホームを開くたびに通信することはありません。
+      </div>
+      <p class="sec-note" style="margin-top:18px">距離の出どころは公表資料に当たって確かめたものだけを載せています。橋のように「橋長」と「中央支間長」で数字が変わるものは、どちらの定義かを持たせています。</p>
+    </div>
+
+    <div id="cheer">
+      <p class="sec-eyebrow">03 — CHEER</p>
+      <h2>よいしょは届く。<br>がんばも届く。</h2>
+      <p class="sec-note" style="margin-bottom:22px">通知が飛ぶのは「よいしょ」と「がんば」だけ。7日泳いでいない仲間には、その日の5つのひと言から選んで送れます。</p>
+
+      <!-- 手で組んだ再現ではなく、アプリの実物（シートのところで切ったもの）。
+           筋トレのページと同じ扱いで、作り直すたびに本物とずれるのを避ける -->
+      <figure class="shot">
+        <img src="img/swim/cheer-sheet.png" alt="仲間によいしょを送るシート。今日のひと言が5つ並んでいる"
+             width="620" height="583" loading="lazy">
+        <figcaption>ひと言は毎日入れ替わります。自由記述はありません。</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- 04 公開の意思 -->
+  <div class="band-sec">
+    <div class="inner sec">
+      <p class="sec-eyebrow">04 — YOUR CALL</p>
+      <h2>公開するかどうかは、自分で決める</h2>
+      <div class="cards two" style="margin-top:26px">
+        <div class="fcard">
+          <div>
+            <h3>押したときだけ公開される</h3>
+            <p>セットを追加しただけでは仲間に出ません。その日ぶんのサマリーで「仲間に投稿する」を押したときだけ公開されます。投稿せずに記録だけ残すこともできます。</p>
+          </div>
+        </div>
+        <div class="fcard">
+          <div>
+            <h3>あとから仲間になった人に過去は見えない</h3>
+            <p>仲間になる前の投稿は、あとから仲間になった相手には表示されません。承認した瞬間に、過去の記録がさかのぼって見られることはありません。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 仲間 -->
+  <div class="band-sec split" id="circle">
+    <div>
+      <p class="sec-eyebrow">05 — CLOSED CIRCLE</p>
+      <h2>知らない人は、<br>入ってこない</h2>
+      <p class="sec-note" style="margin-bottom:22px">ユーザー検索もおすすめの仲間も作りません。仲間になる方法は2つだけ。</p>
+
+      <div class="route">
+        <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h2M20 14v2M16 20h4" />
+          </svg>
+        </span>
+        <span>
+          <b>招待QR / 招待コード</b>
+          <span>その場で見せる。<span class="en">KENJI-7F3AQ2</span> を送る。</span>
+        </span>
+      </div>
+      <div class="route">
+        <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 12.5l5.5 5.5L20 7" /></svg>
+        </span>
+        <span>
+          <b>承認制のリクエスト</b>
+          <span>承認するまで、記録は誰にも見えない。</span>
+        </span>
+      </div>
+
+      <div class="callout" style="margin-top:20px">
+        アカウントは筋トレ版と共通です。どちらで仲間になっても、両方の記録が同じ仲間に届きます。
+      </div>
+    </div>
+
+    <div>
+      <p class="sec-eyebrow">06 — HEALTH</p>
+      <h2>ヘルスケアから<br>取り込める</h2>
+      <p class="sec-note" style="margin-bottom:22px">Apple ヘルスケアに残っている水泳を、直近14日ぶんまで取り込めます。</p>
+      <div class="grid">
+        <div class="tile">
+          <h3>入れるかどうかは自分で決める</h3>
+          <p>既定は無効です。プロフィールの「ヘルスケア連携」を入れて、初めて許可を求めます。読むのは水泳だけで、体重も心拍も読みません。</p>
+        </div>
+        <div class="tile">
+          <h3>取り込んでも公開されない</h3>
+          <p>取り込んだ記録が勝手に仲間へ出ることはありません。同じ回が二度入ることもありません。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="band-sec" id="faq">
+    <div class="inner sec faq">
+      <div>
+        <p class="sec-eyebrow">07 — FAQ</p>
+        <h2>よくある質問</h2>
+        <p class="sec-note" style="margin-bottom:24px">ここに無いことは、メールでうかがいます。個人で開発・運営しています。</p>
+        <a class="btn" href="support.html">サポートを見る</a>
+      </div>
+      <div class="qa">
+        <div class="q">
+          <h3>料金はかかりますか？</h3>
+          <p>かかりません。記録・履歴・推移・仲間の機能をすべて無料で使えます。広告も入れません。記録できる本数や日数に上限はありません。</p>
+        </div>
+        <div class="q">
+          <h3>筋トレ版（yoisho）との関係は？</h3>
+          <p>同じアカウントで動く別のアプリです。両方入れると、筋トレの投稿も水泳の投稿も同じ仲間に届きます。片方だけでも使えます。</p>
+        </div>
+        <div class="q">
+          <h3>仲間がいなくても使えますか？</h3>
+          <p>使えます。一人で記録するだけで完結します。仲間は招待QRか招待コードで、あとから招けます。アプリの中に知らない人を探す機能はありません。</p>
+        </div>
+        <div class="q">
+          <h3>時間を計り忘れたら、記録できませんか？</h3>
+          <p>できます。要るのは距離だけで、時間は任意です。入れた日だけ 100m あたりのペースが出ます。</p>
+        </div>
+        <div class="q">
+          <h3>プールの長さ（25m / 50m）は設定しますか？</h3>
+          <p>設定しません。泳いだ距離をそのまま入れます。入力の手数を増やさないためです。</p>
+        </div>
+        <div class="q">
+          <h3>過去の日にも記録できますか？</h3>
+          <p>できます。記録画面の日付を前後に動かすか、履歴からその日を開いて入れられます。</p>
+        </div>
+        <div class="q">
+          <h3>知らない人に記録を見られませんか？</h3>
+          <p>見られません。承認した相互フォローの仲間以外には表示されません。ユーザー検索機能そのものがありません。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 締め -->
+  <div class="band-sec closing-sec">
+    <div class="inner closing">
+      <div>
+        <h2>今日の1本から、<br>積み上げていく。</h2>
+        <p class="sec-note">あとは泳ぐだけ。</p>
+        <div class="hero-actions" style="margin-top:0">
+          <!-- 公開されたら戻す: <a class="cta-invert" href="https://apps.apple.com/jp/app/id6801551094">App Store でダウンロード</a> -->
+          <span class="cta-invert">近日公開</span>
+          <a class="btn" href="support.html">サポート</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="lp-footer">
+    <div class="inner">
+      <div>
+        <div class="foot-brand">
+          <span class="sq"><img src="img/swim/icon-120.png" alt=""></span>
+          <span class="en">yoisho</span>
+        </div>
+        <p class="foot-tag" style="margin:0">筋トレと水泳、2本のアプリがあります<br>© 2026 yoisho</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <span class="head">プロダクト</span>
+          <a href="#what">できること</a>
+          <a href="#landmark">泳いだ距離</a>
+          <a href="#circle">仲間のしくみ</a>
+          <a href="./">筋トレ版 yoisho</a>
+        </div>
+        <div>
+          <span class="head">サポート</span>
+          <a href="news.html">お知らせ</a>
+          <a href="support.html">よくある質問</a>
+          <a href="mailto:support@yoisho.jp">お問い合わせ</a>
+          <a href="https://x.com/yoisho_app">X (@yoisho_app)</a>
+        </div>
+        <div>
+          <span class="head">規約</span>
+          <a href="terms.html">利用規約</a>
+          <a href="privacy.html">プライバシーポリシー</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

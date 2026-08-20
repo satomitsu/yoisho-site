@@ -35,6 +35,15 @@
              "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
 }
 
+/* スイムのページ（swim.html）だけ差し色を水色にする。
+   アプリの `Brand`（#5CC8F5）と同じ色で、**変数だけを差し替える**。
+   面・枠・影の作りは筋トレのページと1つも変えない */
+body.swim {
+  --accent:      #5CC8F5;
+  /* 紙地の上で読める濃さに落としたもの（リンクの下線と小さな印に使う） */
+  --accent-text: #0E6EA8;
+}
+
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
