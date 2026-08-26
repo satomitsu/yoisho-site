@@ -73,7 +73,7 @@
   <div class="band-sec" id="adds">
     <div class="inner sec">
       <p class="sec-eyebrow">01 — WHAT PRO ADDS</p>
-      <h2>Pro で増える3つ</h2>
+      <h2>Pro で増えるもの</h2>
       <p class="sec-note">記録画面には手を入れません。増えるのは履歴・推移・設定の中だけです。</p>
       <div class="cards two">
         <div class="fcard trend-card">
@@ -82,7 +82,7 @@
             <div>
               <span class="no">01</span>
               <h3>12週より前の推移</h3>
-              <p>無料は直近12週まで。Pro は6ヶ月と全期間が開き、最初の1セットまで遡って、年をまたいだ積み上げが見えます。種目ごとの推移も、その範囲すべてで追えます。</p>
+              <p>無料は直近12週まで。Pro は6ヶ月と、見たい範囲を指で決めるカスタムが開きます。年をまたいだ積み上げも、種目ごとの推移も、その範囲すべてで追えます。</p>
             </div>
           </div>
         <svg class="trend" viewBox="0 0 838 394" role="img"
@@ -152,12 +152,49 @@
         </div>
       </div>
 
+      <!-- 振り返りの3つ。**絵は作らない。**
+           推移とルーティンは実物を見せる価値があるが、こちらは「どこまで遡れるか」の話で、
+           絵にしても同じグラフが並ぶだけになる。文字で正確に書くほうが伝わる -->
+      <div class="cards">
+        <div class="fcard">
+          <div class="top">
+            <div>
+              <span class="no">03</span>
+              <h3>自己ベストの足あと</h3>
+              <p>種目ごとに、いつ・いくつ更新してきたかが並びます。無料でも表は出ますが、
+                さかのぼれるのは直近12週まで。Pro は最初の1回から全部見えます。</p>
+            </div>
+          </div>
+        </div>
+        <div class="fcard">
+          <div class="top">
+            <div>
+              <span class="no">04</span>
+              <h3>好きな月のふりかえり</h3>
+              <p>月が変わると出るふりかえりを、あとから開き直せます。無料は先月まで、
+                Pro は12ヶ月ぶん、どの月でも。<strong>今月ぶんは誰にも出しません</strong>
+                — 途中の月を「先月より」と並べても意味がないからです。</p>
+            </div>
+          </div>
+        </div>
+        <div class="fcard">
+          <div class="top">
+            <div>
+              <span class="no">05</span>
+              <h3>年のまとめ</h3>
+              <p>1年ぶんを1枚に。月ごとの積み上がり、よく上げた種目、効かせた部位、
+                走った距離と泳いだ距離まで。履歴の「年」から開きます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- テーマは文字で説明しても伝わらない。4つ並べて見せる。
            **枠ごとその配色で塗る**（角の落とし方まで、そのテーマの作りに合わせる） -->
       <div class="fcard themes-card">
         <div class="themes-head">
           <div>
-            <span class="no">03</span>
+            <span class="no">06</span>
             <h3>テーマカラーを選ぶ</h3>
             <p>地・面・インク・差し色をまとめて着せ替えます。枠の太さも、角の落とし方も変わります。
               <strong>記録の手数は4つとも同じです。</strong></p>
@@ -232,10 +269,25 @@
             <tr>
               <td>推移をさかのぼれる範囲</td>
               <td>直近12週</td>
+              <td class="pro-col">6ヶ月・カスタム</td>
+            </tr>
+            <tr>
+              <td>自己ベストの足あと</td>
+              <td>直近12週ぶん</td>
               <td class="pro-col">全期間</td>
             </tr>
             <tr>
-              <td>種目ごとの推移</td>
+              <td>月のふりかえり</td>
+              <td>先月まで</td>
+              <td class="pro-col">12ヶ月ぶん</td>
+            </tr>
+            <tr>
+              <td>年のまとめ</td>
+              <td>—</td>
+              <td class="pro-col">◯</td>
+            </tr>
+            <tr>
+              <td>種目ごとの推移・筋肉別</td>
               <td>◯</td>
               <td class="pro-col">◯</td>
             </tr>
