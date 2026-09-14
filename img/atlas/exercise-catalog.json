@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "status": "poster-only",
+  "licenseFile": "img/atlas/MODEL-LICENSE.md",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "notes": "Still-image previews only. referenceCycleSeconds is from the source animation, not a measured encoded video.",
+  "exercises": [
+    {
+      "id": "bench-press",
+      "name": "ベンチプレス",
+      "regions": ["chest"],
+      "equipment": "バーベル",
+      "primary": ["大胸筋", "上腕三頭筋"],
+      "assist": ["三角筋前部"],
+      "referenceCycleSeconds": 4,
+      "variant": "ブリッジを組んだフォーム",
+      "point": "バーを下ろすときと押し上げるときで、大胸筋の形がどう変わるかに注目。",
+      "views": [
+        { "id": "oblique", "label": "斜め", "poster": "img/atlas/posters/bench-press.webp", "video": null },
+        { "id": "opposite", "label": "反対側", "poster": "img/atlas/posters/bench-press-opposite.webp", "video": null },
+        { "id": "high", "label": "上方", "poster": "img/atlas/posters/bench-press-high.webp", "video": null }
+      ]
+    },
+    {
+      "id": "deadlift",
+      "name": "デッドリフト",
+      "regions": ["back", "legs"],
+      "equipment": "バーベル",
+      "primary": ["大臀筋", "ハムストリング"],
+      "assist": ["大腿四頭筋", "大内転筋"],
+      "referenceCycleSeconds": 6,
+      "keywords": ["背中", "脊柱起立筋", "はむすとりんぐす", "ハムストリングス"],
+      "variant": "床から引き上げるフォーム",
+      "point": "股関節の動きに合わせて、お尻と太ももの裏の筋肉がどう変わるかに注目。",
+      "views": [
+        { "id": "oblique", "label": "斜め", "poster": "img/atlas/posters/deadlift.webp", "video": null }
+      ]
+    },
+    {
+      "id": "squat",
+      "name": "スクワット",
+      "regions": ["legs"],
+      "equipment": "バーベル",
+      "primary": ["大腿四頭筋", "大臀筋"],
+      "assist": ["大内転筋"],
+      "referenceCycleSeconds": 6.5,
+      "variant": "背中の上部でバーを支えるフォーム",
+      "point": "しゃがむ動作と立ち上がる動作で、太ももの前とお尻の筋肉を見比べる。",
+      "views": [
+        { "id": "oblique", "label": "斜め", "poster": "img/atlas/posters/squat.webp", "video": null }
+      ]
+    }
+  ]
+}
