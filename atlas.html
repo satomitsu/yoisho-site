@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>筋トレ図鑑 - yoisho — 動作と働く筋肉を、見て確かめる</title>
+  <meta name="description" content="筋トレの動作と、そのとき働く筋肉を複数の視点で確かめる図鑑。種目と視点を切り替えて、主に働く筋肉と動作を助ける筋肉を見比べられます。">
+  <meta name="theme-color" content="#F4F2EC">
+  <meta property="og:title" content="筋トレ図鑑 - yoisho">
+  <meta property="og:description" content="筋トレの動作と、そのとき働く筋肉を複数の視点で確かめる図鑑。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yoisho.jp/atlas.html">
+  <meta property="og:image" content="https://yoisho.jp/img/link-image.png">
+  <meta property="og:image:width" content="1122">
+  <meta property="og:image:height" content="1402">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://yoisho.jp/img/twitter-image.png">
+  <link rel="icon" href="img/icon-120.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=30">
+</head>
+
+<body class="lp atlas">
+
+  <!-- ヘッダー -->
+  <div class="band-sec">
+    <div class="inner">
+      <nav class="nav">
+        <a class="nav-logo" href="./" aria-label="yoisho">
+          <img src="img/icon-120.png" alt="">
+          <span class="stack">
+            <span class="word">yoisho</span>
+            <span class="band">よいしょ</span>
+          </span>
+        </a>
+        <div class="nav-links">
+          <a class="hide-sp" href="#atlas-library">種目一覧</a>
+          <a class="hide-sp" href="#atlas-about">出典・利用条件</a>
+          <a class="hide-sp" href="./">筋トレ版 yoisho</a>
+          <a class="btn" href="mailto:support@yoisho.jp">問い合わせる</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- 見出し -->
+  <div class="band-sec">
+    <div class="inner" style="padding-top:40px">
+      <h1 style="margin:0">筋トレ図鑑</h1>
+    </div>
+  </div>
+
+  <!-- 種目の詳細（選んだ1種目を表示） -->
+  <div class="band-sec">
+    <div class="inner sec" style="padding-bottom:36px">
+      <div class="atlas-study">
+        <div class="atlas-viewer">
+          <div class="atlas-stage">
+            <div class="atlas-stage-top">
+              <span class="eyebrow" style="margin:0">ANATOMY VIEW</span>
+              <span class="chip" id="atlas-stage-badge">静止画プレビュー</span>
+            </div>
+            <img id="atlas-image" alt="" width="1000" height="750" decoding="async">
+            <video id="atlas-video" width="1000" height="750" playsinline loop hidden></video>
+            <div class="atlas-stage-bottom">
+              <span id="atlas-view-label"></span>
+              <span>人体を透過して筋肉を表示</span>
+            </div>
+          </div>
+          <div class="atlas-view-controls">
+            <div id="atlas-view-options" class="atlas-view-options" role="group" aria-label="見る方向"></div>
+            <div class="atlas-video-state">
+              <button type="button" id="atlas-video-placeholder" disabled>▶ 動画は準備中</button>
+              <div class="atlas-video-speed" id="atlas-video-speed" role="group" aria-label="再生速度" hidden>
+                <button type="button" data-speed="0.5">0.5×</button>
+                <button type="button" data-speed="1" aria-pressed="true">1×</button>
+              </div>
+              <span id="atlas-duration"></span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="atlas-detail" aria-labelledby="atlas-exercise-title">
+          <div class="atlas-detail-top">
+            <span id="atlas-category" class="tag strength"></span>
+            <span id="atlas-equipment" class="atlas-equipment"></span>
+          </div>
+          <h2 id="atlas-exercise-title" style="margin:10px 0 4px"></h2>
+          <p id="atlas-exercise-variant" class="atlas-variant"></p>
+          <div class="atlas-muscles">
+            <h3 class="subhead" style="margin-top:22px;padding-top:0;border-top:0">働く筋肉</h3>
+            <div class="atlas-muscle-group">
+              <p><span class="atlas-role-dot"></span>主に働く筋肉</p>
+              <ul id="atlas-primary" class="chips"></ul>
+            </div>
+            <div class="atlas-muscle-group atlas-assist">
+              <p><span class="atlas-role-dot"></span>動作を助ける筋肉</p>
+              <ul id="atlas-assist" class="chips"></ul>
+            </div>
+          </div>
+          <div class="note atlas-focus">
+            <span class="eyebrow" style="margin:0">筋トレmemo</span>
+            <p style="margin:8px 0 0;color:var(--text2)">準備中です。</p>
+          </div>
+          <div class="atlas-feedback">
+            <span class="eyebrow" style="margin:0">フィードバック</span>
+            <textarea id="atlas-feedback-input" class="atlas-feedback-input"
+                      placeholder="この種目について、気づいたことがあれば" maxlength="500" rows="2"></textarea>
+            <div class="atlas-feedback-row">
+              <button type="button" class="btn" id="atlas-feedback-send">送信する</button>
+              <span id="atlas-feedback-status" class="atlas-feedback-status" aria-live="polite"></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- 種目一覧・検索・絞り込み -->
+  <div class="band-sec">
+    <div class="inner sec" id="atlas-library">
+      <div class="atlas-library-heading">
+        <h2 style="margin:0">種目を選ぶ</h2>
+        <label class="atlas-search">
+          <input id="atlas-search-input" type="search" placeholder="種目名・筋肉名で探す" aria-label="種目名や筋肉名で検索" autocomplete="off">
+        </label>
+      </div>
+      <div class="atlas-filter-row">
+        <div class="atlas-filters" role="group" aria-label="部位で絞り込み">
+          <button type="button" data-filter="all" aria-pressed="true">すべて</button>
+          <button type="button" data-filter="chest" aria-pressed="false">胸</button>
+          <button type="button" data-filter="back" aria-pressed="false">背中</button>
+          <button type="button" data-filter="legs" aria-pressed="false">脚・尻</button>
+        </div>
+        <span id="atlas-result-count" class="atlas-result-count" aria-live="polite"></span>
+      </div>
+      <div class="atlas-cards" id="atlas-cards"></div>
+      <div class="atlas-empty note" id="atlas-empty" hidden>
+        <p style="margin:0 0 6px;font-weight:700">該当する種目がありません</p>
+        <p style="margin:0 0 14px;color:var(--text2)">別の種目名や筋肉名で探してください。</p>
+        <button type="button" class="btn" id="atlas-reset">条件をリセット</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 出典・利用条件 -->
+  <div class="band-sec">
+    <div class="inner sec" id="atlas-about" style="padding-top:44px">
+      <h2 style="font-size:20px">この図鑑について・出典と利用条件</h2>
+      <p class="prose">筋トレの動作と、関連する筋肉をさまざまな方向から見るための図鑑です。いまは制作中の3種目を静止画で表示しています。動画は準備でき次第、追加します。</p>
+      <p class="prose">人体画像は、<a href="https://github.com/Z-Anatomy/Models-of-human-anatomy" target="_blank" rel="noopener noreferrer">Z-Anatomy</a> 由来の加工モデルを描画したものです。これらの人体画像は <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> で提供します。出典と変更内容を示し、改変物にも同じライセンスを適用するなどの条件で再利用できます。</p>
+      <p class="prose" style="font-size:13px;color:var(--text3)">BodyParts3D - The Database Center for Life Science - CC-BY-SA 2.1 Japan<br>
+        Z-Anatomy - The libre 3D atlas of anatomy - CC-BY-SA 4.0<br>
+        Original model: BodyParts3D, © The Database Center for Life Science.<br>
+        原素材の著作者：Kousaku Okubo（元の BodyParts3D）、Gauthier Kervyn（3D anatomy/design）、Marcin Zielinski（Blender tools）、その他の contributors。</p>
+      <p class="prose">変更内容：筋肉の選別・日本語グループ化、領域の調整、軽量化、体表の加工、筋トレ動作に応じた形状の変形と静止画の描画。動作は教育用の簡易表現であり、原素材の著作者がこのサイトや動作表現を推奨・監修していることを意味しません。</p>
+      <p class="prose">元の帰属指定と変更履歴を保持しています。素材は現状のままで提供され、保証はありません。詳しくは<a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode.ja" target="_blank" rel="noopener noreferrer">ライセンス全文</a>と<a href="img/atlas/MODEL-LICENSE.md" target="_blank" rel="noopener noreferrer">出典の詳細ページ</a>をご覧ください。この条件は、独立して作成した画面やプログラム、このサイト全体のライセンスを一括して指定するものではありません。</p>
+    </div>
+  </div>
+
+  <p id="atlas-announcement" class="atlas-sr-only" aria-live="polite"></p>
+
+  <script src="atlas.js?v=7"></script>
+
+  <footer class="lp-footer">
+    <div class="inner">
+      <div>
+        <div class="foot-brand">
+          <span class="sq"><img src="img/icon-120.png" alt=""></span>
+          <span class="en">yoisho</span>
+        </div>
+        <p class="foot-tag" style="margin:0">the sound Japanese lifters make when they lift<br>© 2026 yoisho</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <span class="head">プロダクト</span>
+          <a href="./">筋トレ版 yoisho</a>
+          <a href="swim.html">水泳記録 - yoisho</a>
+          <a href="pro.html">yoisho Pro</a>
+        </div>
+        <div>
+          <span class="head">サポート</span>
+          <a href="news.html">お知らせ</a>
+          <a href="support.html">よくある質問</a>
+          <a href="mailto:support@yoisho.jp">お問い合わせ</a>
+          <a href="https://x.com/yoisho_app">X (@yoisho_app)</a>
+        </div>
+        <div>
+          <span class="head">規約</span>
+          <a href="terms.html">利用規約</a>
+          <a href="privacy.html">プライバシーポリシー</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

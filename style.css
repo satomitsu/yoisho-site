@@ -882,3 +882,101 @@ body.pro-page .closing .btn:hover { background: var(--accent); color: var(--ink)
 
 /* ヘッダーのロゴの隣に置く PRO。ロゴの高さの中心に合わせる */
 body.pro-page .nav-logo .pro-tag { align-self: center; margin-left: 2px; }
+
+/* ---------- 筋トレ図鑑（atlas.html） ---------- */
+/* 角丸なし・枠はインク2px・影はオフセットのみ（他ページと同じネオブルータリズム）。
+   静止画のみの Stage 1（動画は準備中）。60種目に増えても、この節は変えず
+   データ（assets/site/atlas/exercise-catalog.json）を足すだけで済む形にしてある */
+
+.atlas-study { display: grid; gap: 24px; align-items: start; }
+@media (min-width: 900px) { .atlas-study { grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr); } }
+
+.atlas-viewer { background: var(--card); border: var(--stroke) solid var(--ink);
+                box-shadow: 4px 4px 0 var(--ink); }
+.atlas-stage { position: relative; background: var(--surface2);
+               aspect-ratio: 1.3; overflow: hidden; }
+.atlas-stage img,
+.atlas-stage video { position: absolute; inset: 0; display: block;
+                     width: 100%; height: 100%; object-fit: contain; }
+.atlas-stage-top { position: absolute; z-index: 1; top: 14px; left: 14px; right: 14px;
+                   display: flex; align-items: center; justify-content: space-between; }
+.atlas-stage-bottom { position: absolute; z-index: 1; bottom: 12px; left: 14px; right: 14px;
+                      display: flex; align-items: center; justify-content: space-between;
+                      font-size: 12px; color: var(--text2); }
+/* 動画は自前のコントロールバーが下端に出るので、重ねない */
+.atlas-stage.has-video .atlas-stage-bottom { display: none; }
+.atlas-view-controls { padding: 14px 16px; display: flex; flex-direction: column; gap: 12px;
+                       border-top: var(--stroke) solid var(--ink); }
+.atlas-view-options { display: flex; gap: 6px; flex-wrap: wrap; }
+.atlas-view-options button[aria-pressed="true"] { background: var(--accent); }
+.atlas-video-state { display: flex; align-items: center; justify-content: space-between;
+                     gap: 10px; font-size: 13px; color: var(--text2); }
+.atlas-video-state button { border: var(--stroke) solid var(--text3); background: none;
+                            color: var(--text3); padding: 6px 12px; font-size: 13px; }
+.atlas-video-speed { display: flex; gap: 6px; }
+.atlas-video-speed[hidden] { display: none; }
+.atlas-video-speed button { border: var(--stroke) solid var(--ink); background: var(--card);
+                           color: var(--ink); padding: 4px 10px; font-size: 12px; }
+.atlas-video-speed button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+.atlas-detail-top { display: flex; align-items: center; gap: 8px; }
+.atlas-equipment { font-size: 13px; color: var(--text2); }
+.atlas-variant { color: var(--text2); font-size: 14px; margin: 4px 0 0; }
+.atlas-muscle-group { margin-bottom: 14px; }
+.atlas-muscle-group > p { display: flex; align-items: center; gap: 6px;
+                          color: var(--text2); font-size: 12px; margin: 0 0 8px; }
+.atlas-role-dot { width: 7px; height: 7px; flex: none; background: var(--accent-text); }
+.atlas-assist .atlas-role-dot { background: var(--run-text); }
+.atlas-muscles .chips { margin-top: 0; }
+.atlas-focus { margin-top: 20px; }
+
+.atlas-feedback { margin-top: 20px; }
+.atlas-feedback-input { display: block; width: 100%; margin-top: 8px;
+                        border: var(--stroke) solid var(--ink); background: var(--card);
+                        padding: 9px 12px; font: inherit; font-size: 14px; color: var(--ink);
+                        resize: vertical; }
+.atlas-feedback-row { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+.atlas-feedback-status { font-size: 13px; color: var(--text2); }
+.atlas-feedback-status.is-error { color: #B3261E; }
+
+.atlas-library-heading { display: flex; flex-wrap: wrap; align-items: center;
+                         justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+.atlas-search { display: flex; align-items: center; width: 280px; max-width: 100%;
+               border: var(--stroke) solid var(--ink); background: var(--card); padding: 9px 13px; }
+.atlas-search input { width: 100%; border: 0; background: none; outline: none;
+                      font: inherit; color: var(--ink); font-size: 14px; }
+.atlas-filter-row { display: flex; flex-wrap: wrap; align-items: center;
+                   justify-content: space-between; gap: 10px; margin-bottom: 20px; }
+.atlas-filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.atlas-filters button { border: var(--stroke) solid var(--ink); background: var(--card);
+                        padding: 6px 14px; font-size: 14px; color: var(--ink); }
+.atlas-filters button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.atlas-result-count { font-size: 13px; color: var(--text2); white-space: nowrap; }
+
+.atlas-cards { display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .atlas-cards { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .atlas-cards { grid-template-columns: repeat(3, 1fr); } }
+.atlas-exercise-card { display: block; text-align: left; padding: 0; width: 100%;
+                       background: var(--card); border: var(--stroke) solid var(--ink);
+                       box-shadow: 4px 4px 0 var(--ink); cursor: pointer;
+                       transition: transform .12s ease, box-shadow .12s ease; }
+.atlas-exercise-card:hover,
+.atlas-exercise-card[aria-pressed="true"] { transform: translate(-2px, -2px);
+                                            box-shadow: 6px 6px 0 var(--ink); }
+.atlas-card-image { position: relative; background: var(--surface2); aspect-ratio: 1.4; }
+.atlas-card-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.atlas-card-view { position: absolute; right: 8px; bottom: 8px; }
+.atlas-card-copy { padding: 14px 16px 16px; }
+.atlas-card-meta { margin-bottom: 8px; }
+.atlas-card-copy h3 { margin: 0 0 4px; font-size: 17px; }
+.atlas-card-copy p { margin: 0; font-size: 13px; color: var(--text2); }
+.atlas-empty { text-align: center; padding: 32px; }
+
+.atlas-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+                overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+@media (max-width: 600px) {
+  .atlas-library-heading { flex-direction: column; align-items: stretch; }
+  .atlas-search { width: 100%; }
+  .atlas-filter-row { flex-direction: column; align-items: flex-start; }
+}
