@@ -24,6 +24,8 @@
 
   // 読み込みを待つ上限（これを過ぎたら、押せる状態に戻して知らせる）
   const LOAD_TIMEOUT_MS = 10000;
+  // 全画面の返事を待つ上限（過ぎたら自前で広げる）
+  const FULLSCREEN_WAIT_MS = 700;
 
   const REGION_LABELS = {
     chest: '胸', back: '背中', legs: '脚・尻', shoulders: '肩', arms: '腕', core: '腹',
@@ -43,6 +45,13 @@
   // **本人が再生したいかどうか。** 動画の paused とは別に持つ——読み込み中は
   // まだ paused なので、これが無いと視点を替えたときに再生が途切れる
   let intendedPlaying = false;
+
+  // 拡大の倍率と、そのときのずらし幅（px）。**視点を替えても持ち越す**
+  // ——同じところを別の方向から見比べるためのもの。種目を替えたら戻す
+  const zoom = { scale: 1, x: 0, y: 0 };
+  const MAX_ZOOM = 4;
+  // 全画面の返事を待っているあいだの控え（畳んだら取り消す）
+  let fullscreenTimer = null;
 
   function normalize(value) {
     return value.normalize('NFKC').toLowerCase().replace(/[\s・ー]/g, '');
@@ -77,6 +86,207 @@
     $('#atlas-message-text').textContent = text || '';
     $('#atlas-retry').hidden = !retry;
     $('#atlas-message').classList.toggle('is-shown', Boolean(text));
+  }
+
+  // ---- 拡大縮小（指でひろげる・つまむ／⌘・Ctrl＋ホイール／＋−のボタン）と全画面
+
+  function clampZoom() {
+    zoom.scale = Math.min(MAX_ZOOM, Math.max(1, zoom.scale));
+    const box = $('.atlas-stage').getBoundingClientRect();
+    // **枠の外まで送らない**（送れると、絵の無いところを見ることになる）
+    const maxX = (box.width * (zoom.scale - 1)) / 2;
+    const maxY = (box.height * (zoom.scale - 1)) / 2;
+    zoom.x = Math.min(maxX, Math.max(-maxX, zoom.x));
+    zoom.y = Math.min(maxY, Math.max(-maxY, zoom.y));
+  }
+
+  function applyZoom() {
+    clampZoom();
+    $('#atlas-media').style.transform =
+      'translate(' + zoom.x + 'px, ' + zoom.y + 'px) scale(' + zoom.scale + ')';
+    const stage = $('.atlas-stage');
+    // **拡大しているあいだだけ指の動きをこちらで受ける**
+    // （等倍のままなら、なぞってページを送れる側に返す）
+    stage.style.touchAction = zoom.scale > 1 ? 'none' : '';
+    stage.style.cursor = zoom.scale > 1 ? 'grab' : '';
+    $('#atlas-zoom-out').disabled = zoom.scale <= 1;
+    $('#atlas-zoom-in').disabled = zoom.scale >= MAX_ZOOM;
+  }
+
+  function resetZoom() {
+    zoom.scale = 1;
+    zoom.x = 0;
+    zoom.y = 0;
+    applyZoom();
+  }
+
+  /** `at`（枠の中心から測った位置）を動かさないまま倍率を変える */
+  function zoomTo(scale, at) {
+    const next = Math.min(MAX_ZOOM, Math.max(1, scale));
+    const point = at || { x: 0, y: 0 };
+    const ratio = next / zoom.scale;
+    zoom.x = point.x - (point.x - zoom.x) * ratio;
+    zoom.y = point.y - (point.y - zoom.y) * ratio;
+    zoom.scale = next;
+    if (next === 1) { zoom.x = 0; zoom.y = 0; }
+    applyZoom();
+  }
+
+  function stagePoint(clientX, clientY) {
+    const box = $('.atlas-stage').getBoundingClientRect();
+    return { x: clientX - box.left - box.width / 2, y: clientY - box.top - box.height / 2 };
+  }
+
+  function fullscreenNow() {
+    return document.fullscreenElement || document.webkitFullscreenElement || null;
+  }
+
+  /** ブラウザが全画面をくれないときに、こちらで画面いっぱいに広げる */
+  function spreadInPage(on) {
+    // **待っていた返事はもう要らない**（残すと、畳んだ直後に広げ直してしまう）
+    window.clearTimeout(fullscreenTimer);
+    fullscreenTimer = null;
+    $('.atlas-viewer').classList.toggle('is-full', on);
+    document.body.classList.toggle('atlas-full', on);
+    onFullscreenChange();
+  }
+
+  function toggleFullscreen() {
+    const box = $('.atlas-viewer');
+    const video = $('#atlas-video');
+    window.clearTimeout(fullscreenTimer);
+    fullscreenTimer = null;
+    if (fullscreenNow()) {
+      (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+      return;
+    }
+    if (box.classList.contains('is-full')) { spreadInPage(false); return; }
+
+    // **押しても何も起きない状態を作らない。** 断られたら次の手に移る:
+    // 枠ごと全画面 → iPhone は動画そのものを OS の全画面 → それも無ければ自前で広げる
+    const fallback = () => {
+      if (fullscreenNow() || box.classList.contains('is-full')) return;
+      if (!video.hidden && video.webkitEnterFullscreen) {
+        try { video.webkitEnterFullscreen(); return; } catch (err) { /* 下へ */ }
+      }
+      spreadInPage(true);
+    };
+    // **返事が来ないこともある**（全画面を断る設定・裏に回った窓）。
+    // 少し待って何も起きていなければ、自前で広げる
+    fullscreenTimer = window.setTimeout(fallback, FULLSCREEN_WAIT_MS);
+    // **枠ごと全画面にする**（方向・再生・速度をそのまま使えるように）
+    if (box.requestFullscreen) { box.requestFullscreen().catch(fallback); return; }
+    if (box.webkitRequestFullscreen) { box.webkitRequestFullscreen(); return; }
+    fallback();
+  }
+
+  function onFullscreenChange() {
+    // 本物の全画面になったなら、自前で広げていたぶんは畳む（二重に効かせない）
+    if (fullscreenNow() && $('.atlas-viewer').classList.contains('is-full')) {
+      $('.atlas-viewer').classList.remove('is-full');
+      document.body.classList.remove('atlas-full');
+    }
+    const on = Boolean(fullscreenNow()) || $('.atlas-viewer').classList.contains('is-full');
+    $('#atlas-full').setAttribute('aria-label', on ? '全画面をやめる' : '全画面で見る');
+    $('#atlas-full').textContent = on ? '⤡' : '⤢';
+    applyZoom();   // 枠の大きさが変わるので、送り幅を測り直す
+  }
+
+  function wireZoom() {
+    const stage = $('.atlas-stage');
+
+    $('#atlas-zoom-in').addEventListener('click', () => zoomTo(zoom.scale * 1.5));
+    $('#atlas-zoom-out').addEventListener('click', () => zoomTo(zoom.scale / 1.5));
+    $('#atlas-full').addEventListener('click', toggleFullscreen);
+    document.addEventListener('fullscreenchange', onFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+    window.addEventListener('resize', applyZoom);
+    // 自前で広げているときは、Esc でも戻れるようにする（本物の全画面と同じ触り心地）
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && $('.atlas-viewer').classList.contains('is-full')) spreadInPage(false);
+    });
+
+    // ⌘・Ctrl ＋ホイール（トラックパッドのつまみもこれで届く）。
+    // **素のホイールは取らない**——ページが送れなくなる
+    stage.addEventListener('wheel', (event) => {
+      if (!event.ctrlKey && !event.metaKey) return;
+      event.preventDefault();
+      const step = event.deltaY < 0 ? 1.12 : 1 / 1.12;
+      zoomTo(zoom.scale * step, stagePoint(event.clientX, event.clientY));
+    }, { passive: false });
+
+    stage.addEventListener('dblclick', (event) => {
+      if (event.target.closest('.atlas-stage-tools')) return;
+      if (zoom.scale > 1) resetZoom();
+      else zoomTo(2, stagePoint(event.clientX, event.clientY));
+    });
+
+    // Safari は2本指を `gesture*` で知らせる。**両方で受けると倍に効く**ので、
+    // あるほうだけを使う
+    const hasGesture = 'ongesturestart' in window;
+    let pinchFrom = 1;
+    if (hasGesture) {
+      stage.addEventListener('gesturestart', (event) => {
+        event.preventDefault();
+        pinchFrom = zoom.scale;
+      }, { passive: false });
+      stage.addEventListener('gesturechange', (event) => {
+        event.preventDefault();
+        zoomTo(pinchFrom * event.scale);
+      }, { passive: false });
+      stage.addEventListener('gestureend', (event) => event.preventDefault(), { passive: false });
+    }
+
+    let touch = null;
+    const spread = (t) => Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
+    const middle = (t) => stagePoint((t[0].clientX + t[1].clientX) / 2, (t[0].clientY + t[1].clientY) / 2);
+    stage.addEventListener('touchstart', (event) => {
+      const t = Array.from(event.touches);
+      if (t.length === 2 && !hasGesture) {
+        touch = { kind: 'pinch', from: spread(t), scale: zoom.scale, at: middle(t) };
+      } else if (t.length === 1 && zoom.scale > 1) {
+        touch = { kind: 'pan', x: t[0].clientX, y: t[0].clientY };
+      } else {
+        touch = null;
+      }
+    }, { passive: true });
+    stage.addEventListener('touchmove', (event) => {
+      if (!touch) return;
+      const t = Array.from(event.touches);
+      if (touch.kind === 'pinch' && t.length === 2) {
+        event.preventDefault();
+        zoomTo(touch.scale * (spread(t) / touch.from), touch.at);
+      } else if (touch.kind === 'pan' && t.length === 1) {
+        event.preventDefault();
+        zoom.x += t[0].clientX - touch.x;
+        zoom.y += t[0].clientY - touch.y;
+        touch.x = t[0].clientX;
+        touch.y = t[0].clientY;
+        applyZoom();
+      }
+    }, { passive: false });
+    ['touchend', 'touchcancel'].forEach((name) =>
+      stage.addEventListener(name, () => { touch = null; }));
+
+    // 指以外（マウス・ペン）は、拡大しているときだけ掴んで動かせる
+    let drag = null;
+    stage.addEventListener('pointerdown', (event) => {
+      if (event.pointerType === 'touch' || zoom.scale <= 1) return;
+      if (event.target.closest('.atlas-stage-tools')) return;
+      drag = { x: event.clientX, y: event.clientY };
+      stage.setPointerCapture(event.pointerId);
+      stage.style.cursor = 'grabbing';
+    });
+    stage.addEventListener('pointermove', (event) => {
+      if (!drag) return;
+      zoom.x += event.clientX - drag.x;
+      zoom.y += event.clientY - drag.y;
+      drag.x = event.clientX;
+      drag.y = event.clientY;
+      applyZoom();
+    });
+    ['pointerup', 'pointercancel'].forEach((name) =>
+      stage.addEventListener(name, () => { drag = null; applyZoom(); }));
   }
 
   // ---- 再生（1本だけ。読み込み中も押せるものと押せないものを見た目に合わせる）
@@ -157,7 +367,10 @@
     const url = videoUrl(view);
 
     const carryTime = reset ? 0 : (pending ? pending.time : video.currentTime || 0);
-    if (reset) intendedPlaying = false;
+    if (reset) {
+      intendedPlaying = false;
+      resetZoom();   // 種目が変われば見ていた場所も変わる（視点を替えたときは持ち越す）
+    }
 
     $('#atlas-stage-badge').textContent = url ? '動画' : '静止画';
     $('.atlas-stage').classList.toggle('has-video', Boolean(url));
@@ -426,11 +639,13 @@
       if (document.hidden) pauseCurrent();
     });
     // **画面の外へ出たら止める**（2026-09-18）。タブは開いたままでも、
-    // 下の一覧まで送った先で流しっぱなしにしない
+    // 下の一覧まで送った先で流しっぱなしにしない。
+    // **見張るのは枠のほう**——動画そのものを見張ると、拡大した瞬間に
+    // 枠からはみ出したぶんが「画面の外」と判定されて止まる（2026-09-18）
     if ('IntersectionObserver' in window) {
       new IntersectionObserver((entries) => {
         entries.forEach((entry) => { if (!entry.isIntersecting && intendedPlaying) pauseCurrent(); });
-      }, { threshold: 0.2 }).observe(video);
+      }, { threshold: 0.2 }).observe($('.atlas-stage'));
     }
 
     $$('.atlas-filters button').forEach((button) => {
@@ -452,6 +667,7 @@
       renderCards();
     });
     $('#atlas-feedback-send').addEventListener('click', sendFeedback);
+    wireZoom();
   }
 
   // 5方向ある種目は 45° から見せる（ホームの絵と同じ向き）。

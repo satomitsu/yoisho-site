@@ -905,6 +905,8 @@ body.pro-page .nav-logo .pro-tag { align-self: center; margin-left: 2px; }
 /* 16:9。動画と静止画はどちらも contain で、人体も器具も切らない */
 .atlas-stage { position: relative; background: var(--surface2);
                aspect-ratio: 16 / 9; overflow: hidden; }
+/* 拡大縮小はこの箱ごと動かす（中の動画と静止画を一緒に動かすため） */
+.atlas-stage-media { position: absolute; inset: 0; transform-origin: 50% 50%; }
 .atlas-stage img,
 .atlas-stage video { position: absolute; inset: 0; display: block;
                      width: 100%; height: 100%; object-fit: contain; }
@@ -912,8 +914,25 @@ body.pro-page .nav-logo .pro-tag { align-self: center; margin-left: 2px; }
    （書かないと、動画の裏に静止画が残る） */
 .atlas-stage img[hidden],
 .atlas-stage video[hidden] { display: none; }
-.atlas-stage-top { position: absolute; z-index: 1; top: 14px; left: 14px; right: 14px;
-                   display: flex; align-items: center; justify-content: space-between; }
+.atlas-stage-top { position: absolute; z-index: 2; top: 14px; left: 14px; right: 14px;
+                   display: flex; align-items: flex-start; justify-content: space-between;
+                   gap: 10px; pointer-events: none; }
+.atlas-stage-left { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+/* 拡大・縮小・全画面。絵の上に重ねるので、押せるのはボタンだけにする */
+.atlas-stage-tools { display: flex; gap: 6px; flex: none; pointer-events: auto; }
+.atlas-stage-tools button { width: 36px; height: 36px; display: grid; place-items: center;
+                            border: var(--stroke) solid var(--ink); background: var(--card);
+                            color: var(--ink); font: inherit; font-size: 15px; line-height: 1;
+                            cursor: pointer; }
+.atlas-stage-tools button:disabled { color: var(--text3); border-color: var(--text3); cursor: default; }
+.atlas-stage-hint { font-size: 11px; }
+@media (pointer: coarse) {
+  .atlas-stage-tools button { width: 44px; height: 44px; }
+}
+@media (hover: hover) {
+  /* 指で触る端末には「指でひろげる」と出し、それ以外には出さない */
+  .atlas-stage-hint { display: none; }
+}
 .atlas-stage-bottom { position: absolute; z-index: 1; bottom: 12px; left: 14px; right: 14px;
                       display: flex; align-items: center; justify-content: space-between;
                       font-size: 12px; color: var(--text2); }
@@ -1043,3 +1062,20 @@ body.pro-page .nav-logo .pro-tag { align-self: center; margin-left: 2px; }
 /* ---------- ホームの図鑑への導線 ---------- */
 
 .atlas-lead-note { margin: 18px 0 0; font-size: 12px; color: var(--text3); }
+
+/* ブラウザの中で全画面にする（枠ごと出すので、方向・再生・速度もそのまま使える）。
+   iPhone の Safari は要素を全画面にできないので、あちらは動画そのものを
+   OS の全画面で開く（`atlas.js` の `openFullscreen`） */
+.atlas-viewer:fullscreen,
+.atlas-viewer:-webkit-full-screen { display: flex; flex-direction: column;
+                                    background: var(--card); box-shadow: none; }
+.atlas-viewer:fullscreen .atlas-stage,
+.atlas-viewer:-webkit-full-screen .atlas-stage { flex: 1 1 auto; aspect-ratio: auto; min-height: 0; }
+
+/* ブラウザが全画面をくれないときの逃げ道（`spreadInPage`）。
+   画面いっぱいに広げるだけで、やることは同じ */
+.atlas-viewer.is-full { position: fixed; inset: 0; z-index: 90; margin: 0;
+                        display: flex; flex-direction: column;
+                        background: var(--card); box-shadow: none; }
+.atlas-viewer.is-full .atlas-stage { flex: 1 1 auto; aspect-ratio: auto; min-height: 0; }
+body.atlas-full { overflow: hidden; }
