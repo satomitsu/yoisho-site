@@ -914,12 +914,12 @@ body.pro-page .nav-logo .pro-tag { align-self: center; margin-left: 2px; }
    （書かないと、動画の裏に静止画が残る） */
 .atlas-stage img[hidden],
 .atlas-stage video[hidden] { display: none; }
-.atlas-stage-top { position: absolute; z-index: 2; top: 14px; left: 14px; right: 14px;
-                   display: flex; align-items: flex-start; justify-content: space-between;
-                   gap: 10px; pointer-events: none; }
-.atlas-stage-left { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-/* 拡大・縮小・全画面。絵の上に重ねるので、押せるのはボタンだけにする */
-.atlas-stage-tools { display: flex; gap: 6px; flex: none; pointer-events: auto; }
+/* **動画の上の帯**（枠の中・絵の外）。絵に何も重ねないための置き場所 */
+.atlas-stage-bar { display: flex; align-items: center; justify-content: space-between;
+                   gap: 10px; padding: 10px 12px; border-bottom: var(--stroke) solid var(--ink); }
+.atlas-stage-left { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; min-width: 0; }
+/* 拡大・縮小・全画面 */
+.atlas-stage-tools { display: flex; gap: 6px; flex: none; }
 .atlas-stage-tools button { width: 36px; height: 36px; display: grid; place-items: center;
                             border: var(--stroke) solid var(--ink); background: var(--card);
                             color: var(--ink); font: inherit; font-size: 15px; line-height: 1;
@@ -933,9 +933,9 @@ body.pro-page .nav-logo .pro-tag { align-self: center; margin-left: 2px; }
   /* 指で触る端末には「指でひろげる」と出し、それ以外には出さない */
   .atlas-stage-hint { display: none; }
 }
-.atlas-stage-bottom { position: absolute; z-index: 1; bottom: 12px; left: 14px; right: 14px;
-                      display: flex; align-items: center; justify-content: space-between;
-                      font-size: 12px; color: var(--text2); }
+/* カメラの角度と、指で拡大できるという案内（動画の下） */
+.atlas-stage-meta { display: flex; align-items: center; justify-content: space-between;
+                    gap: 10px; font-size: 12px; color: var(--text2); }
 .atlas-view-controls { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 10px;
                        border-top: var(--stroke) solid var(--ink); }
 .atlas-angle-row { display: flex; align-items: center; gap: 12px; }
@@ -1057,6 +1057,9 @@ body.pro-page .nav-logo .pro-tag { align-self: center; margin-left: 2px; }
   .atlas-control-label,
   .atlas-time { display: none; }
   .atlas-view-controls { padding: 12px 12px 14px; }
+  /* 狭いところでは飾りの見出しを畳む（「動画」の印と道具を1行に収める） */
+  .atlas-stage-left .eyebrow { display: none; }
+  .atlas-stage-bar { padding: 8px 10px; }
 }
 
 /* ---------- ホームの図鑑への導線 ---------- */

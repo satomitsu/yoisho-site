@@ -22,7 +22,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=36">
+  <link rel="stylesheet" href="style.css?v=37">
 </head>
 
 <body class="lp atlas">
@@ -64,30 +64,33 @@
       <div class="atlas-study">
         <div>
           <div class="atlas-viewer">
+            <!-- **絵の上には何も重ねない**（利用者の指摘。2026-09-18。スマホでは
+                 拡大・全画面のボタンが人体に重なって見えていた）。見出しも道具も
+                 動画の外に出し、枠の中は絵だけにする -->
+            <div class="atlas-stage-bar">
+              <span class="atlas-stage-left">
+                <span class="eyebrow" style="margin:0">ANATOMY / MOTION</span>
+                <span class="chip" id="atlas-stage-badge">静止画</span>
+              </span>
+              <span class="atlas-stage-tools">
+                <button type="button" id="atlas-zoom-out" aria-label="縮小" disabled>−</button>
+                <button type="button" id="atlas-zoom-in" aria-label="拡大">＋</button>
+                <button type="button" id="atlas-full" aria-label="全画面で見る">⤢</button>
+              </span>
+            </div>
             <div class="atlas-stage">
-              <div class="atlas-stage-top">
-                <span class="atlas-stage-left">
-                  <span class="eyebrow" style="margin:0">ANATOMY / MOTION</span>
-                  <span class="chip" id="atlas-stage-badge">静止画</span>
-                </span>
-                <span class="atlas-stage-tools">
-                  <button type="button" id="atlas-zoom-out" aria-label="縮小" disabled>−</button>
-                  <button type="button" id="atlas-zoom-in" aria-label="拡大">＋</button>
-                  <button type="button" id="atlas-full" aria-label="全画面で見る">⤢</button>
-                </span>
-              </div>
               <div class="atlas-stage-media" id="atlas-media">
                 <img id="atlas-image" alt="" width="1000" height="750" decoding="async">
                 <video id="atlas-video" playsinline loop muted preload="metadata" hidden
                        aria-label="選んだ種目の動作（音はありません）"></video>
               </div>
-              <div class="atlas-stage-bottom">
-                <span id="atlas-view-label"></span>
-                <span class="atlas-stage-hint">指でひろげる・つまむと拡大できます</span>
-              </div>
             </div>
 
             <div class="atlas-view-controls">
+              <div class="atlas-stage-meta">
+                <span id="atlas-view-label"></span>
+                <span class="atlas-stage-hint">指でひろげる・つまむと拡大できます</span>
+              </div>
               <div class="atlas-angle-row">
                 <span class="atlas-control-label">見る方向</span>
                 <div id="atlas-view-options" class="atlas-view-options" role="group" aria-label="見る方向"></div>
@@ -214,7 +217,7 @@
 
   <p id="atlas-announcement" class="atlas-sr-only" aria-live="polite"></p>
 
-  <script src="atlas.js?v=13"></script>
+  <script src="atlas.js?v=14"></script>
 
   <footer class="lp-footer">
     <div class="inner">

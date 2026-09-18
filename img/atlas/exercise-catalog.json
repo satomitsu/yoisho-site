@@ -3077,8 +3077,8 @@
       "variant": "",
       "referenceCycleSeconds": 6.5,
       "recordingVersion": "v20260910-c5f198ec",
-      "description": "座った姿勢でダンベルを頭上へ押し上げる種目。",
-      "guideFrom": "ダンベルショルダープレス",
+      "description": "マシンのグリップを肩の高さから真上へ押し上げる種目。",
+      "guideFrom": "マシンショルダープレス",
       "primary": [
         "三角筋（前部・中部）"
       ],
@@ -3831,7 +3831,7 @@
       ],
       "variant": "",
       "referenceCycleSeconds": 6.5,
-      "recordingVersion": "v20260918-5f906701",
+      "recordingVersion": "v20260918-860f5ae8",
       "description": "ケーブルを使い、肘を伸ばしてバーを下に押し下げる種目。",
       "primary": [
         "上腕三頭筋"
@@ -3847,9 +3847,9 @@
           "label": "0°",
           "angleDegrees": 0,
           "pitchDegrees": 18,
-          "poster": "img/atlas/posters/triceps-pushdown/v20260918-5f906701/poster-000.webp",
+          "poster": "img/atlas/posters/triceps-pushdown/v20260918-860f5ae8/poster-000.webp",
           "video": null,
-          "videoKey": "exercises/triceps-pushdown/v20260918-5f906701/view-000.mp4",
+          "videoKey": "exercises/triceps-pushdown/v20260918-860f5ae8/view-000.mp4",
           "durationSeconds": 6.5
         },
         {
@@ -3857,9 +3857,9 @@
           "label": "45°",
           "angleDegrees": 45,
           "pitchDegrees": 18,
-          "poster": "img/atlas/posters/triceps-pushdown/v20260918-5f906701/poster-045.webp",
+          "poster": "img/atlas/posters/triceps-pushdown/v20260918-860f5ae8/poster-045.webp",
           "video": null,
-          "videoKey": "exercises/triceps-pushdown/v20260918-5f906701/view-045.mp4",
+          "videoKey": "exercises/triceps-pushdown/v20260918-860f5ae8/view-045.mp4",
           "durationSeconds": 6.5
         },
         {
@@ -3867,9 +3867,9 @@
           "label": "90°",
           "angleDegrees": 90,
           "pitchDegrees": 18,
-          "poster": "img/atlas/posters/triceps-pushdown/v20260918-5f906701/poster-090.webp",
+          "poster": "img/atlas/posters/triceps-pushdown/v20260918-860f5ae8/poster-090.webp",
           "video": null,
-          "videoKey": "exercises/triceps-pushdown/v20260918-5f906701/view-090.mp4",
+          "videoKey": "exercises/triceps-pushdown/v20260918-860f5ae8/view-090.mp4",
           "durationSeconds": 6.5
         },
         {
@@ -3877,9 +3877,9 @@
           "label": "135°",
           "angleDegrees": 135,
           "pitchDegrees": 18,
-          "poster": "img/atlas/posters/triceps-pushdown/v20260918-5f906701/poster-135.webp",
+          "poster": "img/atlas/posters/triceps-pushdown/v20260918-860f5ae8/poster-135.webp",
           "video": null,
-          "videoKey": "exercises/triceps-pushdown/v20260918-5f906701/view-135.mp4",
+          "videoKey": "exercises/triceps-pushdown/v20260918-860f5ae8/view-135.mp4",
           "durationSeconds": 6.5
         },
         {
@@ -3887,9 +3887,9 @@
           "label": "180°",
           "angleDegrees": 180,
           "pitchDegrees": 18,
-          "poster": "img/atlas/posters/triceps-pushdown/v20260918-5f906701/poster-180.webp",
+          "poster": "img/atlas/posters/triceps-pushdown/v20260918-860f5ae8/poster-180.webp",
           "video": null,
-          "videoKey": "exercises/triceps-pushdown/v20260918-5f906701/view-180.mp4",
+          "videoKey": "exercises/triceps-pushdown/v20260918-860f5ae8/view-180.mp4",
           "durationSeconds": 6.5
         }
       ]
