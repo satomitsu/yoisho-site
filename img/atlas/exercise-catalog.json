@@ -6,831 +6,358 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
   "videoBaseUrl": "https://pub-403566d3b5604c4992fe8b43aa09968b.r2.dev/",
   "videoBaseUrlNote": "動画の配信元（2026-09-18 に R2 へ 75 本を置いた）。null に戻すと動画を出さず、静止画のまま「動画は準備中」と表示する。各視点の videoKey がこの後ろに付く。末尾の / を落とさない",
-  "notes": "撮影した動画つき（2026-09-18 の15種目）。角度は撮影座標系（0〜180°）で、0°を正面とは断定しない。旧3種目は静止画のまま。",
+  "notes": "66種目・各5方向の動画つき。角度は撮影座標系（0〜180°）で、0°を正面とは断定しない。筋肉と説明はアプリの種目ガイドと同じもの。収録元から受け取った表記がある種目は、その表記のまま。",
+  "defaultExercise": "bench-press",
   "exercises": [
     {
-      "id": "bench-press",
-      "name": "ベンチプレス",
+      "id": "incline-dumbbell-press",
+      "name": "インクラインダンベルプレス",
       "regions": [
         "chest"
       ],
-      "equipment": "バーベル",
-      "primary": [
-        "大胸筋",
-        "上腕三頭筋"
-      ],
-      "assist": [
-        "三角筋前部"
-      ],
-      "referenceCycleSeconds": 4,
-      "variant": "ブリッジを組んだフォーム",
-      "point": "バーを下ろすときと押し上げるときで、大胸筋の形がどう変わるかに注目。",
-      "views": [
-        {
-          "id": "oblique",
-          "label": "斜め",
-          "poster": "img/atlas/posters/bench-press.webp",
-          "video": null
-        },
-        {
-          "id": "opposite",
-          "label": "反対側",
-          "poster": "img/atlas/posters/bench-press-opposite.webp",
-          "video": null
-        },
-        {
-          "id": "high",
-          "label": "上方",
-          "poster": "img/atlas/posters/bench-press-high.webp",
-          "video": null
-        }
-      ]
-    },
-    {
-      "id": "deadlift",
-      "name": "デッドリフト",
-      "regions": [
-        "back",
-        "legs"
-      ],
-      "equipment": "バーベル",
-      "primary": [
-        "大臀筋",
-        "ハムストリング"
-      ],
-      "assist": [
-        "大腿四頭筋",
-        "大内転筋"
-      ],
-      "referenceCycleSeconds": 6,
-      "keywords": [
-        "背中",
-        "脊柱起立筋",
-        "はむすとりんぐす",
-        "ハムストリングス"
-      ],
-      "variant": "床から引き上げるフォーム",
-      "point": "股関節の動きに合わせて、お尻と太ももの裏の筋肉がどう変わるかに注目。",
-      "views": [
-        {
-          "id": "oblique",
-          "label": "斜め",
-          "poster": "img/atlas/posters/deadlift.webp",
-          "video": null
-        }
-      ]
-    },
-    {
-      "id": "squat",
-      "name": "スクワット",
-      "regions": [
-        "legs"
-      ],
-      "equipment": "バーベル",
-      "primary": [
-        "大腿四頭筋",
-        "大臀筋"
-      ],
-      "assist": [
-        "大内転筋"
-      ],
-      "referenceCycleSeconds": 6.5,
-      "variant": "背中の上部でバーを支えるフォーム",
-      "point": "しゃがむ動作と立ち上がる動作で、太ももの前とお尻の筋肉を見比べる。",
-      "views": [
-        {
-          "id": "oblique",
-          "label": "斜め",
-          "poster": "img/atlas/posters/squat.webp",
-          "video": null
-        }
-      ]
-    },
-    {
-      "id": "close-grip-bench",
-      "name": "ナローベンチプレス",
-      "regions": [
-        "arms"
-      ],
-      "equipment": "",
-      "primary": [
-        "上腕三頭筋"
-      ],
-      "assist": [
-        "大胸筋・三角筋前部"
-      ],
-      "stableLabel": "姿勢の保持・把持",
-      "primaryRoleLabel": "主導",
-      "assistRoleLabel": "協働",
-      "referenceCycleSeconds": 6.5,
       "variant": "",
-      "point": "脇を自然に開き、みぞおちへ。",
-      "recordingVersion": "v20260918-5f906701",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "ベンチを斜めに起こし、ダンベルを胸の上部から真上へ押し上げる種目。",
+      "primary": [
+        "大胸筋（上部）",
+        "大胸筋（中部・下部）"
+      ],
+      "assist": [
+        "三角筋（前部・中部）",
+        "上腕三頭筋"
+      ],
       "views": [
         {
           "id": "a000",
           "label": "0°",
           "angleDegrees": 0,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/close-grip-bench/v20260918-5f906701/poster-000.webp",
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/incline-dumbbell-press/v20260910-c5f198ec/poster-000.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/close-grip-bench/v20260918-5f906701/view-000.mp4"
+          "videoKey": "exercises/incline-dumbbell-press/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
         },
         {
           "id": "a045",
           "label": "45°",
           "angleDegrees": 45,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/close-grip-bench/v20260918-5f906701/poster-045.webp",
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/incline-dumbbell-press/v20260910-c5f198ec/poster-045.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/close-grip-bench/v20260918-5f906701/view-045.mp4"
+          "videoKey": "exercises/incline-dumbbell-press/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
         },
         {
           "id": "a090",
           "label": "90°",
           "angleDegrees": 90,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/close-grip-bench/v20260918-5f906701/poster-090.webp",
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/incline-dumbbell-press/v20260910-c5f198ec/poster-090.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/close-grip-bench/v20260918-5f906701/view-090.mp4"
+          "videoKey": "exercises/incline-dumbbell-press/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
         },
         {
           "id": "a135",
           "label": "135°",
           "angleDegrees": 135,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/close-grip-bench/v20260918-5f906701/poster-135.webp",
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/incline-dumbbell-press/v20260910-c5f198ec/poster-135.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/close-grip-bench/v20260918-5f906701/view-135.mp4"
+          "videoKey": "exercises/incline-dumbbell-press/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
         },
         {
           "id": "a180",
           "label": "180°",
           "angleDegrees": 180,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/close-grip-bench/v20260918-5f906701/poster-180.webp",
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/incline-dumbbell-press/v20260910-c5f198ec/poster-180.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/close-grip-bench/v20260918-5f906701/view-180.mp4"
+          "videoKey": "exercises/incline-dumbbell-press/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
         }
       ]
     },
     {
-      "id": "triceps-pushdown",
-      "name": "トライセップスプレスダウン",
+      "id": "incline-bench-press",
+      "name": "インクラインベンチプレス",
       "regions": [
-        "arms"
+        "chest"
       ],
-      "equipment": "",
+      "variant": "30°",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260918-5f906701",
+      "description": "斜めにしたベンチでバーベルを上部胸筋に向けて押し上げる種目。",
       "primary": [
-        "上腕三頭筋"
+        "大胸筋上部"
+      ],
+      "assist": [
+        "大胸筋中部・下部・三角筋前部・上腕三頭筋"
+      ],
+      "primaryRoleLabel": "主導",
+      "assistRoleLabel": "協働",
+      "stableLabel": "姿勢の保持・把持",
+      "point": "肩と臀部をベンチに支え、胸を少し高く保ってバーベルを押し上げる。",
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/incline-bench-press/v20260918-5f906701/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/incline-bench-press/v20260918-5f906701/view-000.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/incline-bench-press/v20260918-5f906701/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/incline-bench-press/v20260918-5f906701/view-045.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/incline-bench-press/v20260918-5f906701/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/incline-bench-press/v20260918-5f906701/view-090.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/incline-bench-press/v20260918-5f906701/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/incline-bench-press/v20260918-5f906701/view-135.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/incline-bench-press/v20260918-5f906701/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/incline-bench-press/v20260918-5f906701/view-180.mp4",
+          "durationSeconds": 6.0
+        }
+      ]
+    },
+    {
+      "id": "cable-crossover",
+      "name": "ケーブルクロスオーバー",
+      "regions": [
+        "chest"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "左右のケーブルを胸の前で交差させるように引き寄せ、大胸筋を絞る種目。",
+      "primary": [
+        "大胸筋（中部・下部）"
       ],
       "assist": [],
-      "stableLabel": "姿勢保持・把持：肩・体幹・前腕",
-      "primaryRoleLabel": "主導",
-      "assistRoleLabel": "協働",
-      "referenceCycleSeconds": 6.5,
-      "variant": "",
-      "point": "軽く前傾し、上腕を体側に保って押し下げ、ゆっくり戻す。",
-      "recordingVersion": "v20260918-5f906701",
       "views": [
         {
           "id": "a000",
           "label": "0°",
           "angleDegrees": 0,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/triceps-pushdown/v20260918-5f906701/poster-000.webp",
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/cable-crossover/v20260910-c5f198ec/poster-000.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/triceps-pushdown/v20260918-5f906701/view-000.mp4"
+          "videoKey": "exercises/cable-crossover/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a045",
           "label": "45°",
           "angleDegrees": 45,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/triceps-pushdown/v20260918-5f906701/poster-045.webp",
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/cable-crossover/v20260910-c5f198ec/poster-045.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/triceps-pushdown/v20260918-5f906701/view-045.mp4"
+          "videoKey": "exercises/cable-crossover/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a090",
           "label": "90°",
           "angleDegrees": 90,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/triceps-pushdown/v20260918-5f906701/poster-090.webp",
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/cable-crossover/v20260910-c5f198ec/poster-090.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/triceps-pushdown/v20260918-5f906701/view-090.mp4"
+          "videoKey": "exercises/cable-crossover/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a135",
           "label": "135°",
           "angleDegrees": 135,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/triceps-pushdown/v20260918-5f906701/poster-135.webp",
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/cable-crossover/v20260910-c5f198ec/poster-135.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/triceps-pushdown/v20260918-5f906701/view-135.mp4"
+          "videoKey": "exercises/cable-crossover/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a180",
           "label": "180°",
           "angleDegrees": 180,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/triceps-pushdown/v20260918-5f906701/poster-180.webp",
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/cable-crossover/v20260910-c5f198ec/poster-180.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/triceps-pushdown/v20260918-5f906701/view-180.mp4"
+          "videoKey": "exercises/cable-crossover/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.0
         }
       ]
     },
     {
-      "id": "one-arm-row",
-      "name": "ワンハンドダンベルロー",
-      "regions": [
-        "back"
-      ],
-      "equipment": "ベンチ支持",
-      "primary": [
-        "右の広背筋・僧帽筋中部・大円筋"
-      ],
-      "assist": [
-        "右の上腕二頭筋・三角筋後部"
-      ],
-      "stableLabel": "姿勢の保持・把持",
-      "primaryRoleLabel": "主導",
-      "assistRoleLabel": "協働",
-      "referenceCycleSeconds": 6,
-      "variant": "右・ベンチ支持",
-      "point": "左手・左膝と右足で支え、身体のひねりを抑えて右のダンベルを腰へ引く。",
-      "recordingVersion": "v20260918-5f906701",
-      "views": [
-        {
-          "id": "a000",
-          "label": "0°",
-          "angleDegrees": 0,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/one-arm-row/v20260918-5f906701/poster-000.webp",
-          "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/one-arm-row/v20260918-5f906701/view-000.mp4"
-        },
-        {
-          "id": "a045",
-          "label": "45°",
-          "angleDegrees": 45,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/one-arm-row/v20260918-5f906701/poster-045.webp",
-          "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/one-arm-row/v20260918-5f906701/view-045.mp4"
-        },
-        {
-          "id": "a090",
-          "label": "90°",
-          "angleDegrees": 90,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/one-arm-row/v20260918-5f906701/poster-090.webp",
-          "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/one-arm-row/v20260918-5f906701/view-090.mp4"
-        },
-        {
-          "id": "a135",
-          "label": "135°",
-          "angleDegrees": 135,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/one-arm-row/v20260918-5f906701/poster-135.webp",
-          "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/one-arm-row/v20260918-5f906701/view-135.mp4"
-        },
-        {
-          "id": "a180",
-          "label": "180°",
-          "angleDegrees": 180,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/one-arm-row/v20260918-5f906701/poster-180.webp",
-          "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/one-arm-row/v20260918-5f906701/view-180.mp4"
-        }
-      ]
-    },
-    {
-      "id": "face-pull",
-      "name": "フェイスプル",
-      "regions": [
-        "shoulders"
-      ],
-      "equipment": "ロープ",
-      "primary": [
-        "三角筋後部"
-      ],
-      "assist": [
-        "僧帽筋中部・小円筋・上腕二頭筋"
-      ],
-      "stableLabel": "姿勢の保持・把持",
-      "primaryRoleLabel": "主導",
-      "assistRoleLabel": "協働",
-      "referenceCycleSeconds": 6.5,
-      "variant": "立位・ロープ",
-      "point": "肘を左右へ開き、ロープを顔の両側へ引き寄せる。",
-      "recordingVersion": "v20260918-5f906701",
-      "views": [
-        {
-          "id": "a000",
-          "label": "0°",
-          "angleDegrees": 0,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/face-pull/v20260918-5f906701/poster-000.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/face-pull/v20260918-5f906701/view-000.mp4"
-        },
-        {
-          "id": "a045",
-          "label": "45°",
-          "angleDegrees": 45,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/face-pull/v20260918-5f906701/poster-045.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/face-pull/v20260918-5f906701/view-045.mp4"
-        },
-        {
-          "id": "a090",
-          "label": "90°",
-          "angleDegrees": 90,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/face-pull/v20260918-5f906701/poster-090.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/face-pull/v20260918-5f906701/view-090.mp4"
-        },
-        {
-          "id": "a135",
-          "label": "135°",
-          "angleDegrees": 135,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/face-pull/v20260918-5f906701/poster-135.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/face-pull/v20260918-5f906701/view-135.mp4"
-        },
-        {
-          "id": "a180",
-          "label": "180°",
-          "angleDegrees": 180,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/face-pull/v20260918-5f906701/poster-180.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/face-pull/v20260918-5f906701/view-180.mp4"
-        }
-      ]
-    },
-    {
-      "id": "cable-side-raise",
-      "name": "ケーブルサイドレイズ",
-      "regions": [
-        "shoulders"
-      ],
-      "equipment": "低いプーリー",
-      "primary": [
-        "右の三角筋中部"
-      ],
-      "assist": [
-        "右の三角筋前部・僧帽筋上下部"
-      ],
-      "stableLabel": "姿勢の保持・把持",
-      "primaryRoleLabel": "主導",
-      "assistRoleLabel": "協働",
-      "referenceCycleSeconds": 6.5,
-      "variant": "右・低いプーリー",
-      "point": "体幹を安定させ、右肘を軽く曲げたまま腕を横へ上げる。",
-      "recordingVersion": "v20260918-5f906701",
-      "views": [
-        {
-          "id": "a000",
-          "label": "0°",
-          "angleDegrees": 0,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/cable-side-raise/v20260918-5f906701/poster-000.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/cable-side-raise/v20260918-5f906701/view-000.mp4"
-        },
-        {
-          "id": "a045",
-          "label": "45°",
-          "angleDegrees": 45,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/cable-side-raise/v20260918-5f906701/poster-045.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/cable-side-raise/v20260918-5f906701/view-045.mp4"
-        },
-        {
-          "id": "a090",
-          "label": "90°",
-          "angleDegrees": 90,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/cable-side-raise/v20260918-5f906701/poster-090.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/cable-side-raise/v20260918-5f906701/view-090.mp4"
-        },
-        {
-          "id": "a135",
-          "label": "135°",
-          "angleDegrees": 135,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/cable-side-raise/v20260918-5f906701/poster-135.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/cable-side-raise/v20260918-5f906701/view-135.mp4"
-        },
-        {
-          "id": "a180",
-          "label": "180°",
-          "angleDegrees": 180,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/cable-side-raise/v20260918-5f906701/poster-180.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/cable-side-raise/v20260918-5f906701/view-180.mp4"
-        }
-      ]
-    },
-    {
-      "id": "lunge",
-      "name": "ランジ",
-      "regions": [
-        "legs"
-      ],
-      "equipment": "ダンベル",
-      "primary": [
-        "右の大腿四頭筋・大臀筋"
-      ],
-      "assist": [
-        "右のハムストリングス・大内転筋"
-      ],
-      "stableLabel": "姿勢の保持：後脚・体幹・腕",
-      "primaryRoleLabel": "主導",
-      "assistRoleLabel": "協働",
-      "referenceCycleSeconds": 6.5,
-      "variant": "右脚前・ダンベル",
-      "point": "右足を前へ踏み出し、足裏で支えて沈み込み、元の立位に戻る。",
-      "recordingVersion": "v20260918-5f906701",
-      "views": [
-        {
-          "id": "a000",
-          "label": "0°",
-          "angleDegrees": 0,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/lunge/v20260918-5f906701/poster-000.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/lunge/v20260918-5f906701/view-000.mp4"
-        },
-        {
-          "id": "a045",
-          "label": "45°",
-          "angleDegrees": 45,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/lunge/v20260918-5f906701/poster-045.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/lunge/v20260918-5f906701/view-045.mp4"
-        },
-        {
-          "id": "a090",
-          "label": "90°",
-          "angleDegrees": 90,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/lunge/v20260918-5f906701/poster-090.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/lunge/v20260918-5f906701/view-090.mp4"
-        },
-        {
-          "id": "a135",
-          "label": "135°",
-          "angleDegrees": 135,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/lunge/v20260918-5f906701/poster-135.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/lunge/v20260918-5f906701/view-135.mp4"
-        },
-        {
-          "id": "a180",
-          "label": "180°",
-          "angleDegrees": 180,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/lunge/v20260918-5f906701/poster-180.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/lunge/v20260918-5f906701/view-180.mp4"
-        }
-      ]
-    },
-    {
-      "id": "smith-squat",
-      "name": "スミスマシンスクワット",
-      "regions": [
-        "legs"
-      ],
-      "equipment": "垂直レール",
-      "primary": [
-        "大腿四頭筋・大臀筋"
-      ],
-      "assist": [
-        "大内転筋"
-      ],
-      "stableLabel": "姿勢の保持・把持",
-      "primaryRoleLabel": "主導",
-      "assistRoleLabel": "協働",
-      "referenceCycleSeconds": 6.5,
-      "variant": "垂直レール",
-      "point": "バーを背中の上部で支え、足裏を固定してレールに沿ってしゃがむ。",
-      "recordingVersion": "v20260918-5f906701",
-      "views": [
-        {
-          "id": "a000",
-          "label": "0°",
-          "angleDegrees": 0,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/smith-squat/v20260918-5f906701/poster-000.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/smith-squat/v20260918-5f906701/view-000.mp4"
-        },
-        {
-          "id": "a045",
-          "label": "45°",
-          "angleDegrees": 45,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/smith-squat/v20260918-5f906701/poster-045.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/smith-squat/v20260918-5f906701/view-045.mp4"
-        },
-        {
-          "id": "a090",
-          "label": "90°",
-          "angleDegrees": 90,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/smith-squat/v20260918-5f906701/poster-090.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/smith-squat/v20260918-5f906701/view-090.mp4"
-        },
-        {
-          "id": "a135",
-          "label": "135°",
-          "angleDegrees": 135,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/smith-squat/v20260918-5f906701/poster-135.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/smith-squat/v20260918-5f906701/view-135.mp4"
-        },
-        {
-          "id": "a180",
-          "label": "180°",
-          "angleDegrees": 180,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/smith-squat/v20260918-5f906701/poster-180.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/smith-squat/v20260918-5f906701/view-180.mp4"
-        }
-      ]
-    },
-    {
-      "id": "hack-squat",
-      "name": "ハックスクワット",
-      "regions": [
-        "legs"
-      ],
-      "equipment": "",
-      "primary": [
-        "大腿四頭筋・大臀筋"
-      ],
-      "assist": [
-        "大内転筋"
-      ],
-      "stableLabel": "姿勢の保持・把持",
-      "primaryRoleLabel": "主導",
-      "assistRoleLabel": "協働",
-      "referenceCycleSeconds": 6.5,
-      "variant": "45°・背中支持",
-      "point": "背中と肩をパッドで支え、足裏をプレートにつけて斜めのレールに沿って上下する。",
-      "recordingVersion": "v20260918-5f906701",
-      "views": [
-        {
-          "id": "a000",
-          "label": "0°",
-          "angleDegrees": 0,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/hack-squat/v20260918-5f906701/poster-000.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/hack-squat/v20260918-5f906701/view-000.mp4"
-        },
-        {
-          "id": "a045",
-          "label": "45°",
-          "angleDegrees": 45,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/hack-squat/v20260918-5f906701/poster-045.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/hack-squat/v20260918-5f906701/view-045.mp4"
-        },
-        {
-          "id": "a090",
-          "label": "90°",
-          "angleDegrees": 90,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/hack-squat/v20260918-5f906701/poster-090.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/hack-squat/v20260918-5f906701/view-090.mp4"
-        },
-        {
-          "id": "a135",
-          "label": "135°",
-          "angleDegrees": 135,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/hack-squat/v20260918-5f906701/poster-135.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/hack-squat/v20260918-5f906701/view-135.mp4"
-        },
-        {
-          "id": "a180",
-          "label": "180°",
-          "angleDegrees": 180,
-          "pitchDegrees": 18,
-          "poster": "img/atlas/posters/hack-squat/v20260918-5f906701/poster-180.webp",
-          "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/hack-squat/v20260918-5f906701/view-180.mp4"
-        }
-      ]
-    },
-    {
-      "id": "machine-chest-press",
-      "name": "マシンチェストプレス",
+      "id": "smith-bench-press",
+      "name": "スミスマシンベンチプレス",
       "regions": [
         "chest"
       ],
-      "equipment": "",
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-e59540bf",
+      "description": "軌道が固定されたスミスマシンで行うベンチプレス。安定して重量を扱える。",
       "primary": [
-        "大胸筋"
+        "大胸筋（中部・下部）"
       ],
       "assist": [
-        "三角筋前部・上腕三頭筋"
+        "大胸筋（上部）",
+        "三角筋（前部・中部）",
+        "上腕三頭筋"
       ],
-      "stableLabel": "姿勢の保持・把持",
-      "primaryRoleLabel": "主導",
-      "assistRoleLabel": "協働",
-      "referenceCycleSeconds": 6.5,
-      "variant": "",
-      "point": "背もたれで体を支え、胸の高さからレバーを前へ押す。",
-      "recordingVersion": "v20260918-5f906701",
       "views": [
         {
           "id": "a000",
           "label": "0°",
           "angleDegrees": 0,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/machine-chest-press/v20260918-5f906701/poster-000.webp",
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/smith-bench-press/v20260910-e59540bf/poster-000.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/machine-chest-press/v20260918-5f906701/view-000.mp4"
+          "videoKey": "exercises/smith-bench-press/v20260910-e59540bf/view-000.mp4",
+          "durationSeconds": 6.5
         },
         {
           "id": "a045",
           "label": "45°",
           "angleDegrees": 45,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/machine-chest-press/v20260918-5f906701/poster-045.webp",
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/smith-bench-press/v20260910-e59540bf/poster-045.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/machine-chest-press/v20260918-5f906701/view-045.mp4"
+          "videoKey": "exercises/smith-bench-press/v20260910-e59540bf/view-045.mp4",
+          "durationSeconds": 6.5
         },
         {
           "id": "a090",
           "label": "90°",
           "angleDegrees": 90,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/machine-chest-press/v20260918-5f906701/poster-090.webp",
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/smith-bench-press/v20260910-e59540bf/poster-090.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/machine-chest-press/v20260918-5f906701/view-090.mp4"
+          "videoKey": "exercises/smith-bench-press/v20260910-e59540bf/view-090.mp4",
+          "durationSeconds": 6.5
         },
         {
           "id": "a135",
           "label": "135°",
           "angleDegrees": 135,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/machine-chest-press/v20260918-5f906701/poster-135.webp",
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/smith-bench-press/v20260910-e59540bf/poster-135.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/machine-chest-press/v20260918-5f906701/view-135.mp4"
+          "videoKey": "exercises/smith-bench-press/v20260910-e59540bf/view-135.mp4",
+          "durationSeconds": 6.5
         },
         {
           "id": "a180",
           "label": "180°",
           "angleDegrees": 180,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/machine-chest-press/v20260918-5f906701/poster-180.webp",
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/smith-bench-press/v20260910-e59540bf/poster-180.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/machine-chest-press/v20260918-5f906701/view-180.mp4"
+          "videoKey": "exercises/smith-bench-press/v20260910-e59540bf/view-180.mp4",
+          "durationSeconds": 6.5
         }
       ]
     },
     {
-      "id": "decline-bench-press",
-      "name": "デクラインベンチプレス",
+      "id": "dumbbell-fly",
+      "name": "ダンベルフライ",
       "regions": [
         "chest"
       ],
-      "equipment": "",
+      "variant": "",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "仰向けでダンベルを弧を描くように開閉し、胸を横に伸縮させる種目。",
       "primary": [
-        "大胸筋中部・下部"
+        "大胸筋（中部・下部）"
       ],
       "assist": [
-        "大胸筋上部・上腕三頭筋・三角筋前部"
+        "大胸筋（上部）",
+        "三角筋（前部・中部）"
       ],
-      "stableLabel": "姿勢の保持・把持",
-      "primaryRoleLabel": "主導",
-      "assistRoleLabel": "協働",
-      "referenceCycleSeconds": 6,
-      "variant": "−15°",
-      "point": "足をパッドに固定し、胸を軽く張った姿勢でバーベルを押し上げる。",
-      "recordingVersion": "v20260918-5f906701",
       "views": [
         {
           "id": "a000",
           "label": "0°",
           "angleDegrees": 0,
-          "pitchDegrees": 29.999999999999996,
-          "poster": "img/atlas/posters/decline-bench-press/v20260918-5f906701/poster-000.webp",
+          "pitchDegrees": 50,
+          "poster": "img/atlas/posters/dumbbell-fly/v20260910-c5f198ec/poster-000.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/decline-bench-press/v20260918-5f906701/view-000.mp4"
+          "videoKey": "exercises/dumbbell-fly/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a045",
           "label": "45°",
           "angleDegrees": 45,
-          "pitchDegrees": 29.999999999999996,
-          "poster": "img/atlas/posters/decline-bench-press/v20260918-5f906701/poster-045.webp",
+          "pitchDegrees": 50,
+          "poster": "img/atlas/posters/dumbbell-fly/v20260910-c5f198ec/poster-045.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/decline-bench-press/v20260918-5f906701/view-045.mp4"
+          "videoKey": "exercises/dumbbell-fly/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a090",
           "label": "90°",
           "angleDegrees": 90,
-          "pitchDegrees": 29.999999999999996,
-          "poster": "img/atlas/posters/decline-bench-press/v20260918-5f906701/poster-090.webp",
+          "pitchDegrees": 50,
+          "poster": "img/atlas/posters/dumbbell-fly/v20260910-c5f198ec/poster-090.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/decline-bench-press/v20260918-5f906701/view-090.mp4"
+          "videoKey": "exercises/dumbbell-fly/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a135",
           "label": "135°",
           "angleDegrees": 135,
-          "pitchDegrees": 29.999999999999996,
-          "poster": "img/atlas/posters/decline-bench-press/v20260918-5f906701/poster-135.webp",
+          "pitchDegrees": 50,
+          "poster": "img/atlas/posters/dumbbell-fly/v20260910-c5f198ec/poster-135.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/decline-bench-press/v20260918-5f906701/view-135.mp4"
+          "videoKey": "exercises/dumbbell-fly/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a180",
           "label": "180°",
           "angleDegrees": 180,
-          "pitchDegrees": 29.999999999999996,
-          "poster": "img/atlas/posters/decline-bench-press/v20260918-5f906701/poster-180.webp",
+          "pitchDegrees": 50,
+          "poster": "img/atlas/posters/dumbbell-fly/v20260910-c5f198ec/poster-180.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/decline-bench-press/v20260918-5f906701/view-180.mp4"
+          "videoKey": "exercises/dumbbell-fly/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.0
         }
       ]
     },
@@ -841,20 +368,21 @@
         "chest",
         "arms"
       ],
+      "variant": "平行バー",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260918-5f906701",
       "equipment": "平行バー",
+      "description": "平行棒に体を預け、腕を曲げ伸ばして体を上下させる自重種目。",
       "primary": [
         "大胸筋中部・下部・上腕三頭筋"
       ],
       "assist": [
         "大胸筋上部・三角筋前部"
       ],
-      "stableLabel": "姿勢の保持・把持",
       "primaryRoleLabel": "主導",
       "assistRoleLabel": "協働",
-      "referenceCycleSeconds": 6,
-      "variant": "平行バー",
+      "stableLabel": "姿勢の保持・把持",
       "point": "胸を少し前へ傾け、膝を曲げて足を浮かせたまま身体を上下させる。",
-      "recordingVersion": "v20260918-5f906701",
       "views": [
         {
           "id": "a000",
@@ -863,8 +391,8 @@
           "pitchDegrees": 12,
           "poster": "img/atlas/posters/dips/v20260918-5f906701/poster-000.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/dips/v20260918-5f906701/view-000.mp4"
+          "videoKey": "exercises/dips/v20260918-5f906701/view-000.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a045",
@@ -873,8 +401,8 @@
           "pitchDegrees": 12,
           "poster": "img/atlas/posters/dips/v20260918-5f906701/poster-045.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/dips/v20260918-5f906701/view-045.mp4"
+          "videoKey": "exercises/dips/v20260918-5f906701/view-045.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a090",
@@ -883,8 +411,8 @@
           "pitchDegrees": 12,
           "poster": "img/atlas/posters/dips/v20260918-5f906701/poster-090.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/dips/v20260918-5f906701/view-090.mp4"
+          "videoKey": "exercises/dips/v20260918-5f906701/view-090.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a135",
@@ -893,8 +421,8 @@
           "pitchDegrees": 12,
           "poster": "img/atlas/posters/dips/v20260918-5f906701/poster-135.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/dips/v20260918-5f906701/view-135.mp4"
+          "videoKey": "exercises/dips/v20260918-5f906701/view-135.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a180",
@@ -903,227 +431,508 @@
           "pitchDegrees": 12,
           "poster": "img/atlas/posters/dips/v20260918-5f906701/poster-180.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/dips/v20260918-5f906701/view-180.mp4"
+          "videoKey": "exercises/dips/v20260918-5f906701/view-180.mp4",
+          "durationSeconds": 6.0
         }
       ]
     },
     {
-      "id": "ez-bar-curl",
-      "name": "EZバーカール",
-      "regions": [
-        "arms"
-      ],
-      "equipment": "",
-      "primary": [
-        "上腕二頭筋"
-      ],
-      "assist": [
-        "腕橈骨筋"
-      ],
-      "stableLabel": "姿勢の保持・把持",
-      "primaryRoleLabel": "主導",
-      "assistRoleLabel": "協働",
-      "referenceCycleSeconds": 6,
-      "variant": "立位",
-      "point": "バーの傾斜に沿って握り、上腕を体側に保って肘を曲げ伸ばしする。",
-      "recordingVersion": "v20260918-5f906701",
-      "views": [
-        {
-          "id": "a000",
-          "label": "0°",
-          "angleDegrees": 0,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/ez-bar-curl/v20260918-5f906701/poster-000.webp",
-          "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/ez-bar-curl/v20260918-5f906701/view-000.mp4"
-        },
-        {
-          "id": "a045",
-          "label": "45°",
-          "angleDegrees": 45,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/ez-bar-curl/v20260918-5f906701/poster-045.webp",
-          "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/ez-bar-curl/v20260918-5f906701/view-045.mp4"
-        },
-        {
-          "id": "a090",
-          "label": "90°",
-          "angleDegrees": 90,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/ez-bar-curl/v20260918-5f906701/poster-090.webp",
-          "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/ez-bar-curl/v20260918-5f906701/view-090.mp4"
-        },
-        {
-          "id": "a135",
-          "label": "135°",
-          "angleDegrees": 135,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/ez-bar-curl/v20260918-5f906701/poster-135.webp",
-          "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/ez-bar-curl/v20260918-5f906701/view-135.mp4"
-        },
-        {
-          "id": "a180",
-          "label": "180°",
-          "angleDegrees": 180,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/ez-bar-curl/v20260918-5f906701/poster-180.webp",
-          "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/ez-bar-curl/v20260918-5f906701/view-180.mp4"
-        }
-      ]
-    },
-    {
-      "id": "incline-bench-press",
-      "name": "インクラインベンチプレス",
+      "id": "decline-bench-press",
+      "name": "デクラインベンチプレス",
       "regions": [
         "chest"
       ],
-      "equipment": "",
+      "variant": "−15°",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260918-5f906701",
+      "description": "ベンチを下向きに傾け、バーベルを下部胸筋に向けて押し上げる種目。",
       "primary": [
-        "大胸筋上部"
+        "大胸筋中部・下部"
       ],
       "assist": [
-        "大胸筋中部・下部・三角筋前部・上腕三頭筋"
+        "大胸筋上部・上腕三頭筋・三角筋前部"
       ],
-      "stableLabel": "姿勢の保持・把持",
       "primaryRoleLabel": "主導",
       "assistRoleLabel": "協働",
-      "referenceCycleSeconds": 6,
-      "variant": "30°",
-      "point": "肩と臀部をベンチに支え、胸を少し高く保ってバーベルを押し上げる。",
-      "recordingVersion": "v20260918-5f906701",
+      "stableLabel": "姿勢の保持・把持",
+      "point": "足をパッドに固定し、胸を軽く張った姿勢でバーベルを押し上げる。",
       "views": [
         {
           "id": "a000",
           "label": "0°",
           "angleDegrees": 0,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/incline-bench-press/v20260918-5f906701/poster-000.webp",
+          "pitchDegrees": 30,
+          "poster": "img/atlas/posters/decline-bench-press/v20260918-5f906701/poster-000.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/incline-bench-press/v20260918-5f906701/view-000.mp4"
+          "videoKey": "exercises/decline-bench-press/v20260918-5f906701/view-000.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a045",
           "label": "45°",
           "angleDegrees": 45,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/incline-bench-press/v20260918-5f906701/poster-045.webp",
+          "pitchDegrees": 30,
+          "poster": "img/atlas/posters/decline-bench-press/v20260918-5f906701/poster-045.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/incline-bench-press/v20260918-5f906701/view-045.mp4"
+          "videoKey": "exercises/decline-bench-press/v20260918-5f906701/view-045.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a090",
           "label": "90°",
           "angleDegrees": 90,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/incline-bench-press/v20260918-5f906701/poster-090.webp",
+          "pitchDegrees": 30,
+          "poster": "img/atlas/posters/decline-bench-press/v20260918-5f906701/poster-090.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/incline-bench-press/v20260918-5f906701/view-090.mp4"
+          "videoKey": "exercises/decline-bench-press/v20260918-5f906701/view-090.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a135",
           "label": "135°",
           "angleDegrees": 135,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/incline-bench-press/v20260918-5f906701/poster-135.webp",
+          "pitchDegrees": 30,
+          "poster": "img/atlas/posters/decline-bench-press/v20260918-5f906701/poster-135.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/incline-bench-press/v20260918-5f906701/view-135.mp4"
+          "videoKey": "exercises/decline-bench-press/v20260918-5f906701/view-135.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a180",
           "label": "180°",
           "angleDegrees": 180,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/incline-bench-press/v20260918-5f906701/poster-180.webp",
+          "pitchDegrees": 30,
+          "poster": "img/atlas/posters/decline-bench-press/v20260918-5f906701/poster-180.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/incline-bench-press/v20260918-5f906701/view-180.mp4"
+          "videoKey": "exercises/decline-bench-press/v20260918-5f906701/view-180.mp4",
+          "durationSeconds": 6.0
         }
       ]
     },
     {
-      "id": "seated-row",
-      "name": "シーテッドロー",
+      "id": "pushup",
+      "name": "プッシュアップ",
       "regions": [
-        "back"
+        "chest"
       ],
-      "equipment": "ケーブル",
+      "variant": "",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "床に手をつき、体を一直線に保ったまま腕を曲げ伸ばす自重の基本種目。",
       "primary": [
-        "広背筋・僧帽筋中部・大円筋"
+        "大胸筋（中部・下部）"
       ],
       "assist": [
-        "三角筋後部・上腕二頭筋・僧帽筋下部"
+        "三角筋（前部・中部）",
+        "上腕三頭筋"
       ],
-      "stableLabel": "姿勢の保持・把持",
-      "primaryRoleLabel": "主導",
-      "assistRoleLabel": "協働",
-      "referenceCycleSeconds": 6,
-      "variant": "ケーブル",
-      "point": "足をプレートに置き、胸を張った姿勢でハンドルを腹部へ引く。",
-      "recordingVersion": "v20260918-5f906701",
       "views": [
         {
           "id": "a000",
           "label": "0°",
           "angleDegrees": 0,
           "pitchDegrees": 18,
-          "poster": "img/atlas/posters/seated-row/v20260918-5f906701/poster-000.webp",
+          "poster": "img/atlas/posters/pushup/v20260910-c5f198ec/poster-000.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/seated-row/v20260918-5f906701/view-000.mp4"
+          "videoKey": "exercises/pushup/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a045",
           "label": "45°",
           "angleDegrees": 45,
           "pitchDegrees": 18,
-          "poster": "img/atlas/posters/seated-row/v20260918-5f906701/poster-045.webp",
+          "poster": "img/atlas/posters/pushup/v20260910-c5f198ec/poster-045.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/seated-row/v20260918-5f906701/view-045.mp4"
+          "videoKey": "exercises/pushup/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a090",
           "label": "90°",
           "angleDegrees": 90,
           "pitchDegrees": 18,
-          "poster": "img/atlas/posters/seated-row/v20260918-5f906701/poster-090.webp",
+          "poster": "img/atlas/posters/pushup/v20260910-c5f198ec/poster-090.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/seated-row/v20260918-5f906701/view-090.mp4"
+          "videoKey": "exercises/pushup/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a135",
           "label": "135°",
           "angleDegrees": 135,
           "pitchDegrees": 18,
-          "poster": "img/atlas/posters/seated-row/v20260918-5f906701/poster-135.webp",
+          "poster": "img/atlas/posters/pushup/v20260910-c5f198ec/poster-135.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/seated-row/v20260918-5f906701/view-135.mp4"
+          "videoKey": "exercises/pushup/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.0
         },
         {
           "id": "a180",
           "label": "180°",
           "angleDegrees": 180,
           "pitchDegrees": 18,
-          "poster": "img/atlas/posters/seated-row/v20260918-5f906701/poster-180.webp",
+          "poster": "img/atlas/posters/pushup/v20260910-c5f198ec/poster-180.webp",
           "video": null,
-          "durationSeconds": 6,
-          "videoKey": "exercises/seated-row/v20260918-5f906701/view-180.mp4"
+          "videoKey": "exercises/pushup/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.0
+        }
+      ]
+    },
+    {
+      "id": "bench-press",
+      "name": "ベンチプレス",
+      "regions": [
+        "chest"
+      ],
+      "variant": "ブリッジを組んだフォーム",
+      "referenceCycleSeconds": 4,
+      "recordingVersion": "v20260910-c5f198ec",
+      "equipment": "バーベル",
+      "description": "仰向けでバーベルを胸まで下ろし、まっすぐ押し上げる筋トレの基本種目。",
+      "primary": [
+        "大胸筋（中部・下部）"
+      ],
+      "assist": [
+        "大胸筋（上部）",
+        "三角筋（前部・中部）",
+        "上腕三頭筋"
+      ],
+      "point": "バーを下ろすときと押し上げるときで、大胸筋の形がどう変わるかに注目。",
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 30,
+          "poster": "img/atlas/posters/bench-press/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/bench-press/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 4.0
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 30,
+          "poster": "img/atlas/posters/bench-press/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/bench-press/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 4.0
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 30,
+          "poster": "img/atlas/posters/bench-press/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/bench-press/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 4.0
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 30,
+          "poster": "img/atlas/posters/bench-press/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/bench-press/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 4.0
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 30,
+          "poster": "img/atlas/posters/bench-press/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/bench-press/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 4.0
+        }
+      ]
+    },
+    {
+      "id": "pec-deck",
+      "name": "ペックフライ",
+      "regions": [
+        "chest"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "マシンに座り、腕を左右から胸の前で閉じるように寄せる種目。",
+      "primary": [
+        "大胸筋（中部・下部）"
+      ],
+      "assist": [
+        "大胸筋（上部）"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/pec-deck/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/pec-deck/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/pec-deck/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/pec-deck/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/pec-deck/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/pec-deck/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/pec-deck/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/pec-deck/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/pec-deck/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/pec-deck/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.0
+        }
+      ]
+    },
+    {
+      "id": "machine-chest-press",
+      "name": "マシンチェストプレス",
+      "regions": [
+        "chest"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260918-5f906701",
+      "description": "軌道が決まったマシンで、ハンドルを前方へ押し出す種目。",
+      "primary": [
+        "大胸筋"
+      ],
+      "assist": [
+        "三角筋前部・上腕三頭筋"
+      ],
+      "primaryRoleLabel": "主導",
+      "assistRoleLabel": "協働",
+      "stableLabel": "姿勢の保持・把持",
+      "point": "背もたれで体を支え、胸の高さからレバーを前へ押す。",
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/machine-chest-press/v20260918-5f906701/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/machine-chest-press/v20260918-5f906701/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/machine-chest-press/v20260918-5f906701/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/machine-chest-press/v20260918-5f906701/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/machine-chest-press/v20260918-5f906701/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/machine-chest-press/v20260918-5f906701/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/machine-chest-press/v20260918-5f906701/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/machine-chest-press/v20260918-5f906701/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/machine-chest-press/v20260918-5f906701/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/machine-chest-press/v20260918-5f906701/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "tbar-row",
+      "name": "Tバーロー",
+      "regions": [
+        "back"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "体を前傾させ、Tバーのシャフトを胸に引き寄せる種目。",
+      "primary": [
+        "広背筋",
+        "僧帽筋"
+      ],
+      "assist": [
+        "三角筋（後部）",
+        "上腕二頭筋"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/tbar-row/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/tbar-row/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/tbar-row/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/tbar-row/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/tbar-row/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/tbar-row/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/tbar-row/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/tbar-row/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/tbar-row/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/tbar-row/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.0
+        }
+      ]
+    },
+    {
+      "id": "supported-tbar-row",
+      "name": "Tバーロー",
+      "regions": [
+        "back"
+      ],
+      "variant": "胸支持・ワイド",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "体を前傾させ、Tバーのシャフトを胸に引き寄せる種目。",
+      "primary": [
+        "広背筋",
+        "僧帽筋"
+      ],
+      "assist": [
+        "三角筋（後部）",
+        "上腕二頭筋"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/supported-tbar-row/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/supported-tbar-row/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/supported-tbar-row/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/supported-tbar-row/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/supported-tbar-row/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/supported-tbar-row/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/supported-tbar-row/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/supported-tbar-row/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/supported-tbar-row/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/supported-tbar-row/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.0
         }
       ]
     },
@@ -1133,18 +942,18 @@
       "regions": [
         "back"
       ],
-      "equipment": "",
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260918-5f906701",
+      "description": "バーベルやダンベルを持ち、肩をまっすぐ上にすくめる種目。",
       "primary": [
         "僧帽筋上部"
       ],
       "assist": [],
-      "stableLabel": "姿勢の保持・把持",
       "primaryRoleLabel": "主導",
       "assistRoleLabel": "協働",
-      "referenceCycleSeconds": 6.5,
-      "variant": "",
+      "stableLabel": "姿勢の保持・把持",
       "point": "肘を伸ばし、首と体幹を保って肩をすくめる。",
-      "recordingVersion": "v20260918-5f906701",
       "views": [
         {
           "id": "a000",
@@ -1153,8 +962,8 @@
           "pitchDegrees": 18,
           "poster": "img/atlas/posters/shrug/v20260918-5f906701/poster-000.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/shrug/v20260918-5f906701/view-000.mp4"
+          "videoKey": "exercises/shrug/v20260918-5f906701/view-000.mp4",
+          "durationSeconds": 6.5
         },
         {
           "id": "a045",
@@ -1163,8 +972,8 @@
           "pitchDegrees": 18,
           "poster": "img/atlas/posters/shrug/v20260918-5f906701/poster-045.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/shrug/v20260918-5f906701/view-045.mp4"
+          "videoKey": "exercises/shrug/v20260918-5f906701/view-045.mp4",
+          "durationSeconds": 6.5
         },
         {
           "id": "a090",
@@ -1173,8 +982,8 @@
           "pitchDegrees": 18,
           "poster": "img/atlas/posters/shrug/v20260918-5f906701/poster-090.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/shrug/v20260918-5f906701/view-090.mp4"
+          "videoKey": "exercises/shrug/v20260918-5f906701/view-090.mp4",
+          "durationSeconds": 6.5
         },
         {
           "id": "a135",
@@ -1183,8 +992,8 @@
           "pitchDegrees": 18,
           "poster": "img/atlas/posters/shrug/v20260918-5f906701/poster-135.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/shrug/v20260918-5f906701/view-135.mp4"
+          "videoKey": "exercises/shrug/v20260918-5f906701/view-135.mp4",
+          "durationSeconds": 6.5
         },
         {
           "id": "a180",
@@ -1193,8 +1002,3651 @@
           "pitchDegrees": 18,
           "poster": "img/atlas/posters/shrug/v20260918-5f906701/poster-180.webp",
           "video": null,
-          "durationSeconds": 6.5,
-          "videoKey": "exercises/shrug/v20260918-5f906701/view-180.mp4"
+          "videoKey": "exercises/shrug/v20260918-5f906701/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "seated-row",
+      "name": "シーテッドロー",
+      "regions": [
+        "back"
+      ],
+      "variant": "ケーブル",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260918-5f906701",
+      "equipment": "ケーブル",
+      "description": "ケーブルマシンに座り、ハンドルを体に引き寄せる種目。",
+      "primary": [
+        "広背筋・僧帽筋中部・大円筋"
+      ],
+      "assist": [
+        "三角筋後部・上腕二頭筋・僧帽筋下部"
+      ],
+      "primaryRoleLabel": "主導",
+      "assistRoleLabel": "協働",
+      "stableLabel": "姿勢の保持・把持",
+      "point": "足をプレートに置き、胸を張った姿勢でハンドルを腹部へ引く。",
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/seated-row/v20260918-5f906701/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/seated-row/v20260918-5f906701/view-000.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/seated-row/v20260918-5f906701/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/seated-row/v20260918-5f906701/view-045.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/seated-row/v20260918-5f906701/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/seated-row/v20260918-5f906701/view-090.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/seated-row/v20260918-5f906701/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/seated-row/v20260918-5f906701/view-135.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/seated-row/v20260918-5f906701/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/seated-row/v20260918-5f906701/view-180.mp4",
+          "durationSeconds": 6.0
+        }
+      ]
+    },
+    {
+      "id": "deadlift",
+      "name": "デッドリフト",
+      "regions": [
+        "back",
+        "legs"
+      ],
+      "variant": "床から引き上げるフォーム",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260910-c5f198ec",
+      "equipment": "バーベル",
+      "description": "床のバーベルを、背中をまっすぐ保ったまま持ち上げる全身種目。",
+      "primary": [
+        "脊柱起立筋（腰椎部）",
+        "臀筋",
+        "ハムストリング"
+      ],
+      "assist": [
+        "僧帽筋",
+        "広背筋",
+        "前腕筋群"
+      ],
+      "point": "股関節の動きに合わせて、お尻と太ももの裏の筋肉がどう変わるかに注目。",
+      "keywords": [
+        "背中",
+        "脊柱起立筋",
+        "はむすとりんぐす",
+        "ハムストリングス"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/deadlift/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/deadlift/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/deadlift/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/deadlift/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/deadlift/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/deadlift/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/deadlift/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/deadlift/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/deadlift/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/deadlift/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.0
+        }
+      ]
+    },
+    {
+      "id": "half-deadlift",
+      "name": "ハーフデッドリフト",
+      "regions": [
+        "back"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "膝の下あたりまでの可動域で行う、通常より浅いデッドリフト。",
+      "primary": [
+        "脊柱起立筋（腰椎部）"
+      ],
+      "assist": [
+        "臀筋",
+        "僧帽筋",
+        "広背筋"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/half-deadlift/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/half-deadlift/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/half-deadlift/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/half-deadlift/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/half-deadlift/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/half-deadlift/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/half-deadlift/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/half-deadlift/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/half-deadlift/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/half-deadlift/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.0
+        }
+      ]
+    },
+    {
+      "id": "back-extension",
+      "name": "バックエクステンション",
+      "regions": [
+        "back"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260910-e59540bf",
+      "description": "台にうつ伏せになり、上体を反らして起こす種目。",
+      "primary": [
+        "脊柱起立筋（腰椎部）"
+      ],
+      "assist": [
+        "臀筋",
+        "ハムストリング"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/back-extension/v20260910-e59540bf/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/back-extension/v20260910-e59540bf/view-000.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/back-extension/v20260910-e59540bf/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/back-extension/v20260910-e59540bf/view-045.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/back-extension/v20260910-e59540bf/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/back-extension/v20260910-e59540bf/view-090.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/back-extension/v20260910-e59540bf/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/back-extension/v20260910-e59540bf/view-135.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/back-extension/v20260910-e59540bf/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/back-extension/v20260910-e59540bf/view-180.mp4",
+          "durationSeconds": 6.0
+        }
+      ]
+    },
+    {
+      "id": "bent-over-row",
+      "name": "ベントオーバーロー",
+      "regions": [
+        "back"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "上体を前傾させ、バーベルを腹の方へ引き上げる種目。",
+      "primary": [
+        "広背筋",
+        "僧帽筋"
+      ],
+      "assist": [
+        "三角筋（後部）",
+        "脊柱起立筋（腰椎部）",
+        "上腕二頭筋"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/bent-over-row/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/bent-over-row/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/bent-over-row/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/bent-over-row/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/bent-over-row/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/bent-over-row/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/bent-over-row/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/bent-over-row/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/bent-over-row/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/bent-over-row/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.0
+        }
+      ]
+    },
+    {
+      "id": "lat-pulldown",
+      "name": "ラットプルダウン",
+      "regions": [
+        "back"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "座った状態でバーを頭上から胸元へ引き下ろす種目。",
+      "primary": [
+        "広背筋",
+        "大円筋・小円筋"
+      ],
+      "assist": [
+        "僧帽筋",
+        "上腕二頭筋"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/lat-pulldown/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/lat-pulldown/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/lat-pulldown/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/lat-pulldown/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/lat-pulldown/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/lat-pulldown/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/lat-pulldown/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/lat-pulldown/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/lat-pulldown/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/lat-pulldown/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.0
+        }
+      ]
+    },
+    {
+      "id": "one-arm-row",
+      "name": "ワンハンドダンベルロー",
+      "regions": [
+        "back"
+      ],
+      "variant": "右・ベンチ支持",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260918-5f906701",
+      "equipment": "ベンチ支持",
+      "description": "片手片膝をベンチに付き、ダンベルを腰の方へ引き上げる種目。",
+      "primary": [
+        "右の広背筋・僧帽筋中部・大円筋"
+      ],
+      "assist": [
+        "右の上腕二頭筋・三角筋後部"
+      ],
+      "primaryRoleLabel": "主導",
+      "assistRoleLabel": "協働",
+      "stableLabel": "姿勢の保持・把持",
+      "point": "左手・左膝と右足で支え、身体のひねりを抑えて右のダンベルを腰へ引く。",
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/one-arm-row/v20260918-5f906701/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/one-arm-row/v20260918-5f906701/view-000.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/one-arm-row/v20260918-5f906701/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/one-arm-row/v20260918-5f906701/view-045.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/one-arm-row/v20260918-5f906701/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/one-arm-row/v20260918-5f906701/view-090.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/one-arm-row/v20260918-5f906701/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/one-arm-row/v20260918-5f906701/view-135.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/one-arm-row/v20260918-5f906701/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/one-arm-row/v20260918-5f906701/view-180.mp4",
+          "durationSeconds": 6.0
+        }
+      ]
+    },
+    {
+      "id": "pull-up",
+      "name": "懸垂",
+      "regions": [
+        "back"
+      ],
+      "variant": "順手",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "バーにぶら下がり、体を引き上げる自重の代表種目。",
+      "primary": [
+        "広背筋",
+        "大円筋・小円筋"
+      ],
+      "assist": [
+        "僧帽筋",
+        "上腕二頭筋"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/pull-up/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/pull-up/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/pull-up/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/pull-up/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/pull-up/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/pull-up/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/pull-up/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/pull-up/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/pull-up/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/pull-up/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "adduction",
+      "name": "アダクション",
+      "regions": [
+        "legs"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "マシンに座り、開いた脚を内側へ閉じる種目。",
+      "primary": [
+        "内転筋群"
+      ],
+      "assist": [],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/adduction/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/adduction/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/adduction/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/adduction/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/adduction/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/adduction/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/adduction/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/adduction/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/adduction/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/adduction/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "abduction",
+      "name": "アブダクション",
+      "regions": [
+        "legs"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "マシンに座り、閉じた脚を外側へ開く種目。",
+      "primary": [
+        "臀筋"
+      ],
+      "assist": [],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/abduction/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/abduction/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/abduction/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/abduction/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/abduction/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/abduction/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/abduction/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/abduction/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/abduction/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/abduction/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "calf-raise",
+      "name": "カーフレイズ",
+      "regions": [
+        "legs"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "つま先立ちを繰り返し、ふくらはぎを鍛える種目。",
+      "primary": [
+        "腓腹筋"
+      ],
+      "assist": [],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/calf-raise/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/calf-raise/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/calf-raise/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/calf-raise/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/calf-raise/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/calf-raise/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/calf-raise/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/calf-raise/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/calf-raise/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/calf-raise/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.0
+        }
+      ]
+    },
+    {
+      "id": "squat",
+      "name": "スクワット",
+      "regions": [
+        "legs"
+      ],
+      "variant": "背中の上部でバーを支えるフォーム",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "equipment": "バーベル",
+      "description": "バーベルを担ぎ、しゃがんで立ち上がる筋トレの基本種目。",
+      "primary": [
+        "大腿四頭筋",
+        "臀筋"
+      ],
+      "assist": [
+        "内転筋群",
+        "ハムストリング",
+        "脊柱起立筋（腰椎部）"
+      ],
+      "point": "しゃがむ動作と立ち上がる動作で、太ももの前とお尻の筋肉を見比べる。",
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/squat/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/squat/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/squat/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/squat/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/squat/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/squat/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/squat/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/squat/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/squat/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/squat/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "smith-squat",
+      "name": "スミスマシンスクワット",
+      "regions": [
+        "legs"
+      ],
+      "variant": "垂直レール",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260918-5f906701",
+      "equipment": "垂直レール",
+      "description": "軌道が固定されたスミスマシンで行うスクワット。バランスを取りやすい。",
+      "primary": [
+        "大腿四頭筋・大臀筋"
+      ],
+      "assist": [
+        "大内転筋"
+      ],
+      "primaryRoleLabel": "主導",
+      "assistRoleLabel": "協働",
+      "stableLabel": "姿勢の保持・把持",
+      "point": "バーを背中の上部で支え、足裏を固定してレールに沿ってしゃがむ。",
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/smith-squat/v20260918-5f906701/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/smith-squat/v20260918-5f906701/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/smith-squat/v20260918-5f906701/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/smith-squat/v20260918-5f906701/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/smith-squat/v20260918-5f906701/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/smith-squat/v20260918-5f906701/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/smith-squat/v20260918-5f906701/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/smith-squat/v20260918-5f906701/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/smith-squat/v20260918-5f906701/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/smith-squat/v20260918-5f906701/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "hack-squat",
+      "name": "ハックスクワット",
+      "regions": [
+        "legs"
+      ],
+      "variant": "45°・背中支持",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260918-5f906701",
+      "description": "専用マシンに背中を預け、斜めに沈み込んで立ち上がる種目。",
+      "primary": [
+        "大腿四頭筋・大臀筋"
+      ],
+      "assist": [
+        "大内転筋"
+      ],
+      "primaryRoleLabel": "主導",
+      "assistRoleLabel": "協働",
+      "stableLabel": "姿勢の保持・把持",
+      "point": "背中と肩をパッドで支え、足裏をプレートにつけて斜めのレールに沿って上下する。",
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/hack-squat/v20260918-5f906701/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/hack-squat/v20260918-5f906701/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/hack-squat/v20260918-5f906701/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/hack-squat/v20260918-5f906701/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/hack-squat/v20260918-5f906701/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/hack-squat/v20260918-5f906701/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/hack-squat/v20260918-5f906701/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/hack-squat/v20260918-5f906701/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/hack-squat/v20260918-5f906701/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/hack-squat/v20260918-5f906701/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "hip-thrust",
+      "name": "ヒップスラスト",
+      "regions": [
+        "legs"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "肩をベンチに預け、バーベルを腰に乗せてお尻を突き上げる種目。",
+      "primary": [
+        "臀筋"
+      ],
+      "assist": [
+        "ハムストリング"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/hip-thrust/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/hip-thrust/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/hip-thrust/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/hip-thrust/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/hip-thrust/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/hip-thrust/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/hip-thrust/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/hip-thrust/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/hip-thrust/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/hip-thrust/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "front-squat",
+      "name": "フロントスクワット",
+      "regions": [
+        "legs"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "バーベルを鎖骨の前に担いで行うスクワット。上体が起きやすい。",
+      "primary": [
+        "大腿四頭筋"
+      ],
+      "assist": [
+        "臀筋",
+        "脊柱起立筋（腰椎部）"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/front-squat/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/front-squat/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/front-squat/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/front-squat/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/front-squat/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/front-squat/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/front-squat/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/front-squat/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/front-squat/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/front-squat/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "bulgarian-squat",
+      "name": "ブルガリアンスクワット",
+      "regions": [
+        "legs"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "後ろ足を台に乗せ、片脚で沈み込むスクワット。",
+      "primary": [
+        "大腿四頭筋",
+        "臀筋"
+      ],
+      "assist": [
+        "ハムストリング"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/bulgarian-squat/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/bulgarian-squat/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/bulgarian-squat/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/bulgarian-squat/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/bulgarian-squat/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/bulgarian-squat/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/bulgarian-squat/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/bulgarian-squat/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/bulgarian-squat/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/bulgarian-squat/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "lunge",
+      "name": "ランジ",
+      "regions": [
+        "legs"
+      ],
+      "variant": "右脚前・ダンベル",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260918-5f906701",
+      "equipment": "ダンベル",
+      "description": "片脚を前に踏み出し、腰を落として戻る種目。",
+      "primary": [
+        "右の大腿四頭筋・大臀筋"
+      ],
+      "assist": [
+        "右のハムストリングス・大内転筋"
+      ],
+      "primaryRoleLabel": "主導",
+      "assistRoleLabel": "協働",
+      "stableLabel": "姿勢の保持：後脚・体幹・腕",
+      "point": "右足を前へ踏み出し、足裏で支えて沈み込み、元の立位に戻る。",
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/lunge/v20260918-5f906701/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/lunge/v20260918-5f906701/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/lunge/v20260918-5f906701/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/lunge/v20260918-5f906701/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/lunge/v20260918-5f906701/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/lunge/v20260918-5f906701/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/lunge/v20260918-5f906701/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/lunge/v20260918-5f906701/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/lunge/v20260918-5f906701/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/lunge/v20260918-5f906701/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "romanian-deadlift",
+      "name": "ルーマニアンデッドリフト",
+      "regions": [
+        "legs"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "膝を軽く曲げたまま、バーベルを太もも沿いに下ろして戻す種目。",
+      "primary": [
+        "ハムストリング",
+        "臀筋"
+      ],
+      "assist": [
+        "脊柱起立筋（腰椎部）"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/romanian-deadlift/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/romanian-deadlift/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/romanian-deadlift/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/romanian-deadlift/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/romanian-deadlift/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/romanian-deadlift/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/romanian-deadlift/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/romanian-deadlift/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/romanian-deadlift/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/romanian-deadlift/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "leg-extension",
+      "name": "レッグエクステンション",
+      "regions": [
+        "legs"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "マシンに座り、膝を伸ばして脚を持ち上げる種目。",
+      "primary": [
+        "大腿四頭筋"
+      ],
+      "assist": [],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/leg-extension/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/leg-extension/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/leg-extension/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/leg-extension/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/leg-extension/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/leg-extension/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/leg-extension/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/leg-extension/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/leg-extension/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/leg-extension/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "leg-curl",
+      "name": "レッグカール",
+      "regions": [
+        "legs"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "うつ伏せや座った姿勢で、膝を曲げてパッドを引き寄せる種目。",
+      "primary": [
+        "ハムストリング"
+      ],
+      "assist": [
+        "腓腹筋"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/leg-curl/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/leg-curl/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/leg-curl/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/leg-curl/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/leg-curl/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/leg-curl/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/leg-curl/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/leg-curl/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/leg-curl/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/leg-curl/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "leg-press",
+      "name": "レッグプレス",
+      "regions": [
+        "legs"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "座った姿勢で、足でプレートを押し上げる種目。",
+      "primary": [
+        "大腿四頭筋"
+      ],
+      "assist": [
+        "臀筋",
+        "内転筋群"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/leg-press/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/leg-press/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/leg-press/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/leg-press/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/leg-press/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/leg-press/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/leg-press/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/leg-press/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/leg-press/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/leg-press/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "upright-row",
+      "name": "アップライトロー",
+      "regions": [
+        "shoulders"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "バーベルやダンベルを体の前から顎の高さまで引き上げる種目。",
+      "primary": [
+        "三角筋（前部・中部）",
+        "僧帽筋"
+      ],
+      "assist": [
+        "上腕二頭筋"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/upright-row/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/upright-row/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/upright-row/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/upright-row/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/upright-row/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/upright-row/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/upright-row/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/upright-row/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/upright-row/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/upright-row/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "arnold-press",
+      "name": "アーノルドプレス",
+      "regions": [
+        "shoulders"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "手のひらを体側に向けた状態から、ひねりながら押し上げる種目。",
+      "primary": [
+        "三角筋（前部・中部）"
+      ],
+      "assist": [
+        "上腕三頭筋"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/arnold-press/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/arnold-press/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/arnold-press/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/arnold-press/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/arnold-press/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/arnold-press/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/arnold-press/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/arnold-press/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/arnold-press/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/arnold-press/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "cable-side-raise",
+      "name": "ケーブルサイドレイズ",
+      "regions": [
+        "shoulders"
+      ],
+      "variant": "右・低いプーリー",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260918-5f906701",
+      "equipment": "低いプーリー",
+      "description": "ケーブルを体の横から斜め上へ引き上げる種目。",
+      "primary": [
+        "右の三角筋中部"
+      ],
+      "assist": [
+        "右の三角筋前部・僧帽筋上下部"
+      ],
+      "primaryRoleLabel": "主導",
+      "assistRoleLabel": "協働",
+      "stableLabel": "姿勢の保持・把持",
+      "point": "体幹を安定させ、右肘を軽く曲げたまま腕を横へ上げる。",
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/cable-side-raise/v20260918-5f906701/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/cable-side-raise/v20260918-5f906701/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/cable-side-raise/v20260918-5f906701/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/cable-side-raise/v20260918-5f906701/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/cable-side-raise/v20260918-5f906701/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/cable-side-raise/v20260918-5f906701/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/cable-side-raise/v20260918-5f906701/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/cable-side-raise/v20260918-5f906701/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/cable-side-raise/v20260918-5f906701/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/cable-side-raise/v20260918-5f906701/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "side-raise",
+      "name": "サイドレイズ",
+      "regions": [
+        "shoulders"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "ダンベルを体の横から肩の高さまで持ち上げる種目。",
+      "primary": [
+        "三角筋（前部・中部）"
+      ],
+      "assist": [
+        "僧帽筋"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/side-raise/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/side-raise/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/side-raise/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/side-raise/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/side-raise/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/side-raise/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/side-raise/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/side-raise/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/side-raise/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/side-raise/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "dumbbell-shoulder-press",
+      "name": "ダンベルショルダープレス",
+      "regions": [
+        "shoulders"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "座った姿勢でダンベルを頭上へ押し上げる種目。",
+      "primary": [
+        "三角筋（前部・中部）"
+      ],
+      "assist": [
+        "上腕三頭筋",
+        "僧帽筋"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/dumbbell-shoulder-press/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/dumbbell-shoulder-press/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/dumbbell-shoulder-press/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/dumbbell-shoulder-press/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/dumbbell-shoulder-press/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/dumbbell-shoulder-press/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/dumbbell-shoulder-press/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/dumbbell-shoulder-press/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/dumbbell-shoulder-press/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/dumbbell-shoulder-press/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "face-pull",
+      "name": "フェイスプル",
+      "regions": [
+        "shoulders"
+      ],
+      "variant": "立位・ロープ",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260918-5f906701",
+      "equipment": "ロープ",
+      "description": "ケーブルを顔に向かって引き寄せ、肩の後ろ側を鍛える種目。",
+      "primary": [
+        "三角筋後部"
+      ],
+      "assist": [
+        "僧帽筋中部・小円筋・上腕二頭筋"
+      ],
+      "primaryRoleLabel": "主導",
+      "assistRoleLabel": "協働",
+      "stableLabel": "姿勢の保持・把持",
+      "point": "肘を左右へ開き、ロープを顔の両側へ引き寄せる。",
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/face-pull/v20260918-5f906701/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/face-pull/v20260918-5f906701/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/face-pull/v20260918-5f906701/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/face-pull/v20260918-5f906701/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/face-pull/v20260918-5f906701/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/face-pull/v20260918-5f906701/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/face-pull/v20260918-5f906701/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/face-pull/v20260918-5f906701/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/face-pull/v20260918-5f906701/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/face-pull/v20260918-5f906701/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "front-raise",
+      "name": "フロントレイズ",
+      "regions": [
+        "shoulders"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "ダンベルを体の前から肩の高さまで持ち上げる種目。",
+      "primary": [
+        "三角筋（前部・中部）"
+      ],
+      "assist": [
+        "大胸筋（上部）"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/front-raise/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/front-raise/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/front-raise/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/front-raise/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/front-raise/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/front-raise/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/front-raise/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/front-raise/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/front-raise/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/front-raise/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "machine-shoulder-press",
+      "name": "マシンショルダープレス",
+      "regions": [
+        "shoulders"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "座った姿勢でダンベルを頭上へ押し上げる種目。",
+      "guideFrom": "ダンベルショルダープレス",
+      "primary": [
+        "三角筋（前部・中部）"
+      ],
+      "assist": [
+        "上腕三頭筋",
+        "僧帽筋"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/machine-shoulder-press/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/machine-shoulder-press/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/machine-shoulder-press/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/machine-shoulder-press/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/machine-shoulder-press/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/machine-shoulder-press/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/machine-shoulder-press/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/machine-shoulder-press/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/machine-shoulder-press/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/machine-shoulder-press/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "military-press",
+      "name": "ミリタリープレス",
+      "regions": [
+        "shoulders"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "立った姿勢でバーベルを頭上へ押し上げる種目。",
+      "primary": [
+        "三角筋（前部・中部）"
+      ],
+      "assist": [
+        "上腕三頭筋",
+        "僧帽筋"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/military-press/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/military-press/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/military-press/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/military-press/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/military-press/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/military-press/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/military-press/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/military-press/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/military-press/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/military-press/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.0
+        }
+      ]
+    },
+    {
+      "id": "rear-raise",
+      "name": "リアレイズ",
+      "regions": [
+        "shoulders"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "前傾姿勢からダンベルを左右に持ち上げ、肩の後ろを鍛える種目。",
+      "primary": [
+        "三角筋（後部）"
+      ],
+      "assist": [
+        "大円筋・小円筋",
+        "僧帽筋"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/rear-raise/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/rear-raise/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/rear-raise/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/rear-raise/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/rear-raise/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/rear-raise/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/rear-raise/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/rear-raise/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/rear-raise/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/rear-raise/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "ez-bar-curl",
+      "name": "EZバーカール",
+      "regions": [
+        "arms"
+      ],
+      "variant": "立位",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260918-5f906701",
+      "description": "波型のEZバーを使い、肘を曲げて持ち上げる種目。",
+      "primary": [
+        "上腕二頭筋"
+      ],
+      "assist": [
+        "腕橈骨筋"
+      ],
+      "primaryRoleLabel": "主導",
+      "assistRoleLabel": "協働",
+      "stableLabel": "姿勢の保持・把持",
+      "point": "バーの傾斜に沿って握り、上腕を体側に保って肘を曲げ伸ばしする。",
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/ez-bar-curl/v20260918-5f906701/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/ez-bar-curl/v20260918-5f906701/view-000.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/ez-bar-curl/v20260918-5f906701/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/ez-bar-curl/v20260918-5f906701/view-045.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/ez-bar-curl/v20260918-5f906701/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/ez-bar-curl/v20260918-5f906701/view-090.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/ez-bar-curl/v20260918-5f906701/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/ez-bar-curl/v20260918-5f906701/view-135.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/ez-bar-curl/v20260918-5f906701/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/ez-bar-curl/v20260918-5f906701/view-180.mp4",
+          "durationSeconds": 6.0
+        }
+      ]
+    },
+    {
+      "id": "incline-dumbbell-curl",
+      "name": "インクラインダンベルカール",
+      "regions": [
+        "arms"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "斜めのベンチに寄りかかり、腕を後ろに引いた状態でカールする種目。",
+      "primary": [
+        "上腕二頭筋"
+      ],
+      "assist": [],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/incline-dumbbell-curl/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/incline-dumbbell-curl/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/incline-dumbbell-curl/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/incline-dumbbell-curl/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/incline-dumbbell-curl/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/incline-dumbbell-curl/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/incline-dumbbell-curl/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/incline-dumbbell-curl/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/incline-dumbbell-curl/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/incline-dumbbell-curl/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "overhead-extension",
+      "name": "オーバーヘッドエクステンション",
+      "regions": [
+        "arms"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "ダンベルを頭上に持ち上げ、肘を曲げ伸ばしして鍛える種目。",
+      "primary": [
+        "上腕三頭筋"
+      ],
+      "assist": [],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/overhead-extension/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/overhead-extension/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/overhead-extension/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/overhead-extension/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/overhead-extension/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/overhead-extension/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/overhead-extension/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/overhead-extension/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/overhead-extension/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/overhead-extension/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "kickback",
+      "name": "キックバック",
+      "regions": [
+        "arms"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "前傾姿勢から、腕を後ろに伸ばして肘を伸ばしきる種目。",
+      "primary": [
+        "上腕三頭筋"
+      ],
+      "assist": [],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/kickback/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/kickback/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/kickback/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/kickback/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/kickback/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/kickback/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/kickback/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/kickback/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/kickback/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/kickback/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "cable-curl",
+      "name": "ケーブルカール",
+      "regions": [
+        "arms"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "ケーブルを使って肘を曲げ、二頭筋を収縮させる種目。",
+      "primary": [
+        "上腕二頭筋"
+      ],
+      "assist": [],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/cable-curl/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/cable-curl/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/cable-curl/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/cable-curl/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/cable-curl/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/cable-curl/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/cable-curl/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/cable-curl/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/cable-curl/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/cable-curl/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "concentration-curl",
+      "name": "コンセントレーションカール",
+      "regions": [
+        "arms"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "座った姿勢で肘を太ももに固定し、片手でカールする種目。",
+      "primary": [
+        "上腕二頭筋"
+      ],
+      "assist": [],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/concentration-curl/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/concentration-curl/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/concentration-curl/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/concentration-curl/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/concentration-curl/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/concentration-curl/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/concentration-curl/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/concentration-curl/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/concentration-curl/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/concentration-curl/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "skull-crusher",
+      "name": "スカルクラッシャー",
+      "regions": [
+        "arms"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "仰向けでバーベルやダンベルを額の近くまで下ろし、押し上げる種目。",
+      "primary": [
+        "上腕三頭筋"
+      ],
+      "assist": [],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/skull-crusher/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/skull-crusher/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/skull-crusher/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/skull-crusher/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/skull-crusher/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/skull-crusher/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/skull-crusher/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/skull-crusher/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/skull-crusher/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/skull-crusher/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "dumbbell-curl",
+      "name": "ダンベルカール",
+      "regions": [
+        "arms"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "ダンベルを持ち、肘を曲げて持ち上げる腕の基本種目。",
+      "primary": [
+        "上腕二頭筋"
+      ],
+      "assist": [
+        "前腕筋群"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/dumbbell-curl/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/dumbbell-curl/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/dumbbell-curl/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/dumbbell-curl/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/dumbbell-curl/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/dumbbell-curl/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/dumbbell-curl/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/dumbbell-curl/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/dumbbell-curl/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/dumbbell-curl/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "triceps-pushdown",
+      "name": "トライセップスプレスダウン",
+      "regions": [
+        "arms"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260918-5f906701",
+      "description": "ケーブルを使い、肘を伸ばしてバーを下に押し下げる種目。",
+      "primary": [
+        "上腕三頭筋"
+      ],
+      "assist": [],
+      "primaryRoleLabel": "主導",
+      "assistRoleLabel": "協働",
+      "stableLabel": "姿勢保持・把持：肩・体幹・前腕",
+      "point": "軽く前傾し、上腕を体側に保って押し下げ、ゆっくり戻す。",
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/triceps-pushdown/v20260918-5f906701/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/triceps-pushdown/v20260918-5f906701/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/triceps-pushdown/v20260918-5f906701/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/triceps-pushdown/v20260918-5f906701/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/triceps-pushdown/v20260918-5f906701/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/triceps-pushdown/v20260918-5f906701/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/triceps-pushdown/v20260918-5f906701/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/triceps-pushdown/v20260918-5f906701/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/triceps-pushdown/v20260918-5f906701/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/triceps-pushdown/v20260918-5f906701/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "close-grip-bench",
+      "name": "ナローベンチプレス",
+      "regions": [
+        "arms"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260918-5f906701",
+      "description": "手幅を狭くして行うベンチプレス。三頭筋への負荷が高まる。",
+      "primary": [
+        "上腕三頭筋"
+      ],
+      "assist": [
+        "大胸筋・三角筋前部"
+      ],
+      "primaryRoleLabel": "主導",
+      "assistRoleLabel": "協働",
+      "stableLabel": "姿勢の保持・把持",
+      "point": "脇を自然に開き、みぞおちへ。",
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/close-grip-bench/v20260918-5f906701/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/close-grip-bench/v20260918-5f906701/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/close-grip-bench/v20260918-5f906701/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/close-grip-bench/v20260918-5f906701/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/close-grip-bench/v20260918-5f906701/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/close-grip-bench/v20260918-5f906701/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/close-grip-bench/v20260918-5f906701/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/close-grip-bench/v20260918-5f906701/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/close-grip-bench/v20260918-5f906701/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/close-grip-bench/v20260918-5f906701/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "hammer-curl",
+      "name": "ハンマーカール",
+      "regions": [
+        "arms"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "手のひらを向かい合わせたままカールする種目。",
+      "primary": [
+        "前腕筋群",
+        "上腕二頭筋"
+      ],
+      "assist": [],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/hammer-curl/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/hammer-curl/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/hammer-curl/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/hammer-curl/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/hammer-curl/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/hammer-curl/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/hammer-curl/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/hammer-curl/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/hammer-curl/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/hammer-curl/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "preacher-curl",
+      "name": "プリーチャーカール",
+      "regions": [
+        "arms"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "専用の台に腕を乗せて固定し、カールする種目。",
+      "primary": [
+        "上腕二頭筋"
+      ],
+      "assist": [],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/preacher-curl/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/preacher-curl/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/preacher-curl/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/preacher-curl/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/preacher-curl/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/preacher-curl/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/preacher-curl/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/preacher-curl/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/preacher-curl/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/preacher-curl/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "wrist-curl",
+      "name": "リストカール",
+      "regions": [
+        "arms"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "手首だけを曲げ伸ばしして、前腕を鍛える種目。",
+      "primary": [
+        "前腕筋群"
+      ],
+      "assist": [],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/wrist-curl/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/wrist-curl/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/wrist-curl/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/wrist-curl/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/wrist-curl/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/wrist-curl/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/wrist-curl/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/wrist-curl/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/wrist-curl/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/wrist-curl/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "reverse-curl",
+      "name": "リバースカール",
+      "regions": [
+        "arms"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "手のひらを下に向けて握り、カールする種目。",
+      "primary": [
+        "前腕筋群"
+      ],
+      "assist": [
+        "上腕二頭筋"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/reverse-curl/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/reverse-curl/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/reverse-curl/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/reverse-curl/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/reverse-curl/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/reverse-curl/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/reverse-curl/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/reverse-curl/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/reverse-curl/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/reverse-curl/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "ab-roller",
+      "name": "アブローラー",
+      "regions": [
+        "core"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "ローラーを転がしながら体を伸ばし、引き戻す種目。",
+      "primary": [
+        "腹直筋"
+      ],
+      "assist": [
+        "広背筋"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/ab-roller/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/ab-roller/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/ab-roller/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/ab-roller/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/ab-roller/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/ab-roller/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/ab-roller/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/ab-roller/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/ab-roller/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/ab-roller/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "crunch",
+      "name": "クランチ",
+      "regions": [
+        "core"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "仰向けで上体を丸めるように起こす、腹筋の基本種目。",
+      "primary": [
+        "腹直筋"
+      ],
+      "assist": [
+        "腹斜筋群"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/crunch/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/crunch/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/crunch/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/crunch/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/crunch/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/crunch/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/crunch/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/crunch/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/crunch/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/crunch/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "cable-crunch",
+      "name": "ケーブルクランチ",
+      "regions": [
+        "core"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "膝立ちでケーブルを持ち、体を丸めて縮める種目。",
+      "primary": [
+        "腹直筋"
+      ],
+      "assist": [
+        "腹斜筋群"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/cable-crunch/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/cable-crunch/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/cable-crunch/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/cable-crunch/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/cable-crunch/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/cable-crunch/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/cable-crunch/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/cable-crunch/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/cable-crunch/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/cable-crunch/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "sit-up",
+      "name": "シットアップ",
+      "regions": [
+        "core"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "仰向けから上体を完全に起こす腹筋種目。",
+      "primary": [
+        "腹直筋"
+      ],
+      "assist": [],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/sit-up/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/sit-up/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/sit-up/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/sit-up/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/sit-up/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/sit-up/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/sit-up/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/sit-up/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/sit-up/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/sit-up/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "hanging-leg-raise",
+      "name": "ハンギングレッグレイズ",
+      "regions": [
+        "core"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "バーにぶら下がり、脚を持ち上げる腹筋種目。",
+      "primary": [
+        "腹直筋"
+      ],
+      "assist": [
+        "腹斜筋群"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/hanging-leg-raise/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/hanging-leg-raise/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/hanging-leg-raise/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/hanging-leg-raise/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/hanging-leg-raise/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/hanging-leg-raise/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/hanging-leg-raise/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/hanging-leg-raise/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 6.0
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 12,
+          "poster": "img/atlas/posters/hanging-leg-raise/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/hanging-leg-raise/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.0
+        }
+      ]
+    },
+    {
+      "id": "bicycle-crunch",
+      "name": "バイシクルクランチ",
+      "regions": [
+        "core"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 8,
+      "recordingVersion": "v20260910-c5f198ec",
+      "description": "仰向けで自転車を漕ぐように、肘とひざを交互に近づける種目。",
+      "primary": [
+        "腹斜筋群"
+      ],
+      "assist": [
+        "腹直筋"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/bicycle-crunch/v20260910-c5f198ec/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/bicycle-crunch/v20260910-c5f198ec/view-000.mp4",
+          "durationSeconds": 8.0
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/bicycle-crunch/v20260910-c5f198ec/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/bicycle-crunch/v20260910-c5f198ec/view-045.mp4",
+          "durationSeconds": 8.0
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/bicycle-crunch/v20260910-c5f198ec/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/bicycle-crunch/v20260910-c5f198ec/view-090.mp4",
+          "durationSeconds": 8.0
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/bicycle-crunch/v20260910-c5f198ec/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/bicycle-crunch/v20260910-c5f198ec/view-135.mp4",
+          "durationSeconds": 8.0
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/bicycle-crunch/v20260910-c5f198ec/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/bicycle-crunch/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 8.0
         }
       ]
     }

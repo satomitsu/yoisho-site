@@ -955,6 +955,8 @@ body.pro-page .nav-logo .pro-tag { align-self: center; margin-left: 2px; }
 .atlas-detail-top { display: flex; align-items: center; gap: 8px; }
 .atlas-equipment { font-size: 13px; color: var(--text2); }
 .atlas-variant { color: var(--text2); font-size: 14px; margin: 4px 0 0; }
+.atlas-description { color: var(--text2); font-size: 14px; line-height: 1.8; margin: 10px 0 0; }
+.atlas-description[hidden] { display: none; }
 .atlas-muscle-group { margin-bottom: 14px; }
 .atlas-muscle-group > p { display: flex; align-items: center; gap: 6px;
                           color: var(--text2); font-size: 12px; margin: 0 0 8px; }
@@ -964,8 +966,12 @@ body.pro-page .nav-logo .pro-tag { align-self: center; margin-left: 2px; }
 .atlas-muscle-group[hidden] { display: none; }
 .atlas-stable { margin: 0; font-size: 12px; color: var(--text3); }
 .atlas-focus { margin-top: 20px; }
+.atlas-focus[hidden] { display: none; }
 .atlas-info-foot { margin: 14px 0 0; font-size: 12px; color: var(--text3); }
 .atlas-credit { margin: 12px 0 0; font-size: 12px; color: var(--text2); line-height: 1.7; }
+/* 図鑑の見出しの下。アプリなら電波が無くても見られる、という案内 */
+.atlas-app-note { margin: 10px 0 0; font-size: 13px; color: var(--text2); }
+.atlas-app-note a { margin-left: 6px; }
 
 .atlas-feedback { margin-top: 20px; }
 .atlas-feedback-input { display: block; width: 100%; margin-top: 8px;
@@ -1034,27 +1040,6 @@ body.pro-page .nav-logo .pro-tag { align-self: center; margin-left: 2px; }
   .atlas-view-controls { padding: 12px 12px 14px; }
 }
 
-/* ---------- ホームの図鑑紹介（index.html の 02） ---------- */
+/* ---------- ホームの図鑑への導線 ---------- */
 
-.atlas-lead { display: grid; gap: 22px; align-items: center; margin-top: 26px; }
-@media (min-width: 860px) { .atlas-lead { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); } }
-.atlas-lead-points { list-style: none; margin: 0 0 22px; padding: 0; display: grid; gap: 12px; }
-.atlas-lead-points li { padding-left: 16px; position: relative; color: var(--text2); }
-.atlas-lead-points li::before { content: ""; position: absolute; left: 0; top: .6em;
-                                width: 7px; height: 7px; background: var(--accent-text); }
-.atlas-lead-points strong { color: var(--ink); }
-.atlas-lead-media { position: relative; display: block; background: var(--surface2);
-                    border: var(--stroke-hero) solid var(--ink); box-shadow: 7px 7px 0 var(--accent); }
-.atlas-lead-media:hover { transform: translate(-2px, -2px); box-shadow: 9px 9px 0 var(--accent); }
-.atlas-lead-media img { display: block; width: 100%; height: auto; }
-.atlas-lead-badge { position: absolute; top: 12px; left: 12px; z-index: 1;
-                    font-family: var(--font-en); font-size: 11px; letter-spacing: .12em;
-                    background: var(--ink); color: var(--paper); padding: 4px 8px; }
-.atlas-lead-caption { display: flex; align-items: center; justify-content: space-between;
-                      gap: 10px; padding: 10px 14px; border-top: var(--stroke) solid var(--ink);
-                      background: var(--card); }
-.atlas-lead-caption b { font-size: 15px; }
-.atlas-lead-caption i { font-style: normal; font-size: 13px; color: var(--accent-text); }
-.atlas-lead-steps { margin-top: 26px; }
-.atlas-lead-steps .no { font-family: var(--font-en); font-size: 12px; color: var(--text3); }
 .atlas-lead-note { margin: 18px 0 0; font-size: 12px; color: var(--text3); }

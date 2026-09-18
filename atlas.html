@@ -22,7 +22,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=31">
+  <link rel="stylesheet" href="style.css?v=34">
 </head>
 
 <body class="lp atlas">
@@ -54,6 +54,7 @@
       <p class="sec-eyebrow">TRAINING ATLAS — 筋トレ図鑑</p>
       <h1 style="margin:0">動きが見える。<br><span class="mark-sm">筋肉がわかる</span>。</h1>
       <p class="prose" style="margin:14px 0 0">いつもの1セットを、別の角度から。人体を透かして、筋肉と動作をゆっくり確かめられます。</p>
+      <p class="atlas-app-note">モバイルアプリなら、オフラインで確認できます。<a href="https://apps.apple.com/jp/app/id6794951676">App Store でダウンロード</a></p>
     </div>
   </div>
 
@@ -124,14 +125,15 @@
           </div>
           <h2 id="atlas-exercise-title" style="margin:10px 0 4px"></h2>
           <p id="atlas-exercise-variant" class="atlas-variant"></p>
+          <p id="atlas-description" class="atlas-description"></p>
           <div class="atlas-muscles">
             <h3 class="subhead" style="margin-top:22px;padding-top:0;border-top:0">動きに関わる筋肉</h3>
             <div class="atlas-muscle-group">
-              <p><span class="atlas-role-dot"></span><span id="atlas-primary-label">主に働く</span></p>
+              <p><span class="atlas-role-dot"></span>主に働く</p>
               <ul id="atlas-primary" class="chips"></ul>
             </div>
             <div class="atlas-muscle-group atlas-assist">
-              <p><span class="atlas-role-dot"></span><span id="atlas-assist-label">動作を助ける</span></p>
+              <p><span class="atlas-role-dot"></span>動作を助ける</p>
               <ul id="atlas-assist" class="chips"></ul>
             </div>
             <p id="atlas-stable" class="atlas-stable"></p>
@@ -172,6 +174,7 @@
           <button type="button" data-filter="legs" aria-pressed="false">脚・尻</button>
           <button type="button" data-filter="shoulders" aria-pressed="false">肩</button>
           <button type="button" data-filter="arms" aria-pressed="false">腕</button>
+          <button type="button" data-filter="core" aria-pressed="false">腹</button>
         </div>
         <span id="atlas-result-count" class="atlas-result-count" aria-live="polite"></span>
       </div>
@@ -202,7 +205,7 @@
 
   <p id="atlas-announcement" class="atlas-sr-only" aria-live="polite"></p>
 
-  <script src="atlas.js?v=8"></script>
+  <script src="atlas.js?v=9"></script>
 
   <footer class="lp-footer">
     <div class="inner">

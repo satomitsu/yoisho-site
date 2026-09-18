@@ -26,10 +26,10 @@
   const LOAD_TIMEOUT_MS = 10000;
 
   const REGION_LABELS = {
-    chest: '胸', back: '背中', legs: '脚・尻', shoulders: '肩', arms: '腕',
+    chest: '胸', back: '背中', legs: '脚・尻', shoulders: '肩', arms: '腕', core: '腹',
   };
 
-  const state = { exercises: [], videoBase: null, selected: null, view: null, filter: 'all', query: '', speed: 1 };
+  const state = { exercises: [], videoBase: null, defaultId: null, selected: null, view: null, filter: 'all', query: '', speed: 1 };
 
   // **読み込みごとの通し番号。** 角度を続けて押すと、前の読み込みの `loadedmetadata` や
   // `play()` の結果が**あとから届いて新しい選択を上書きする**（2026-09-18）。
@@ -230,9 +230,11 @@
     $('#atlas-equipment').textContent = item.equipment ? '・' + item.equipment : '';
     $('#atlas-exercise-title').textContent = item.name;
     $('#atlas-exercise-variant').textContent = item.variant || '';
-    $('#atlas-primary-label').textContent = item.primaryRoleLabel || '主に働く';
-    $('#atlas-assist-label').textContent = item.assistRoleLabel || '動作を助ける';
-    $('#atlas-point').textContent = item.point || '準備中です。';
+    $('#atlas-description').textContent = item.description || '';
+    $('#atlas-description').hidden = !item.description;
+    // 見るポイントは書いてある種目にだけ出す（無いのに「準備中」と置かない）
+    $('#atlas-point').textContent = item.point || '';
+    $('#atlas-point').closest('.atlas-focus').hidden = !item.point;
     $('#atlas-stable').textContent = item.stableLabel || '';
     $('#atlas-stable').hidden = !item.stableLabel;
     resetFeedbackForm();
@@ -466,7 +468,9 @@
     const id = params.get('exercise');
     const item = state.exercises.find((e) => e.id === id);
     const angle = params.has('angle') ? Number(params.get('angle')) : null;
-    const chosen = item || state.exercises[0];
+    const chosen = item
+      || state.exercises.find((e) => e.id === state.defaultId)
+      || state.exercises[0];
     if (!chosen) return;
     state.selected = chosen.id;
     state.view = defaultViewId(chosen, Number.isFinite(angle) ? angle : null);
@@ -488,6 +492,7 @@
     }
     state.exercises = data.exercises;
     state.videoBase = data.videoBaseUrl || null;
+    state.defaultId = data.defaultExercise || null;
     pickFromUrl();
     wireControls();
     renderDetail(true);
