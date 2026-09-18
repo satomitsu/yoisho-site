@@ -12,6 +12,10 @@
 // タブを離れたときと、画面の外へ出たときは止める（戻っただけでは再生しない）。
 // 同じ種目のまま視点を替えたときは、再生位置・速度・再生したい意図を次の動画へ引き継ぐ。
 // 種目を替えたときは先頭から。
+//
+// 拡大は指・ホイール・ボタンのどれでもでき、視点を替えても持ち越す。
+// **「全画面」はパソコンとスマホで出し方が違う**——パソコンはブラウザの窓の中で
+// 広げるだけ、スマホは OS の全画面に出す（本人の指示。2026-09-18）。
 (() => {
   const $ = (selector) => document.querySelector(selector);
   const $$ = (selector) => Array.from(document.querySelectorAll(selector));
@@ -141,7 +145,12 @@
     return document.fullscreenElement || document.webkitFullscreenElement || null;
   }
 
-  /** ブラウザが全画面をくれないときに、こちらで画面いっぱいに広げる */
+  /** 指で触る端末か（スマホ・タブレット）。パソコンのブラウザと出し方を変える */
+  function isHandheld() {
+    return window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+  }
+
+  /** ブラウザの中で、窓いっぱいに広げる（OS の全画面には持っていかない） */
   function spreadInPage(on) {
     // **待っていた返事はもう要らない**（残すと、畳んだ直後に広げ直してしまう）
     window.clearTimeout(fullscreenTimer);
@@ -162,19 +171,24 @@
     }
     if (box.classList.contains('is-full')) { spreadInPage(false); return; }
 
-    // **押しても何も起きない状態を作らない。** 断られたら次の手に移る:
-    // 枠ごと全画面 → iPhone は動画そのものを OS の全画面 → それも無ければ自前で広げる
+    // **パソコンのブラウザでは、ブラウザの中で広げるだけにする**
+    // （本人の指示。2026-09-18。OS の全画面へ持っていかない——
+    // タブもアドレスバーも消えると、見ているページから離れた感じになる）
+    if (!isHandheld()) { spreadInPage(true); return; }
+
+    // **スマホは OS の全画面へ。** 押しても何も起きない状態を作らないよう、
+    // 断られたら次の手に移る: iPhone は動画そのもの → 枠ごと → 自前で広げる
     const fallback = () => {
       if (fullscreenNow() || box.classList.contains('is-full')) return;
-      if (!video.hidden && video.webkitEnterFullscreen) {
-        try { video.webkitEnterFullscreen(); return; } catch (err) { /* 下へ */ }
-      }
       spreadInPage(true);
     };
+    if (!video.hidden && video.webkitEnterFullscreen) {
+      // iPhone の Safari は要素を全画面にできない。動画そのものを OS の全画面で開く
+      try { video.webkitEnterFullscreen(); return; } catch (err) { /* 下へ */ }
+    }
     // **返事が来ないこともある**（全画面を断る設定・裏に回った窓）。
     // 少し待って何も起きていなければ、自前で広げる
     fullscreenTimer = window.setTimeout(fallback, FULLSCREEN_WAIT_MS);
-    // **枠ごと全画面にする**（方向・再生・速度をそのまま使えるように）
     if (box.requestFullscreen) { box.requestFullscreen().catch(fallback); return; }
     if (box.webkitRequestFullscreen) { box.webkitRequestFullscreen(); return; }
     fallback();

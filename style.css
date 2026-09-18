@@ -1072,8 +1072,10 @@ body.pro-page .nav-logo .pro-tag { align-self: center; margin-left: 2px; }
 .atlas-viewer:fullscreen .atlas-stage,
 .atlas-viewer:-webkit-full-screen .atlas-stage { flex: 1 1 auto; aspect-ratio: auto; min-height: 0; }
 
-/* ブラウザが全画面をくれないときの逃げ道（`spreadInPage`）。
-   画面いっぱいに広げるだけで、やることは同じ */
+/* **パソコンのブラウザの「全画面」はこれ**（`spreadInPage`。本人の指示。2026-09-18）。
+   OS の全画面には持っていかず、**ブラウザの窓の中で**横いっぱいに広げる。
+   タブもアドレスバーも残るので、ページから離れた感じにならない。
+   スマホで OS の全画面を断られたときの逃げ道も兼ねる */
 .atlas-viewer.is-full { position: fixed; inset: 0; z-index: 90; margin: 0;
                         display: flex; flex-direction: column;
                         background: var(--card); box-shadow: none; }
