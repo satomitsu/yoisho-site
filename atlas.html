@@ -22,7 +22,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=30">
+  <link rel="stylesheet" href="style.css?v=31">
 </head>
 
 <body class="lp atlas">
@@ -51,7 +51,9 @@
   <!-- 見出し -->
   <div class="band-sec">
     <div class="inner" style="padding-top:40px">
-      <h1 style="margin:0">筋トレ図鑑</h1>
+      <p class="sec-eyebrow">TRAINING ATLAS — 筋トレ図鑑</p>
+      <h1 style="margin:0">動きが見える。<br><span class="mark-sm">筋肉がわかる</span>。</h1>
+      <p class="prose" style="margin:14px 0 0">いつもの1セットを、別の角度から。人体を透かして、筋肉と動作をゆっくり確かめられます。</p>
     </div>
   </div>
 
@@ -59,30 +61,60 @@
   <div class="band-sec">
     <div class="inner sec" style="padding-bottom:36px">
       <div class="atlas-study">
-        <div class="atlas-viewer">
-          <div class="atlas-stage">
-            <div class="atlas-stage-top">
-              <span class="eyebrow" style="margin:0">ANATOMY VIEW</span>
-              <span class="chip" id="atlas-stage-badge">静止画プレビュー</span>
-            </div>
-            <img id="atlas-image" alt="" width="1000" height="750" decoding="async">
-            <video id="atlas-video" width="1000" height="750" playsinline loop hidden></video>
-            <div class="atlas-stage-bottom">
-              <span id="atlas-view-label"></span>
-              <span>人体を透過して筋肉を表示</span>
-            </div>
-          </div>
-          <div class="atlas-view-controls">
-            <div id="atlas-view-options" class="atlas-view-options" role="group" aria-label="見る方向"></div>
-            <div class="atlas-video-state">
-              <button type="button" id="atlas-video-placeholder" disabled>▶ 動画は準備中</button>
-              <div class="atlas-video-speed" id="atlas-video-speed" role="group" aria-label="再生速度" hidden>
-                <button type="button" data-speed="0.5">0.5×</button>
-                <button type="button" data-speed="1" aria-pressed="true">1×</button>
+        <div>
+          <div class="atlas-viewer">
+            <div class="atlas-stage">
+              <div class="atlas-stage-top">
+                <span class="eyebrow" style="margin:0">ANATOMY / MOTION</span>
+                <span class="chip" id="atlas-stage-badge">静止画</span>
               </div>
-              <span id="atlas-duration"></span>
+              <img id="atlas-image" alt="" width="1000" height="750" decoding="async">
+              <video id="atlas-video" playsinline loop muted preload="metadata" hidden
+                     aria-label="選んだ種目の動作（音はありません）"></video>
+              <div class="atlas-stage-bottom">
+                <span id="atlas-view-label"></span>
+                <span>人体を透過して筋肉を表示</span>
+              </div>
+            </div>
+
+            <div class="atlas-view-controls">
+              <div class="atlas-angle-row">
+                <span class="atlas-control-label">見る方向</span>
+                <div id="atlas-view-options" class="atlas-view-options" role="group" aria-label="見る方向"></div>
+              </div>
+              <p class="atlas-angle-note">角度は撮影したカメラの位置です。0°を正面、180°を背面とは決めていません。</p>
+
+              <div class="atlas-transport">
+                <button type="button" id="atlas-play" class="atlas-play" disabled>
+                  <span id="atlas-play-symbol" aria-hidden="true">▶</span>
+                  <span id="atlas-play-text">再生</span>
+                </button>
+                <input type="range" id="atlas-scrub" class="atlas-scrub" min="0" max="1000" value="0" step="1"
+                       aria-label="再生位置" disabled>
+                <span id="atlas-time" class="atlas-time"></span>
+                <label class="atlas-speed-label">
+                  <span class="atlas-sr-only">再生速度</span>
+                  <select id="atlas-speed" class="atlas-speed">
+                    <option value="0.5">0.5×</option>
+                    <option value="0.75">0.75×</option>
+                    <option value="1" selected>1×</option>
+                  </select>
+                </label>
+              </div>
             </div>
           </div>
+
+          <p class="atlas-credit">
+            人体の映像・画像は <a href="https://github.com/Z-Anatomy/Models-of-human-anatomy" rel="noopener">Z-Anatomy</a> ／
+            <a href="https://lifesciencedb.jp/bp3d/" rel="noopener">BodyParts3D</a> をもとに、
+            動作をつけて描き出したものです（変更あり）。
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener">CC BY-SA 4.0</a>・
+            <a href="#atlas-about">出典・利用条件</a>
+          </p>
+          <p id="atlas-message" class="atlas-message" role="status" aria-live="polite">
+            <span id="atlas-message-text"></span>
+            <button type="button" class="btn" id="atlas-retry" hidden>もう一度読み込む</button>
+          </p>
         </div>
 
         <aside class="atlas-detail" aria-labelledby="atlas-exercise-title">
@@ -93,20 +125,22 @@
           <h2 id="atlas-exercise-title" style="margin:10px 0 4px"></h2>
           <p id="atlas-exercise-variant" class="atlas-variant"></p>
           <div class="atlas-muscles">
-            <h3 class="subhead" style="margin-top:22px;padding-top:0;border-top:0">働く筋肉</h3>
+            <h3 class="subhead" style="margin-top:22px;padding-top:0;border-top:0">動きに関わる筋肉</h3>
             <div class="atlas-muscle-group">
-              <p><span class="atlas-role-dot"></span>主に働く筋肉</p>
+              <p><span class="atlas-role-dot"></span><span id="atlas-primary-label">主に働く</span></p>
               <ul id="atlas-primary" class="chips"></ul>
             </div>
             <div class="atlas-muscle-group atlas-assist">
-              <p><span class="atlas-role-dot"></span>動作を助ける筋肉</p>
+              <p><span class="atlas-role-dot"></span><span id="atlas-assist-label">動作を助ける</span></p>
               <ul id="atlas-assist" class="chips"></ul>
             </div>
+            <p id="atlas-stable" class="atlas-stable"></p>
           </div>
           <div class="note atlas-focus">
-            <span class="eyebrow" style="margin:0">筋トレmemo</span>
-            <p style="margin:8px 0 0;color:var(--text2)">準備中です。</p>
+            <span class="eyebrow" style="margin:0">見るポイント</span>
+            <p id="atlas-point" style="margin:8px 0 0;color:var(--text2)"></p>
           </div>
+          <p class="atlas-info-foot">筋肉と動作を理解するための簡易表現です。</p>
           <div class="atlas-feedback">
             <span class="eyebrow" style="margin:0">フィードバック</span>
             <textarea id="atlas-feedback-input" class="atlas-feedback-input"
@@ -136,6 +170,8 @@
           <button type="button" data-filter="chest" aria-pressed="false">胸</button>
           <button type="button" data-filter="back" aria-pressed="false">背中</button>
           <button type="button" data-filter="legs" aria-pressed="false">脚・尻</button>
+          <button type="button" data-filter="shoulders" aria-pressed="false">肩</button>
+          <button type="button" data-filter="arms" aria-pressed="false">腕</button>
         </div>
         <span id="atlas-result-count" class="atlas-result-count" aria-live="polite"></span>
       </div>
@@ -152,20 +188,21 @@
   <div class="band-sec">
     <div class="inner sec" id="atlas-about" style="padding-top:44px">
       <h2 style="font-size:20px">この図鑑について・出典と利用条件</h2>
-      <p class="prose">筋トレの動作と、関連する筋肉をさまざまな方向から見るための図鑑です。いまは制作中の3種目を静止画で表示しています。動画は準備でき次第、追加します。</p>
-      <p class="prose">人体画像は、<a href="https://github.com/Z-Anatomy/Models-of-human-anatomy" target="_blank" rel="noopener noreferrer">Z-Anatomy</a> 由来の加工モデルを描画したものです。これらの人体画像は <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> で提供します。出典と変更内容を示し、改変物にも同じライセンスを適用するなどの条件で再利用できます。</p>
+      <p class="prose">筋トレの動作と、そのとき働く筋肉を、いくつもの方向から見るための図鑑です。収録できた種目から順に、動作の動画を足しています。動画のない種目は静止画で表示します。</p>
+      <p class="prose">人体の映像・画像は、<a href="https://github.com/Z-Anatomy/Models-of-human-anatomy" target="_blank" rel="noopener noreferrer">Z-Anatomy</a> 由来の加工モデルを描画したものです。使用した加工モデルと、これらの人体映像・画像には <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> で提供します。出典と変更内容を示し、改変物にも同じライセンスを適用するなどの条件で再利用できます。</p>
       <p class="prose" style="font-size:13px;color:var(--text3)">BodyParts3D - The Database Center for Life Science - CC-BY-SA 2.1 Japan<br>
         Z-Anatomy - The libre 3D atlas of anatomy - CC-BY-SA 4.0<br>
         Original model: BodyParts3D, © The Database Center for Life Science.<br>
         原素材の著作者：Kousaku Okubo（元の BodyParts3D）、Gauthier Kervyn（3D anatomy/design）、Marcin Zielinski（Blender tools）、その他の contributors。</p>
-      <p class="prose">変更内容：筋肉の選別・日本語グループ化、領域の調整、軽量化、体表の加工、筋トレ動作に応じた形状の変形と静止画の描画。動作は教育用の簡易表現であり、原素材の著作者がこのサイトや動作表現を推奨・監修していることを意味しません。</p>
-      <p class="prose">元の帰属指定と変更履歴を保持しています。素材は現状のままで提供され、保証はありません。詳しくは<a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode.ja" target="_blank" rel="noopener noreferrer">ライセンス全文</a>と<a href="img/atlas/MODEL-LICENSE.md" target="_blank" rel="noopener noreferrer">出典の詳細ページ</a>をご覧ください。この条件は、独立して作成した画面やプログラム、このサイト全体のライセンスを一括して指定するものではありません。</p>
+      <p class="prose" style="font-size:13px;color:var(--text3)">BodyParts3D の表記は、取得元の Z-Anatomy が指定している帰属表示のまま載せています（BodyParts3D 本体はその後 CC BY 4.0 で公開されていますが、この図鑑が引き継ぐのは Z-Anatomy の CC BY-SA 4.0 の条件です）。</p>
+      <p class="prose">変更内容：BodyParts3D から Z-Anatomy への加工・変更を経たモデルを使用し、この制作物では筋肉の選別、日本語グループ化、領域の調整、軽量化、体表の加工、筋トレ動作に応じた筋肉形状の変形、関節運動の付与、映像と静止画の描画を行いました。動作は教育用の簡易表現であり、原素材の著作者がこのサイトや動作表現を推奨・監修していることを意味しません。</p>
+      <p class="prose">元の帰属指定と変更履歴を保持しています。素材は現状のままで提供され、保証はありません。保証免責および責任制限はライセンス全文の第5条を参照してください。詳しくは<a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode.ja" target="_blank" rel="noopener noreferrer">ライセンス全文</a>と<a href="img/atlas/MODEL-LICENSE.md" target="_blank" rel="noopener noreferrer">出典の詳細ページ</a>をご覧ください。この条件は、独立して作成した画面やプログラム、このサイト全体のライセンスを一括して指定するものではありません。</p>
     </div>
   </div>
 
   <p id="atlas-announcement" class="atlas-sr-only" aria-live="polite"></p>
 
-  <script src="atlas.js?v=7"></script>
+  <script src="atlas.js?v=8"></script>
 
   <footer class="lp-footer">
     <div class="inner">
@@ -174,7 +211,7 @@
           <span class="sq"><img src="img/icon-120.png" alt=""></span>
           <span class="en">yoisho</span>
         </div>
-        <p class="foot-tag" style="margin:0">the sound Japanese lifters make when they lift<br>© 2026 yoisho</p>
+        <p class="foot-tag" style="margin:0">the sound Japanese lifters make when they lift<br>© 2026 yoisho<br><span style="font-size:12px">人体の映像・画像は <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener">CC BY-SA 4.0</a>（<a href="#atlas-about">出典・利用条件</a>）</span></p>
       </div>
       <div class="foot-cols">
         <div>

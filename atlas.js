@@ -4,11 +4,14 @@
 // assets/site/atlas/exercise-catalog.json）から読む。60種目に増えても
 // このファイルは変えず、データを足すだけで済む形にしてある。
 //
-// 動画は各視点（views[].video）が URL を持てば自動で有効になり、無ければ
-// 静止画（poster）のまま「動画は準備中」と出す。全視点を先読みせず、
-// 選んだ視点の分だけ src を張る。タブを離れたら止める。同じ種目のまま
-// 視点を替えたときだけ、動作位置・再生中かどうか・速度を次の動画へ引き継ぐ
-// （RELEASE.md「筋トレ図鑑」節）。
+// 動画は「配信元（videoBaseUrl）＋視点ごとのキー（views[].videoKey）」で組む。
+// **videoBaseUrl が null のあいだは動画を出さない**（静止画のまま「動画は準備中」）。
+// 配信先へ置いて再生を確かめてから入れる——入れ替えは1か所で済む（RELEASE.md「筋トレ図鑑」節）。
+//
+// 出している動画は**いつも1本だけ**。全視点を先読みせず、選んだ視点の分だけ src を張る。
+// タブを離れたときと、画面の外へ出たときは止める（戻っただけでは再生しない）。
+// 同じ種目のまま視点を替えたときは、再生位置・速度・再生したい意図を次の動画へ引き継ぐ。
+// 種目を替えたときは先頭から。
 (() => {
   const $ = (selector) => document.querySelector(selector);
   const $$ = (selector) => Array.from(document.querySelectorAll(selector));
@@ -19,11 +22,27 @@
   const SUPABASE_URL = 'https://ojyyixzjiccdmmzpdpwx.supabase.co';
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9qeXlpeHpqaWNjZG1tenBkcHd4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUwNDc0MTUsImV4cCI6MjEwMDYyMzQxNX0.7iBFdkBmT5AgBZkYnYctNu2hMrEmdB1DIbOnLRE_1bo';
 
-  const REGION_LABELS = { chest: '胸', back: '背中', legs: '脚・尻' };
+  // 読み込みを待つ上限（これを過ぎたら、押せる状態に戻して知らせる）
+  const LOAD_TIMEOUT_MS = 10000;
 
-  const state = { exercises: [], selected: null, view: null, filter: 'all', query: '', speed: 1 };
-  // 種目を替えたときは動作位置を持ち越さない（視点を替えたときだけ持ち越す）
-  let stageExerciseId = null;
+  const REGION_LABELS = {
+    chest: '胸', back: '背中', legs: '脚・尻', shoulders: '肩', arms: '腕',
+  };
+
+  const state = { exercises: [], videoBase: null, selected: null, view: null, filter: 'all', query: '', speed: 1 };
+
+  // **読み込みごとの通し番号。** 角度を続けて押すと、前の読み込みの `loadedmetadata` や
+  // `play()` の結果が**あとから届いて新しい選択を上書きする**（2026-09-18）。
+  // 番号が変わっていたら、届いた結果は捨てる
+  let revision = 0;
+  // **再生を頼んだ回ごとの番号。** `play()` が却下されるのは非同期なので、
+  // 古い却下で新しい動画を止めないよう、こちらでも見分ける
+  let playTicket = 0;
+  // 読み込み中の目標位置（読み込み中にシークされたらここへ書いて、読めてから当てる）
+  let pending = null;
+  // **本人が再生したいかどうか。** 動画の paused とは別に持つ——読み込み中は
+  // まだ paused なので、これが無いと視点を替えたときに再生が途切れる
+  let intendedPlaying = false;
 
   function normalize(value) {
     return value.normalize('NFKC').toLowerCase().replace(/[\s・ー]/g, '');
@@ -37,44 +56,154 @@
     return state.exercises.find((e) => e.id === state.selected) || state.exercises[0];
   }
 
-  // 動画（あれば）と静止画（無ければ）を切り替える。
-  // **視点を替えたときだけ**、動作位置・再生中かどうか・速度を次の動画へ引き継ぐ
-  // （種目を替えたときは引き継がない——その種目の最初から見せる）
-  function updateStage() {
+  function currentView(item) {
+    return item.views.find((v) => v.id === state.view) || item.views[0];
+  }
+
+  // 配信元が決まっていない視点は「動画なし」として扱う（架空のURLを張らない）
+  function videoUrl(view) {
+    if (view.video) return view.video;
+    if (state.videoBase && view.videoKey) return state.videoBase + view.videoKey;
+    return null;
+  }
+
+  function viewSeconds(item, view) {
+    const video = $('#atlas-video');
+    if (video.duration && Number.isFinite(video.duration) && !video.hidden) return video.duration;
+    return view.durationSeconds || item.referenceCycleSeconds || 0;
+  }
+
+  function showMessage(text, retry) {
+    $('#atlas-message-text').textContent = text || '';
+    $('#atlas-retry').hidden = !retry;
+    $('#atlas-message').classList.toggle('is-shown', Boolean(text));
+  }
+
+  // ---- 再生（1本だけ。読み込み中も押せるものと押せないものを見た目に合わせる）
+
+  function updateTransport() {
     const item = selectedExercise();
     if (!item) return;
-    const view = item.views.find((v) => v.id === state.view) || item.views[0];
+    const view = currentView(item);
+    const hasVideo = Boolean(videoUrl(view));
+    const video = $('#atlas-video');
+    const play = $('#atlas-play');
+    const scrub = $('#atlas-scrub');
+
+    play.disabled = !hasVideo || Boolean(pending);
+    scrub.disabled = !hasVideo || Boolean(pending);
+    $('#atlas-speed').disabled = !hasVideo;
+
+    if (!hasVideo) {
+      $('#atlas-play-symbol').textContent = '▶';
+      $('#atlas-play-text').textContent = '動画は準備中';
+      play.setAttribute('aria-label', 'この種目の動画は準備中です');
+      $('#atlas-time').textContent = '';
+      scrub.value = '0';
+      return;
+    }
+    if (pending) {
+      $('#atlas-play-symbol').textContent = '…';
+      $('#atlas-play-text').textContent = '読込中';
+      play.setAttribute('aria-label', '動画を読み込み中');
+    } else if (intendedPlaying) {
+      $('#atlas-play-symbol').textContent = 'Ⅱ';
+      $('#atlas-play-text').textContent = '停止';
+      play.setAttribute('aria-label', '動画を停止');
+    } else {
+      $('#atlas-play-symbol').textContent = '▶';
+      $('#atlas-play-text').textContent = '再生';
+      play.setAttribute('aria-label', '動画を再生');
+    }
+
+    const total = viewSeconds(item, view);
+    const at = pending ? pending.time : video.currentTime || 0;
+    $('#atlas-time').textContent = at.toFixed(1) + ' / ' + total.toFixed(1) + '秒';
+    scrub.value = String(total > 0 ? Math.round((at / total) * 1000) : 0);
+    scrub.setAttribute('aria-valuetext', at.toFixed(1) + '秒');
+  }
+
+  function playCurrent() {
+    const video = $('#atlas-video');
+    const version = revision;
+    const ticket = ++playTicket;
+    intendedPlaying = true;
+    video.play().catch(() => {
+      // **古い `play()` の却下で、いま選んでいる動画を止めない**
+      if (version !== revision || ticket !== playTicket || !intendedPlaying) return;
+      intendedPlaying = false;
+      updateTransport();
+    });
+    updateTransport();
+  }
+
+  function pauseCurrent() {
+    intendedPlaying = false;
+    playTicket += 1;
+    $('#atlas-video').pause();
+    updateTransport();
+  }
+
+  // 動画（あれば）と静止画（無ければ）を出す。
+  // `reset` は種目を替えたとき——先頭から・停止した状態で始める
+  function loadStage(reset) {
+    const item = selectedExercise();
+    if (!item) return;
+    const view = currentView(item);
     state.view = view.id;
 
     const img = $('#atlas-image');
     const video = $('#atlas-video');
-    const placeholder = $('#atlas-video-placeholder');
-    const speedGroup = $('#atlas-video-speed');
+    const url = videoUrl(view);
 
-    const sameExercise = stageExerciseId === item.id;
-    stageExerciseId = item.id;
-    const carryTime = sameExercise && !video.hidden ? video.currentTime : 0;
-    const carryPlaying = sameExercise && !video.hidden && !video.paused;
+    const carryTime = reset ? 0 : (pending ? pending.time : video.currentTime || 0);
+    if (reset) intendedPlaying = false;
 
-    $('#atlas-stage-badge').textContent = view.video ? '動画' : '静止画プレビュー';
-    $('.atlas-stage').classList.toggle('has-video', Boolean(view.video));
+    $('#atlas-stage-badge').textContent = url ? '動画' : '静止画';
+    $('.atlas-stage').classList.toggle('has-video', Boolean(url));
+    showMessage('');
 
-    if (view.video) {
+    if (url) {
+      const version = ++revision;
+      playTicket += 1;
       img.hidden = true;
       video.hidden = false;
-      video.controls = true;
+      // **最初はポスターを出して、再生は手で押してもらう**（勝手に鳴らさない）。
+      // 取りに行くのは長さを読むぶんだけ（`preload="metadata"`。中身は押されてから）
       video.poster = view.poster;
-      video.playbackRate = state.speed;
-      video.src = view.video;
+      video.setAttribute('aria-label', item.name + 'の動作・カメラ ' + view.label + '（音はありません）');
+      video.pause();
+      pending = { time: carryTime };
+      video.src = url;
+      // **絶対URLに直してから控える**（`currentSrc` は絶対で返ってくるので、
+      // 相対のまま比べると毎回「別物」になり、読み終わりを取りこぼす）
+      const expected = video.src;
       video.load();
+      // **読み込みが返ってこないときにも、押せる状態へ戻す**（`error` が来ない止まり方がある。
+      // 裏へ回っているあいだは OS が読み込みを止めるので、そのときは待ち続ける）
+      window.setTimeout(() => {
+        if (version !== revision || !pending || document.hidden) return;
+        pending = null;
+        showMessage('動画を読み込めませんでした。通信を確かめて、もう一度お試しください。', true);
+        updateTransport();
+      }, LOAD_TIMEOUT_MS);
       video.addEventListener('loadedmetadata', function onLoaded() {
         video.removeEventListener('loadedmetadata', onLoaded);
-        video.currentTime = Math.min(carryTime, video.duration || 0);
-        if (carryPlaying) video.play().catch(() => {});
+        // 新しい選択に追い越されていたら捨てる（`currentSrc` も見る——
+        // 同じ視点を押し直したときに、番号だけでは見分けられない）
+        if (version !== revision || video.currentSrc !== expected || video.readyState < 1) return;
+        const target = pending ? pending.time : 0;
+        pending = null;
+        video.currentTime = Math.min(target, video.duration || 0);
+        video.playbackRate = state.speed;
+        if (intendedPlaying) playCurrent();
+        updateTransport();
       });
-      placeholder.hidden = true;
-      speedGroup.hidden = false;
     } else {
+      revision += 1;
+      playTicket += 1;
+      pending = null;
+      intendedPlaying = false;
       video.pause();
       video.removeAttribute('src');
       video.load();
@@ -82,38 +211,44 @@
       img.hidden = false;
       img.src = view.poster;
       img.alt = item.name + 'の筋肉と姿勢・' + view.label;
-      placeholder.hidden = false;
-      speedGroup.hidden = true;
     }
 
-    $('#atlas-view-label').textContent = view.label + 'から';
+    // **角度は撮影座標系のまま**（0°を「正面」と言い換えない）
+    $('#atlas-view-label').textContent = 'カメラ ' + view.label;
     $$('#atlas-view-options button').forEach((b) => {
       b.setAttribute('aria-pressed', String(b.dataset.view === view.id));
     });
+    updateTransport();
   }
 
-  function renderDetail() {
+  // ---- 種目の説明
+
+  function renderDetail(reset) {
     const item = selectedExercise();
     if (!item) return;
     $('#atlas-category').textContent = categoryLabel(item);
     $('#atlas-equipment').textContent = item.equipment ? '・' + item.equipment : '';
     $('#atlas-exercise-title').textContent = item.name;
     $('#atlas-exercise-variant').textContent = item.variant || '';
-    $('#atlas-duration').textContent = item.referenceCycleSeconds
-      ? '1往復 ' + item.referenceCycleSeconds + '秒'
-      : '';
+    $('#atlas-primary-label').textContent = item.primaryRoleLabel || '主に働く';
+    $('#atlas-assist-label').textContent = item.assistRoleLabel || '動作を助ける';
+    $('#atlas-point').textContent = item.point || '準備中です。';
+    $('#atlas-stable').textContent = item.stableLabel || '';
+    $('#atlas-stable').hidden = !item.stableLabel;
     resetFeedbackForm();
 
     for (const role of ['primary', 'assist']) {
       const ul = $('#atlas-' + role);
+      const values = item[role] || [];
       ul.replaceChildren(
-        ...(item[role] || []).map((text) => {
+        ...values.map((text) => {
           const li = document.createElement('li');
           li.className = 'chip';
           li.textContent = text;
           return li;
         }),
       );
+      ul.closest('.atlas-muscle-group').hidden = values.length === 0;
     }
 
     const options = $('#atlas-view-options');
@@ -126,15 +261,17 @@
         b.textContent = view.label;
         b.setAttribute('aria-pressed', String(view.id === state.view));
         b.addEventListener('click', () => {
+          // **同じ視点を押しただけでは読み直さない**（再生が途切れる）
+          if (state.view === view.id) return;
           state.view = view.id;
-          updateStage();
+          loadStage(false);
           $('#atlas-announcement').textContent = item.name + 'を' + view.label + 'から表示';
         });
         return b;
       }),
     );
 
-    updateStage();
+    loadStage(reset);
     renderCards();
   }
 
@@ -166,12 +303,12 @@
         const img = document.createElement('img');
         img.alt = '';
         img.loading = 'lazy';
-        img.width = 1000;
-        img.height = 750;
+        img.decoding = 'async';
         img.src = view.poster;
         const viewCount = document.createElement('span');
         viewCount.className = 'chip atlas-card-view';
-        viewCount.textContent = item.views.length + '視点';
+        // **数はデータから出す**（5方向に決め打ちしない）
+        viewCount.textContent = item.views.length + '方向';
         imageBox.append(img, viewCount);
 
         const copy = document.createElement('div');
@@ -190,10 +327,12 @@
 
         card.append(imageBox, copy);
         card.addEventListener('click', () => {
-          state.selected = item.id;
-          state.view = null;
-          renderDetail();
-          $('#atlas-announcement').textContent = item.name + 'を表示';
+          if (state.selected !== item.id) {
+            state.selected = item.id;
+            state.view = defaultViewId(item);
+            renderDetail(true);
+            $('#atlas-announcement').textContent = item.name + 'を表示';
+          }
           $('.atlas-study').scrollIntoView({
             behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
             block: 'start',
@@ -250,19 +389,48 @@
   }
 
   function wireControls() {
-    $('#atlas-feedback-send').addEventListener('click', sendFeedback);
-    $$('#atlas-video-speed button').forEach((button) => {
-      button.addEventListener('click', () => {
-        state.speed = parseFloat(button.dataset.speed);
-        $('#atlas-video').playbackRate = state.speed;
-        $$('#atlas-video-speed button').forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
-      });
+    const video = $('#atlas-video');
+
+    $('#atlas-play').addEventListener('click', () => {
+      if (intendedPlaying) pauseCurrent(); else playCurrent();
     });
+    $('#atlas-scrub').addEventListener('input', (event) => {
+      const item = selectedExercise();
+      if (!item) return;
+      const total = viewSeconds(item, currentView(item));
+      const at = (Number(event.target.value) / 1000) * total;
+      // 読み込み中は目標だけ控えて、読めてから当てる
+      if (pending) pending.time = at; else video.currentTime = at;
+      updateTransport();
+    });
+    $('#atlas-speed').addEventListener('change', (event) => {
+      state.speed = Number(event.target.value);
+      video.playbackRate = state.speed;
+    });
+    video.addEventListener('timeupdate', updateTransport);
+    video.addEventListener('play', updateTransport);
+    video.addEventListener('pause', updateTransport);
+    video.addEventListener('error', () => {
+      pending = null;
+      intendedPlaying = false;
+      showMessage('動画を読み込めませんでした。通信を確かめて、もう一度お試しください。', true);
+      updateTransport();
+    });
+    $('#atlas-retry').addEventListener('click', () => loadStage(false));
+
     // タブを離れたら止める。全種目・全視点を先読みしないのと同じ理由で、
-    // 見ていない動画を流しっぱなしにしない
+    // 見ていない動画を流しっぱなしにしない。**戻っただけでは再生し直さない**
     document.addEventListener('visibilitychange', () => {
-      if (document.hidden) $('#atlas-video').pause();
+      if (document.hidden) pauseCurrent();
     });
+    // **画面の外へ出たら止める**（2026-09-18）。タブは開いたままでも、
+    // 下の一覧まで送った先で流しっぱなしにしない
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => {
+        entries.forEach((entry) => { if (!entry.isIntersecting && intendedPlaying) pauseCurrent(); });
+      }, { threshold: 0.2 }).observe(video);
+    }
+
     $$('.atlas-filters button').forEach((button) => {
       button.addEventListener('click', () => {
         state.filter = button.dataset.filter;
@@ -281,6 +449,27 @@
       $$('.atlas-filters button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filter === 'all')));
       renderCards();
     });
+    $('#atlas-feedback-send').addEventListener('click', sendFeedback);
+  }
+
+  // 5方向ある種目は 45° から見せる（ホームの絵と同じ向き）。
+  // 無ければ先頭の視点
+  function defaultViewId(item, angle) {
+    const wanted = angle != null ? item.views.find((v) => v.angleDegrees === angle) : null;
+    const fallback = item.views.find((v) => v.angleDegrees === 45);
+    return (wanted || fallback || item.views[0]).id;
+  }
+
+  // ホームや他のページからの ?exercise=…&angle=… を受ける
+  function pickFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('exercise');
+    const item = state.exercises.find((e) => e.id === id);
+    const angle = params.has('angle') ? Number(params.get('angle')) : null;
+    const chosen = item || state.exercises[0];
+    if (!chosen) return;
+    state.selected = chosen.id;
+    state.view = defaultViewId(chosen, Number.isFinite(angle) ? angle : null);
   }
 
   async function init() {
@@ -298,9 +487,10 @@
       return;
     }
     state.exercises = data.exercises;
-    state.selected = state.exercises[0] && state.exercises[0].id;
+    state.videoBase = data.videoBaseUrl || null;
+    pickFromUrl();
     wireControls();
-    renderDetail();
+    renderDetail(true);
   }
 
   init();
