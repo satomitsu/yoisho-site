@@ -6,7 +6,7 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
   "videoBaseUrl": "https://pub-403566d3b5604c4992fe8b43aa09968b.r2.dev/",
   "videoBaseUrlNote": "動画の配信元（2026-09-18 に R2 へ 75 本を置いた）。null に戻すと動画を出さず、静止画のまま「動画は準備中」と表示する。各視点の videoKey がこの後ろに付く。末尾の / を落とさない",
-  "notes": "66種目・各5方向の動画つき。角度は撮影座標系（0〜180°）で、0°を正面とは断定しない。筋肉と説明はアプリの種目ガイドと同じもの。収録元から受け取った表記がある種目は、その表記のまま。",
+  "notes": "68種目・各5方向の動画つき。角度は撮影座標系（0〜180°）で、0°を正面とは断定しない。筋肉と説明はアプリの種目ガイドと同じもの。収録元から受け取った表記がある種目は、その表記のまま。",
   "defaultExercise": "bench-press",
   "exercises": [
     {
@@ -2856,6 +2856,76 @@
       ]
     },
     {
+      "id": "smith-shoulder-press",
+      "name": "スミスショルダープレス",
+      "regions": [
+        "shoulders"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260919-639c5029",
+      "description": "スミスマシンのバーを、肩の高さから真上へ押し上げる種目。",
+      "primary": [
+        "三角筋（前部・中部）"
+      ],
+      "assist": [
+        "上腕三頭筋",
+        "僧帽筋"
+      ],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/smith-shoulder-press/v20260919-639c5029/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/smith-shoulder-press/v20260919-639c5029/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/smith-shoulder-press/v20260919-639c5029/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/smith-shoulder-press/v20260919-639c5029/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/smith-shoulder-press/v20260919-639c5029/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/smith-shoulder-press/v20260919-639c5029/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/smith-shoulder-press/v20260919-639c5029/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/smith-shoulder-press/v20260919-639c5029/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/smith-shoulder-press/v20260919-639c5029/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/smith-shoulder-press/v20260919-639c5029/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
       "id": "dumbbell-shoulder-press",
       "name": "ダンベルショルダープレス",
       "regions": [
@@ -3076,9 +3146,8 @@
       ],
       "variant": "",
       "referenceCycleSeconds": 6.5,
-      "recordingVersion": "v20260910-c5f198ec",
+      "recordingVersion": "v20260919-639c5029",
       "description": "マシンのグリップを肩の高さから真上へ押し上げる種目。",
-      "guideFrom": "マシンショルダープレス",
       "primary": [
         "三角筋（前部・中部）"
       ],
@@ -3091,50 +3160,50 @@
           "id": "a000",
           "label": "0°",
           "angleDegrees": 0,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/machine-shoulder-press/v20260910-c5f198ec/poster-000.webp",
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/machine-shoulder-press/v20260919-639c5029/poster-000.webp",
           "video": null,
-          "videoKey": "exercises/machine-shoulder-press/v20260910-c5f198ec/view-000.mp4",
+          "videoKey": "exercises/machine-shoulder-press/v20260919-639c5029/view-000.mp4",
           "durationSeconds": 6.5
         },
         {
           "id": "a045",
           "label": "45°",
           "angleDegrees": 45,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/machine-shoulder-press/v20260910-c5f198ec/poster-045.webp",
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/machine-shoulder-press/v20260919-639c5029/poster-045.webp",
           "video": null,
-          "videoKey": "exercises/machine-shoulder-press/v20260910-c5f198ec/view-045.mp4",
+          "videoKey": "exercises/machine-shoulder-press/v20260919-639c5029/view-045.mp4",
           "durationSeconds": 6.5
         },
         {
           "id": "a090",
           "label": "90°",
           "angleDegrees": 90,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/machine-shoulder-press/v20260910-c5f198ec/poster-090.webp",
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/machine-shoulder-press/v20260919-639c5029/poster-090.webp",
           "video": null,
-          "videoKey": "exercises/machine-shoulder-press/v20260910-c5f198ec/view-090.mp4",
+          "videoKey": "exercises/machine-shoulder-press/v20260919-639c5029/view-090.mp4",
           "durationSeconds": 6.5
         },
         {
           "id": "a135",
           "label": "135°",
           "angleDegrees": 135,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/machine-shoulder-press/v20260910-c5f198ec/poster-135.webp",
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/machine-shoulder-press/v20260919-639c5029/poster-135.webp",
           "video": null,
-          "videoKey": "exercises/machine-shoulder-press/v20260910-c5f198ec/view-135.mp4",
+          "videoKey": "exercises/machine-shoulder-press/v20260919-639c5029/view-135.mp4",
           "durationSeconds": 6.5
         },
         {
           "id": "a180",
           "label": "180°",
           "angleDegrees": 180,
-          "pitchDegrees": 12,
-          "poster": "img/atlas/posters/machine-shoulder-press/v20260910-c5f198ec/poster-180.webp",
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/machine-shoulder-press/v20260919-639c5029/poster-180.webp",
           "video": null,
-          "videoKey": "exercises/machine-shoulder-press/v20260910-c5f198ec/view-180.mp4",
+          "videoKey": "exercises/machine-shoulder-press/v20260919-639c5029/view-180.mp4",
           "durationSeconds": 6.5
         }
       ]
@@ -4098,6 +4167,73 @@
           "poster": "img/atlas/posters/preacher-curl/v20260910-c5f198ec/poster-180.webp",
           "video": null,
           "videoKey": "exercises/preacher-curl/v20260910-c5f198ec/view-180.mp4",
+          "durationSeconds": 6.5
+        }
+      ]
+    },
+    {
+      "id": "lying-extension",
+      "name": "ライイングエクステンション",
+      "regions": [
+        "arms"
+      ],
+      "variant": "",
+      "referenceCycleSeconds": 6.5,
+      "recordingVersion": "v20260919-639c5029",
+      "description": "仰向けで肘から先を曲げ伸ばしして、上腕三頭筋を伸ばして戻す種目。",
+      "primary": [
+        "上腕三頭筋"
+      ],
+      "assist": [],
+      "views": [
+        {
+          "id": "a000",
+          "label": "0°",
+          "angleDegrees": 0,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/lying-extension/v20260919-639c5029/poster-000.webp",
+          "video": null,
+          "videoKey": "exercises/lying-extension/v20260919-639c5029/view-000.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a045",
+          "label": "45°",
+          "angleDegrees": 45,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/lying-extension/v20260919-639c5029/poster-045.webp",
+          "video": null,
+          "videoKey": "exercises/lying-extension/v20260919-639c5029/view-045.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a090",
+          "label": "90°",
+          "angleDegrees": 90,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/lying-extension/v20260919-639c5029/poster-090.webp",
+          "video": null,
+          "videoKey": "exercises/lying-extension/v20260919-639c5029/view-090.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a135",
+          "label": "135°",
+          "angleDegrees": 135,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/lying-extension/v20260919-639c5029/poster-135.webp",
+          "video": null,
+          "videoKey": "exercises/lying-extension/v20260919-639c5029/view-135.mp4",
+          "durationSeconds": 6.5
+        },
+        {
+          "id": "a180",
+          "label": "180°",
+          "angleDegrees": 180,
+          "pitchDegrees": 18,
+          "poster": "img/atlas/posters/lying-extension/v20260919-639c5029/poster-180.webp",
+          "video": null,
+          "videoKey": "exercises/lying-extension/v20260919-639c5029/view-180.mp4",
           "durationSeconds": 6.5
         }
       ]
