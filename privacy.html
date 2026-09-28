@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
 <link rel="icon" href="img/icon-120.png">
-<link rel="stylesheet" href="style.css?v=37">
+<link rel="stylesheet" href="style.css?v=38">
 </head>
 <body>
 <div class="band-sec">
@@ -34,7 +34,7 @@
 <div class="wrap">
 
 <h1>プライバシーポリシー</h1>
-<p class="lead">最終更新日 <span class="num">2026年9月6日</span></p>
+<p class="lead">最終更新日 <span class="num">2026年9月28日</span></p>
 
 <p class="prose">yoisho（以下「本アプリ」）における個人情報の取り扱いについて説明します。</p>
 
@@ -152,6 +152,15 @@
     <li>法令に基づく開示請求があった場合</li>
   </ul>
   <p class="prose">本アプリは、通知の配信のために Apple のプッシュ通知サービス（APNs）を利用します。</p>
+
+  <h3>自作種目の部位の推定について（外部送信）</h3>
+  <p class="prose">自作種目を作るとき、入力した<strong>種目名</strong>から効かせる部位を推定するために、種目名を TypeSafe AI（米国）の API へ送信します。</p>
+  <ul class="prose">
+    <li>送信するのは<strong>種目名だけ</strong>です。アカウントの識別子・表示名・メールアドレス・トレーニング記録など、利用者を識別できる情報は送信しません</li>
+    <li>送信は当方のサーバーを経由して行い、端末から TypeSafe AI へ直接通信することはありません</li>
+    <li>推定の結果は、利用者が選び直せる初期値として画面に入るだけです。推定の結果を当方のサーバーに保存することはありません（保存されるのは、利用者が保存した自作種目の内容だけです）</li>
+    <li>推定は自作種目を作る画面でのみ行います。既存の種目や、これまでの記録が送信されることはありません</li>
+  </ul>
 </section>
 
 <section class="chapter" id="s6">
