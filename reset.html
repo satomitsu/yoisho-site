@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; connect-src https://ojyyixzjiccdmmzpdpwx.supabase.co; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>パスワードの再設定 | yoisho</title>
+<meta name="description" content="yoisho のパスワードを新しくします。">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#F4F2EC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="img/icon-120.png">
+<link rel="stylesheet" href="style.css?v=38">
+<style>
+  .reset-form { display: grid; gap: 14px; max-width: 26em; margin-top: 28px; }
+  .reset-form label { display: grid; gap: 6px; font-weight: 700; }
+  .reset-form input { font: inherit; padding: 12px 14px; border: 2px solid var(--ink); border-radius: 10px; background: #fff; }
+  .reset-form .hint { font-weight: 400; font-size: 13px; color: var(--text2); }
+  .reset-error { color: #B42318; font-weight: 700; margin: 0; }
+  .en { color: var(--text2); font-size: 13px; margin-top: 6px; }
+</style>
+</head>
+<body>
+<div class="band-sec">
+  <div class="inner">
+    <nav class="nav">
+      <a class="nav-logo" href="./" aria-label="yoisho">
+        <img src="img/icon-120.png" alt="">
+        <span class="stack">
+          <span class="word">yoisho</span>
+          <span class="band">よいしょ</span>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a class="hide-sp" href="./">トップ</a>
+        <a class="hide-sp" href="support.html">サポート</a>
+        <a class="btn" href="mailto:support@yoisho.jp">問い合わせる</a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+
+<h1>パスワードの再設定</h1>
+
+<section data-step="form" hidden>
+  <p class="lead">新しいパスワードを決めてください</p>
+  <p class="en" lang="en">Reset your yoisho password.</p>
+  <form id="reset-form" class="reset-form" novalidate>
+    <label>新しいパスワード <span class="hint">8 文字以上 / at least 8 characters</span>
+      <input id="pw" type="password" autocomplete="new-password" minlength="8" required>
+    </label>
+    <label>もう一度 <span class="hint">確認のため / confirm</span>
+      <input id="pw2" type="password" autocomplete="new-password" minlength="8" required>
+    </label>
+    <p id="error" class="reset-error" role="alert" hidden></p>
+    <p><button id="submit" class="btn" type="submit">パスワードを変える</button></p>
+  </form>
+</section>
+
+<section class="chapter" data-step="done" hidden>
+  <div class="head"><h2>パスワードを変えました</h2></div>
+  <p class="prose"><strong>yoisho のアプリに戻って、新しいパスワードでログインしてください。</strong>このページは閉じてかまいません。</p>
+  <p class="en" lang="en">Your password has been changed. Go back to the app and sign in with the new password.</p>
+  <p style="margin-top:22px"><a class="btn" href="yoisho://">アプリを開く</a></p>
+</section>
+
+<section class="chapter" data-step="expired" hidden>
+  <div class="head"><h2>このリンクは使えません</h2></div>
+  <p class="prose">期限が切れているか、すでに使われたリンクです。アプリのログイン画面の「パスワードを忘れた」から、もう一度メールを送ってください。</p>
+  <p class="en" lang="en">This link has expired or was already used. Request a new email from "Forgot password" in the app.</p>
+</section>
+
+<section class="chapter" data-step="invalid" hidden>
+  <div class="head"><h2>リンクが正しくありません</h2></div>
+  <p class="prose">メールのリンクをもう一度開くか、アプリのログイン画面の「パスワードを忘れた」から、もう一度メールを送ってください。うまくいかないときは <a href="mailto:support@yoisho.jp">support@yoisho.jp</a> までご連絡ください。</p>
+  <p class="en" lang="en">This link isn't valid. Open the link in the email again, or request a new one from "Forgot password" in the app.</p>
+</section>
+
+<noscript><p class="prose">このページは JavaScript を使います。ブラウザの設定で有効にしてから、もう一度開いてください。</p></noscript>
+
+</div>
+
+<footer class="lp-footer">
+  <div class="inner">
+    <div>
+      <div class="foot-brand">
+        <span class="sq"><img src="img/icon-120.png" alt=""></span>
+        <span class="en">yoisho</span>
+      </div>
+      <p class="foot-tag" style="margin:0">the sound Japanese lifters make when they lift<br>© 2026 yoisho</p>
+    </div>
+    <div class="foot-cols">
+      <div>
+        <span class="head">プロダクト</span>
+        <a href="./">トップ</a>
+      </div>
+      <div>
+        <span class="head">サポート</span>
+        <a href="news.html">お知らせ</a>
+        <a href="support.html">よくある質問</a>
+        <a href="mailto:support@yoisho.jp">お問い合わせ</a>
+        <a href="https://x.com/yoisho_app">X (@yoisho_app)</a>
+      </div>
+      <div>
+        <span class="head">規約</span>
+        <a href="terms.html">利用規約</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="reset.js?v=2"></script>
+</body>
+</html>
