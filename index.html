@@ -22,7 +22,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=37">
+  <link rel="stylesheet" href="style.css?v=39">
 </head>
 
 <body class="lp">
@@ -50,6 +50,22 @@
       </nav>
     </div>
   </div>
+
+  <!-- お知らせ。**文面はここに写さない**——公開のたびに足すのは news.html だけで、
+       ここに書くと次の版で古くなる。末尾の script が news.html の先頭の1件を読んで
+       日付と見出しを差し込む。読めなければ下の案内の文のまま、一覧へ送る -->
+  <a class="band-sec news-bar" href="news.html" id="top-news">
+    <span class="inner news-bar-in">
+      <span class="news-label">お知らせ</span>
+      <span class="news-body">
+        <span class="news-date" data-news-date></span>
+        <span class="news-title" data-news-title>新しくできるようになったこと、直したこと</span>
+      </span>
+      <svg class="news-go" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 5l7 7-7 7" />
+      </svg>
+    </span>
+  </a>
 
   <!-- ヒーロー -->
   <div class="band-sec">
@@ -403,6 +419,33 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // お知らせの帯に、news.html の先頭の1件（いちばん新しいもの）を出す。
+    // news.html は「日付の p → 見出しの h3」を新しい順に積んでいる。
+    // 形が変わって読めないときは、何も書き換えずに案内の文のまま残す
+    (function () {
+      var bar = document.getElementById('top-news');
+      if (!bar || !window.fetch || !window.DOMParser) return;
+      fetch('news.html')
+        .then(function (res) { if (!res.ok) throw res; return res.text(); })
+        .then(function (html) {
+          var doc = new DOMParser().parseFromString(html, 'text/html');
+          var title = doc.querySelector('.chapter h3');
+          if (!title) return;
+          var date = title.previousElementSibling;
+          var tidy = function (el) { return el.textContent.replace(/\s+/g, ' ').trim(); };
+          bar.querySelector('[data-news-title]').textContent = tidy(title);
+          if (date && date.tagName === 'P') {
+            // 「2026年10月27日」を「2026.10.27」に。数字は Space Grotesk で組む
+            var m = tidy(date).match(/^(\d{4})年(\d{1,2})月(\d{1,2})日$/);
+            bar.querySelector('[data-news-date]').textContent =
+              m ? m[1] + '.' + m[2] + '.' + m[3] : tidy(date);
+          }
+        })
+        .catch(function () {});
+    })();
+  </script>
 
 </body>
 

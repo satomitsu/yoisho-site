@@ -380,6 +380,35 @@ footer.site a { color: var(--text2); }
 .nav-links a:hover { background: var(--accent); }
 @media (max-width: 800px) { .nav-links .hide-sp { display: none; } }
 
+/* ---------- お知らせの帯（ヘッダーの直下） ---------- */
+
+/* 帯ごと1つのリンク。押せる範囲を画面幅いっぱいに取り、ホバーで面ごとライムにする
+   （ほかのボタンと同じ合図）。中身は index.html の script が news.html から差し込む */
+.news-bar { display: block; background: var(--card); color: var(--ink);
+            text-decoration: none; }
+.news-bar:hover { background: var(--accent); }
+.news-bar:focus-visible { outline-offset: -5px; }
+.news-bar-in { display: flex; align-items: center; gap: 14px;
+               padding-top: 11px; padding-bottom: 11px; }
+/* 札は黒地。ホバーで帯がライムになっても沈まない */
+.news-label { flex-shrink: 0; background: var(--ink); color: var(--paper);
+              font-size: 12px; font-weight: 700; line-height: 1;
+              letter-spacing: .08em; padding: 6px 9px 6px 10px; }
+.news-body { flex: 1 1 auto; min-width: 0; display: flex; flex-wrap: wrap;
+             align-items: baseline; gap: 0 14px; font-size: 14px; line-height: 1.6; }
+.news-date { font-family: var(--font-en); font-feature-settings: "tnum" 1;
+             font-weight: 600; color: var(--text2); }
+.news-date:empty { display: none; }
+/* ライムの上の文字はインク（灰色のままだと読みにくい） */
+.news-bar:hover .news-date { color: var(--ink); }
+.news-title { font-weight: 700; }
+.news-go { flex-shrink: 0; width: 18px; height: 18px; fill: none;
+           stroke: var(--ink); stroke-width: 2.5; stroke-linecap: square; }
+@media (max-width: 560px) {
+  .news-bar-in { gap: 12px; padding-top: 10px; padding-bottom: 10px; }
+  .news-body { font-size: 13px; }
+}
+
 /* ---------- ヒーロー ---------- */
 
 /* 下の余白は必ず持たせる。無いとボタンとキャラクターの台が
