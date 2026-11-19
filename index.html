@@ -23,6 +23,53 @@
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=39">
+  <link rel="canonical" href="https://yoisho.jp/">
+  <!-- 検索エンジンに「iPhone のアプリで、無料、App Store はここ」を伝える（2026-11-19）。
+       評価（aggregateRating）は載せない——ページに見えていない数を載せると、検索エンジンの決まりに反する -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://yoisho.jp/#website",
+      "url": "https://yoisho.jp/",
+      "name": "yoisho",
+      "alternateName": [
+        "よいしょ",
+        "筋トレ記録 - yoisho"
+      ],
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://yoisho.jp/#app",
+      "name": "筋トレ記録 - yoisho",
+      "alternateName": [
+        "yoisho",
+        "よいしょ"
+      ],
+      "description": "仲間と続ける筋トレ記録アプリ。記録が見えるのは承認した相互フォローの仲間だけ。重さと回数をすばやく記録して、仲間と「よいしょ」を送り合えます。ランキングやいいね数はありません。",
+      "operatingSystem": "iOS",
+      "applicationCategory": "HealthApplication",
+      "inLanguage": [
+        "ja",
+        "en",
+        "fr"
+      ],
+      "url": "https://yoisho.jp/",
+      "downloadUrl": "https://apps.apple.com/jp/app/id6794951676",
+      "installUrl": "https://apps.apple.com/jp/app/id6794951676",
+      "image": "https://yoisho.jp/img/icon-400.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 
 <body class="lp">
@@ -197,6 +244,8 @@
       <div class="callout" style="margin-top:20px">
         ランキングもリーダーボードも作りません。よいしょの数は、相手には見えません。
       </div>
+      <!-- 「友達と続ける」で探す人向けのページ（friends.html）への入口。2026-11-19 -->
+      <p style="margin:22px 0 0"><a class="btn" href="friends.html">友達・仲間と続けるには</a></p>
     </div>
 
     <div id="cheer">
@@ -403,6 +452,7 @@
           <a href="pro.html">yoisho Pro</a>
           <a href="swim.html">水泳記録 - yoisho</a>
           <a href="atlas.html">筋トレ図鑑</a>
+          <a href="friends.html">仲間と続けるには</a>
         </div>
         <div>
           <span class="head">サポート</span>

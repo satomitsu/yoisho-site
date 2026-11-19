@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+# メールの確認・パスワード再設定の着地と、App Store への転送だけのページは検索に出さない
+Disallow: /confirmed.html
+Disallow: /reset.html
+Disallow: /app.html
+Disallow: /x.html
+
+Sitemap: https://yoisho.jp/sitemap.xml
